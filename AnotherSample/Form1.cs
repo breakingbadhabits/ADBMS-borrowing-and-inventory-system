@@ -13,7 +13,7 @@ namespace AnotherSample
 
         private bool Login(string username, string password, string role)
         {
-            string connectionString = "Server=JERMAINE;Database=inventory_system;Trusted_Connection=True;";
+            string connectionString = "Server=LAPTOP-5EJNA00V;Database=inventory_system;Trusted_Connection=True;";
             string query = @"
                 SELECT COUNT(*)
                 FROM users u
