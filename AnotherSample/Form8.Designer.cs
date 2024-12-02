@@ -43,13 +43,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.DeleteBt3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -215,7 +215,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.DeleteBt3);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.dateTimePicker1);
             this.panel2.Controls.Add(this.label2);
@@ -228,29 +228,18 @@
             this.panel2.Size = new System.Drawing.Size(1023, 517);
             this.panel2.TabIndex = 0;
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Green;
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(884, 464);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(84, 31);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "EDIT";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Blue;
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(793, 464);
+            this.button1.Location = new System.Drawing.Point(753, 464);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(84, 31);
             this.button1.TabIndex = 12;
             this.button1.Text = "ADD";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dateTimePicker1
             // 
@@ -307,6 +296,19 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "STOCKS";
             // 
+            // DeleteBt3
+            // 
+            this.DeleteBt3.BackColor = System.Drawing.Color.Red;
+            this.DeleteBt3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DeleteBt3.Location = new System.Drawing.Point(853, 464);
+            this.DeleteBt3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.DeleteBt3.Name = "DeleteBt3";
+            this.DeleteBt3.Size = new System.Drawing.Size(90, 31);
+            this.DeleteBt3.TabIndex = 13;
+            this.DeleteBt3.Text = "DELETE";
+            this.DeleteBt3.UseVisualStyleBackColor = false;
+            this.DeleteBt3.Click += new System.EventHandler(this.DeleteBt3_Click);
+            // 
             // StocksAdminF8
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -348,7 +350,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button DeleteBt3;
     }
 }

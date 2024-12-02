@@ -155,9 +155,6 @@
             "Crimping Tool",
             "Router"});
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Crimping Tool",
-            "Router"});
             this.comboBox2.Location = new System.Drawing.Point(172, 331);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBox2.Name = "comboBox2";
