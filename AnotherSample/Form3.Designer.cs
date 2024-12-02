@@ -51,6 +51,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.FixButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -219,6 +220,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.panel2.Controls.Add(this.FixButton);
             this.panel2.Controls.Add(this.ArchiveBt3);
             this.panel2.Controls.Add(this.EditBt2);
             this.panel2.Controls.Add(this.AddBt1);
@@ -324,6 +326,19 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "ITEMS";
             // 
+            // FixButton
+            // 
+            this.FixButton.BackColor = System.Drawing.Color.Gray;
+            this.FixButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.FixButton.Location = new System.Drawing.Point(53, 461);
+            this.FixButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.FixButton.Name = "FixButton";
+            this.FixButton.Size = new System.Drawing.Size(83, 38);
+            this.FixButton.TabIndex = 11;
+            this.FixButton.Text = "FIX";
+            this.FixButton.UseVisualStyleBackColor = false;
+            this.FixButton.Click += new System.EventHandler(this.button1_Click);
+            // 
             // ItemsAdminF3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -369,5 +384,6 @@
         private System.Windows.Forms.Button LogoutBt11;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button FixButton;
     }
 }

@@ -41,16 +41,18 @@ namespace AnotherSample
         i.item_serial_number AS 'SerialNumber', 
         i.item_type AS 'ItemType', 
         i.item_condition AS 'Condition', 
-        s.stock_id AS 'StockID',  -- Retrieve stock_id
-        s.stock_name AS 'StockUnder', -- Display StockUnder as stock_name
+        s.stock_id AS 'StockID', 
+        s.stock_name AS 'StockUnder', 
         CASE 
-            WHEN i.item_is_borrowed = 1 THEN 'Unavailable' 
+            WHEN i.item_is_borrowed = 1 OR i.item_is_maintenance = 1 THEN 'Unavailable' 
             ELSE 'Available' 
         END AS 'ItemStatus'
     FROM items i
     INNER JOIN stocks s ON i.item_stock_id = s.stock_id
-    WHERE i.item_is_archived = 0";
-
+    WHERE 
+        i.item_is_archived = 0 
+        AND i.item_is_maintenance = 0 
+        AND i.item_is_borrowed = 0";
 
                     SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
                     DataTable dataTable = new DataTable();
@@ -202,9 +204,12 @@ namespace AnotherSample
                     using (SqlConnection connection = new SqlConnection(connectionString))
                     {
                         string query = @"
-                            UPDATE items
-                            SET item_is_archived = 1, item_is_borrowed = 0
-                            WHERE item_id = @ItemId";
+                    UPDATE items
+                    SET 
+                        item_is_archived = 1, 
+                        item_is_maintenance = 0, 
+                        item_is_borrowed = 0
+                    WHERE item_id = @ItemId";
 
                         using (SqlCommand command = new SqlCommand(query, connection))
                         {
@@ -235,7 +240,8 @@ namespace AnotherSample
                 MessageBox.Show("Please select a row to archive.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-        
+
+
         private void RequestBt7_Click(object sender, EventArgs e)
         {
 
@@ -248,10 +254,13 @@ namespace AnotherSample
 
         private void MaintenanceBt6_Click(object sender, EventArgs e)
         {
-
+            MaintenanceAdminF6 itemMaintenance = new MaintenanceAdminF6();
+            this.Hide();
+            itemMaintenance.ShowDialog();
+            this.Close();
         }
 
-       private void EditBt2_Click(object sender, EventArgs e)
+        private void EditBt2_Click(object sender, EventArgs e)
         {
 
         }
@@ -260,6 +269,65 @@ namespace AnotherSample
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                // Retrieve the selected item's ID
+                int selectedItemId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["ID"].Value);
+
+                // Pass the selected item ID to the popup
+                ShowFixItemPopup(selectedItemId);
+            }
+            else
+            {
+
+            }
+            {
+                MessageBox.Show("Please select an item to fix.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void ShowFixItemPopup(int itemId)
+        {
+            Form overlay = new Form
+            {
+                FormBorderStyle = FormBorderStyle.None,
+                BackColor = Color.Black,
+                Opacity = 0.5,
+                ShowInTaskbar = false,
+                StartPosition = FormStartPosition.Manual,
+                Bounds = this.Bounds,
+                Owner = this
+            };
+
+            try
+            {
+                overlay.Show();
+
+                // Pass the itemId to the FixItem form
+                FixItem fixItemForm = new FixItem(itemId)
+                {
+                    StartPosition = FormStartPosition.CenterParent,
+                    Owner = this
+                };
+
+                // Check if the dialog result is OK and refresh items
+                if (fixItemForm.ShowDialog() == DialogResult.OK)
+                {
+                    LoadItems(); // Refresh the DataGridView
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while opening the Fix Item form: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                overlay.Close();
+            }
         }
     }
 }

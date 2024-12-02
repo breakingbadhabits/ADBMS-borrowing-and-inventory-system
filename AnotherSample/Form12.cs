@@ -25,10 +25,6 @@ namespace AnotherSample
             this.Close();
         }
 
-        private void ItemList_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -253,5 +249,46 @@ namespace AnotherSample
         {
 
         }
+        private void ItemList_Load(object sender, EventArgs e)
+        {
+            LoadStockNames(); // Load stock names into comboBox2
+        }
+
+        private void LoadStockNames()
+        {
+            try
+            {
+                // Connection string from configuration
+                using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["InventorySystemDB"].ConnectionString))
+                {
+                    // Query to get stock names
+                    string query = "SELECT stock_name FROM stocks ORDER BY stock_name";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        connection.Open();
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            List<string> stockNames = new List<string>();
+
+                            // Read each stock_name and add it to the list
+                            while (reader.Read())
+                            {
+                                stockNames.Add(reader["stock_name"].ToString());
+                            }
+
+                            // Bind the list of stock names to comboBox2
+                            comboBox2.DataSource = stockNames;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading stock names: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
     }
 }

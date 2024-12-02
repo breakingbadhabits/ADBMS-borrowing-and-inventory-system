@@ -43,3 +43,6 @@ C:\Users\jerma\source\repos\AnotherSample\AnotherSample\obj\Debug\AnotherSample.
 C:\Users\jerma\source\repos\AnotherSample\AnotherSample\obj\Debug\AnotherSample.csproj.CoreCompileInputs.cache
 C:\Users\jerma\source\repos\AnotherSample\AnotherSample\obj\Debug\AnotherSample.csproj.AssemblyReference.cache
 C:\Users\jerma\source\repos\AnotherSample\AnotherSample\obj\Debug\AnotherSample.EditItemList.resources
+C:\Users\jerma\source\repos\AnotherSample\AnotherSample\obj\Debug\AnotherSample.AddStock.resources
+C:\Users\jerma\source\repos\AnotherSample\AnotherSample\obj\Debug\AnotherSample.Form15.resources
+C:\Users\jerma\source\repos\AnotherSample\AnotherSample\obj\Debug\AnotherSample.FixItem.resources

@@ -44,21 +44,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ArchivesBt10 = new System.Windows.Forms.Button();
             this.MaintenanceBt6 = new System.Windows.Forms.Button();
             this.ItemBt4 = new System.Windows.Forms.Button();
+            this.FixedButton = new System.Windows.Forms.Button();
+            this.ArchiveBt3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -70,7 +61,7 @@
             this.LogoutBt11.BackColor = System.Drawing.Color.Blue;
             this.LogoutBt11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogoutBt11.ForeColor = System.Drawing.Color.White;
-            this.LogoutBt11.Location = new System.Drawing.Point(900, 581);
+            this.LogoutBt11.Location = new System.Drawing.Point(1110, 635);
             this.LogoutBt11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LogoutBt11.Name = "LogoutBt11";
             this.LogoutBt11.Size = new System.Drawing.Size(112, 38);
@@ -90,15 +81,15 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(75, 218);
+            this.label2.Location = new System.Drawing.Point(80, 131);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 20);
+            this.label2.Size = new System.Drawing.Size(112, 20);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Search:";
+            this.label2.Text = "Search Item:";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(150, 214);
+            this.textBox1.Location = new System.Drawing.Point(196, 128);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(159, 26);
@@ -108,13 +99,14 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.LightBlue;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(75, 249);
+            this.dataGridView1.Location = new System.Drawing.Point(53, 162);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(892, 291);
+            this.dataGridView1.Size = new System.Drawing.Size(922, 291);
             this.dataGridView1.TabIndex = 4;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label1
             // 
@@ -213,18 +205,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.textBox5);
-            this.panel2.Controls.Add(this.textBox4);
-            this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.LogoutBt11);
+            this.panel2.Controls.Add(this.ArchiveBt3);
+            this.panel2.Controls.Add(this.FixedButton);
             this.panel2.Controls.Add(this.dateTimePicker1);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.textBox1);
@@ -233,116 +215,8 @@
             this.panel2.Location = new System.Drawing.Point(217, 108);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1023, 651);
+            this.panel2.Size = new System.Drawing.Size(1023, 517);
             this.panel2.TabIndex = 0;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Red;
-            this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button3.Location = new System.Drawing.Point(882, 214);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(86, 31);
-            this.button3.TabIndex = 22;
-            this.button3.Text = "DELETE";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Green;
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(792, 214);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(86, 31);
-            this.button2.TabIndex = 21;
-            this.button2.Text = "EDIT";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Blue;
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(702, 214);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 31);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "ADD";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(662, 168);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(159, 26);
-            this.textBox5.TabIndex = 19;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(662, 120);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(159, 26);
-            this.textBox4.TabIndex = 18;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(494, 168);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(170, 20);
-            this.label9.TabIndex = 17;
-            this.label9.Text = "MaintenanceStatus:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(494, 124);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(105, 20);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "Description:";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(248, 168);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(159, 26);
-            this.textBox3.TabIndex = 15;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(248, 120);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(159, 26);
-            this.textBox2.TabIndex = 14;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(75, 171);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(175, 20);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "DateOfMaintenance:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(75, 124);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(82, 20);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "SerialNo:";
             // 
             // panel1
             // 
@@ -350,6 +224,7 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.ArchivesBt10);
+            this.panel1.Controls.Add(this.LogoutBt11);
             this.panel1.Controls.Add(this.HistoriesBt9);
             this.panel1.Controls.Add(this.BorrowedBt8);
             this.panel1.Controls.Add(this.RequestBt7);
@@ -387,6 +262,7 @@
             this.MaintenanceBt6.TabIndex = 13;
             this.MaintenanceBt6.Text = "MAINTENANCE";
             this.MaintenanceBt6.UseVisualStyleBackColor = true;
+            this.MaintenanceBt6.Click += new System.EventHandler(this.MaintenanceBt6_Click);
             // 
             // ItemBt4
             // 
@@ -399,6 +275,30 @@
             this.ItemBt4.Text = "ITEMS";
             this.ItemBt4.UseVisualStyleBackColor = true;
             this.ItemBt4.Click += new System.EventHandler(this.ItemBt4_Click);
+            // 
+            // FixedButton
+            // 
+            this.FixedButton.BackColor = System.Drawing.Color.Gray;
+            this.FixedButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.FixedButton.Location = new System.Drawing.Point(752, 461);
+            this.FixedButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.FixedButton.Name = "FixedButton";
+            this.FixedButton.Size = new System.Drawing.Size(83, 38);
+            this.FixedButton.TabIndex = 12;
+            this.FixedButton.Text = "FIXED";
+            this.FixedButton.UseVisualStyleBackColor = false;
+            // 
+            // ArchiveBt3
+            // 
+            this.ArchiveBt3.BackColor = System.Drawing.Color.Red;
+            this.ArchiveBt3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ArchiveBt3.Location = new System.Drawing.Point(852, 461);
+            this.ArchiveBt3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ArchiveBt3.Name = "ArchiveBt3";
+            this.ArchiveBt3.Size = new System.Drawing.Size(116, 38);
+            this.ArchiveBt3.TabIndex = 13;
+            this.ArchiveBt3.Text = "DELETE";
+            this.ArchiveBt3.UseVisualStyleBackColor = false;
             // 
             // MaintenanceAdminF6
             // 
@@ -441,16 +341,7 @@
         private System.Windows.Forms.Button ArchivesBt10;
         private System.Windows.Forms.Button MaintenanceBt6;
         private System.Windows.Forms.Button ItemBt4;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button FixedButton;
+        private System.Windows.Forms.Button ArchiveBt3;
     }
 }
