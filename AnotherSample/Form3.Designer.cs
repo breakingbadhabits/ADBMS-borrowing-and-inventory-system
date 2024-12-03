@@ -43,6 +43,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.FixButton = new System.Windows.Forms.Button();
             this.ArchiveBt3 = new System.Windows.Forms.Button();
             this.EditBt2 = new System.Windows.Forms.Button();
             this.AddBt1 = new System.Windows.Forms.Button();
@@ -51,7 +52,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.FixButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -137,6 +137,7 @@
             this.HistoriesBt9.TabIndex = 16;
             this.HistoriesBt9.Text = "HISTORIES";
             this.HistoriesBt9.UseVisualStyleBackColor = true;
+            this.HistoriesBt9.Click += new System.EventHandler(this.HistoriesBt9_Click);
             // 
             // BorrowedBt8
             // 
@@ -235,6 +236,19 @@
             this.panel2.Size = new System.Drawing.Size(1023, 517);
             this.panel2.TabIndex = 0;
             // 
+            // FixButton
+            // 
+            this.FixButton.BackColor = System.Drawing.Color.Gray;
+            this.FixButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.FixButton.Location = new System.Drawing.Point(53, 461);
+            this.FixButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.FixButton.Name = "FixButton";
+            this.FixButton.Size = new System.Drawing.Size(83, 38);
+            this.FixButton.TabIndex = 11;
+            this.FixButton.Text = "FIX";
+            this.FixButton.UseVisualStyleBackColor = false;
+            this.FixButton.Click += new System.EventHandler(this.button1_Click);
+            // 
             // ArchiveBt3
             // 
             this.ArchiveBt3.BackColor = System.Drawing.Color.Red;
@@ -325,19 +339,6 @@
             this.label1.Size = new System.Drawing.Size(100, 51);
             this.label1.TabIndex = 3;
             this.label1.Text = "ITEMS";
-            // 
-            // FixButton
-            // 
-            this.FixButton.BackColor = System.Drawing.Color.Gray;
-            this.FixButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.FixButton.Location = new System.Drawing.Point(53, 461);
-            this.FixButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.FixButton.Name = "FixButton";
-            this.FixButton.Size = new System.Drawing.Size(83, 38);
-            this.FixButton.TabIndex = 11;
-            this.FixButton.Text = "FIX";
-            this.FixButton.UseVisualStyleBackColor = false;
-            this.FixButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // ItemsAdminF3
             // 

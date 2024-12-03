@@ -13,11 +13,19 @@ namespace AnotherSample
 {
     public partial class MaintenanceAdminF6 : Form
     {
+
         public MaintenanceAdminF6()
         {
             InitializeComponent();
+
+            // Initialize the connection string before any method calls that depend on it
+            connectionString = "Server=localhost;Database=inventory_system;Trusted_Connection=True;";
+
+            // Load maintenance items
+            LoadMaintenanceItems();
         }
 
+        private string connectionString;
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -85,59 +93,163 @@ namespace AnotherSample
         }
         private void LoadMaintenanceItems()
         {
-            // Connection string (update with your server and database details)
-            string connectionString = "Server=your_server;Database=your_database;Trusted_Connection=True;";
-
-            // SQL query to fetch items where item_is_maintenance = 1
+            // Connection string (already stored in the class variable)
             string query = @"
     SELECT 
         i.item_id AS 'ID', 
         i.item_name AS 'ItemName', 
-        i.item_brand AS 'Brand', 
-        i.item_serial_number AS 'SerialNumber', 
-        i.item_type AS 'ItemType', 
-        i.item_condition AS 'Condition', 
-        s.stock_id AS 'StockID', 
-        s.stock_name AS 'StockUnder', 
-        CASE 
-            WHEN i.item_is_borrowed = 1 OR i.item_is_maintenance = 1 THEN 'Unavailable' 
-            ELSE 'Available' 
-        END AS 'ItemStatus'
+        i.item_serial_number AS 'SerialNumber',
+        m.maintenance_description AS 'Description', 
+        m.maintenance_start_date AS 'StartDate',
+        m.maintenance_complete_date AS 'EndDate'
     FROM items i
-    INNER JOIN stocks s ON i.item_stock_id = s.stock_id
+    INNER JOIN maintenance m ON i.item_id = m.maintenance_item_id
     WHERE 
         i.item_is_archived = 0 
-        AND i.item_is_maintenance = 1 
-        AND i.item_is_borrowed = 0";
+        AND i.item_is_maintenance = 1
+        AND m.maintenance_complete_date IS NULL"; // Add this condition
+
             try
             {
-                // Create a connection to the database
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    // Use SqlDataAdapter to execute the query and fill the DataTable
                     SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
-
-                    // Create a DataTable to store the data
-                    DataTable itemsTable = new DataTable();
-                    adapter.Fill(itemsTable);
-
-                    // Bind the DataTable to the DataGridView
-                    dataGridView1.DataSource = itemsTable;
+                    DataTable maintenanceTable = new DataTable();
+                    adapter.Fill(maintenanceTable);
+                    dataGridView1.DataSource = maintenanceTable;
 
                     // Adjust columns to fit the DataGridView
                     dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+                    // Hide the ID column
+                    dataGridView1.Columns["ID"].Visible = false;
+
+                    // Format the StartDate and EndDate columns
+                    dataGridView1.Columns["StartDate"].DefaultCellStyle.Format = "yyyy-MM-dd";
+                    dataGridView1.Columns["EndDate"].DefaultCellStyle.Format = "yyyy-MM-dd";
                 }
             }
             catch (Exception ex)
             {
-                // Handle any errors that occur during the process
-                MessageBox.Show($"Error loading items data: {ex.Message}");
+                MessageBox.Show($"Error loading maintenance data: {ex.Message}");
             }
         }
 
-        private void MaintenanceAdminF6_Load(object sender, EventArgs e)
+
+
+        private void FixedButton_Click(object sender, EventArgs e)
         {
-            LoadMaintenanceItems();
+            // Ensure a row is selected
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                // Get the selected row's ID
+                int selectedItemId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["ID"].Value);
+
+                // SQL query to update the item_is_maintenance and set maintenance_complete_date
+                string query = @"
+            UPDATE items 
+            SET item_is_maintenance = 0 
+            WHERE item_id = @ItemId;
+
+            UPDATE maintenance
+            SET maintenance_complete_date = GETDATE()
+            WHERE maintenance_item_id = @ItemId;";
+
+                try
+                {
+                    // Create a connection to the database
+                    using (SqlConnection connection = new SqlConnection(connectionString))
+                    {
+                        // Create a SQL command
+                        using (SqlCommand command = new SqlCommand(query, connection))
+                        {
+                            // Add the parameter to the query
+                            command.Parameters.AddWithValue("@ItemId", selectedItemId);
+
+                            // Open the connection
+                            connection.Open();
+
+                            // Execute the query
+                            int rowsAffected = command.ExecuteNonQuery();
+
+                            // Notify the user
+                            if (rowsAffected > 0)
+                            {
+                                MessageBox.Show("Item has been successfully updated!");
+
+                                // Reload the DataGridView to reflect changes
+                                LoadMaintenanceItems();
+                            }
+                            else
+                            {
+                                MessageBox.Show("No rows were updated. Please try again.");
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Handle any errors that occur during the process
+                    MessageBox.Show($"Error updating item: {ex.Message}");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a row first.");
+            }
+        }
+
+
+        private void ArchiveBt3_Click(object sender, EventArgs e)
+        {
+            ArchiveSelectedItem();
+        }
+        private void ArchiveSelectedItem()
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                try
+                {
+                    int selectedItemId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["ID"].Value);
+
+                    using (SqlConnection connection = new SqlConnection(connectionString))
+                    {
+                        string query = @"
+                    UPDATE items
+                    SET 
+                        item_is_archived = 1, 
+                        item_is_maintenance = 1, 
+                        item_is_borrowed = 0
+                    WHERE item_id = @ItemId";
+
+                        using (SqlCommand command = new SqlCommand(query, connection))
+                        {
+                            command.Parameters.AddWithValue("@ItemId", selectedItemId);
+
+                            connection.Open();
+                            int rowsAffected = command.ExecuteNonQuery();
+
+                            if (rowsAffected > 0)
+                            {
+                                MessageBox.Show("Item archived successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                LoadMaintenanceItems();
+                            }
+                            else
+                            {
+                                MessageBox.Show("No item was archived. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error archiving item: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a row to archive.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
     }

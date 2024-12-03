@@ -34,25 +34,23 @@ namespace AnotherSample
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     string query = @"
-    SELECT 
-        i.item_id AS 'ID', 
-        i.item_name AS 'ItemName', 
-        i.item_brand AS 'Brand', 
-        i.item_serial_number AS 'SerialNumber', 
-        i.item_type AS 'ItemType', 
-        i.item_condition AS 'Condition', 
-        s.stock_id AS 'StockID', 
-        s.stock_name AS 'StockUnder', 
-        CASE 
-            WHEN i.item_is_borrowed = 1 OR i.item_is_maintenance = 1 THEN 'Unavailable' 
-            ELSE 'Available' 
-        END AS 'ItemStatus'
-    FROM items i
-    INNER JOIN stocks s ON i.item_stock_id = s.stock_id
-    WHERE 
-        i.item_is_archived = 0 
-        AND i.item_is_maintenance = 0 
-        AND i.item_is_borrowed = 0";
+                SELECT 
+                    i.item_id AS 'ID',  -- Add the ID column to the query
+                    i.item_name AS 'ItemName', 
+                    i.item_brand AS 'Brand', 
+                    i.item_serial_number AS 'SerialNumber', 
+                    i.item_type AS 'ItemType', 
+                    i.item_condition AS 'Condition', 
+                    CASE 
+                        WHEN i.item_is_borrowed = 1 OR i.item_is_maintenance = 1 THEN 'Unavailable' 
+                        ELSE 'Available' 
+                    END AS 'ItemStatus'
+                FROM items i
+                INNER JOIN stocks s ON i.item_stock_id = s.stock_id
+                WHERE 
+                    i.item_is_archived = 0 
+                    AND i.item_is_maintenance = 0 
+                    AND i.item_is_borrowed = 0";
 
                     SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
                     DataTable dataTable = new DataTable();
@@ -65,6 +63,9 @@ namespace AnotherSample
                         // Bind the data if rows are available
                         dataGridView1.DataSource = dataTable;
                         dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+                        // Hide the ID column (the column we added in the query)
+                        dataGridView1.Columns["ID"].Visible = false;
                     }
                     else
                     {
@@ -207,7 +208,7 @@ namespace AnotherSample
                     UPDATE items
                     SET 
                         item_is_archived = 1, 
-                        item_is_maintenance = 0, 
+                        item_is_maintenance = 1, 
                         item_is_borrowed = 0
                     WHERE item_id = @ItemId";
 
@@ -275,18 +276,22 @@ namespace AnotherSample
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                // Retrieve the selected item's ID
+                // Kunin ang ID mula sa selected row
                 int selectedItemId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["ID"].Value);
 
-                // Pass the selected item ID to the popup
-                ShowFixItemPopup(selectedItemId);
+                // Buksan ang FixItem form at ipasa ang itemId
+                FixItem fixItemForm = new FixItem(selectedItemId);
+
+                // Ipakita ang form bilang modal dialog
+                if (fixItemForm.ShowDialog() == DialogResult.OK)
+                {
+                    // Reload the data in DataGridView after fixing the item
+                    LoadItems();
+                }
             }
             else
             {
-
-            }
-            {
-                MessageBox.Show("Please select an item to fix.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please select a row to fix.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -328,6 +333,11 @@ namespace AnotherSample
             {
                 overlay.Close();
             }
+        }
+
+        private void HistoriesBt9_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

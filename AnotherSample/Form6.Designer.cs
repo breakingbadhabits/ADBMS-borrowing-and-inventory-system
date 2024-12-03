@@ -44,12 +44,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.ArchiveBt3 = new System.Windows.Forms.Button();
+            this.FixedButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ArchivesBt10 = new System.Windows.Forms.Button();
             this.MaintenanceBt6 = new System.Windows.Forms.Button();
             this.ItemBt4 = new System.Windows.Forms.Button();
-            this.FixedButton = new System.Windows.Forms.Button();
-            this.ArchiveBt3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -97,6 +97,10 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.LightBlue;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(53, 162);
@@ -218,6 +222,32 @@
             this.panel2.Size = new System.Drawing.Size(1023, 517);
             this.panel2.TabIndex = 0;
             // 
+            // ArchiveBt3
+            // 
+            this.ArchiveBt3.BackColor = System.Drawing.Color.Red;
+            this.ArchiveBt3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ArchiveBt3.Location = new System.Drawing.Point(852, 461);
+            this.ArchiveBt3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ArchiveBt3.Name = "ArchiveBt3";
+            this.ArchiveBt3.Size = new System.Drawing.Size(116, 38);
+            this.ArchiveBt3.TabIndex = 13;
+            this.ArchiveBt3.Text = "ARCHIVE";
+            this.ArchiveBt3.UseVisualStyleBackColor = false;
+            this.ArchiveBt3.Click += new System.EventHandler(this.ArchiveBt3_Click);
+            // 
+            // FixedButton
+            // 
+            this.FixedButton.BackColor = System.Drawing.Color.Gray;
+            this.FixedButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.FixedButton.Location = new System.Drawing.Point(752, 461);
+            this.FixedButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.FixedButton.Name = "FixedButton";
+            this.FixedButton.Size = new System.Drawing.Size(83, 38);
+            this.FixedButton.TabIndex = 12;
+            this.FixedButton.Text = "FIXED";
+            this.FixedButton.UseVisualStyleBackColor = false;
+            this.FixedButton.Click += new System.EventHandler(this.FixedButton_Click);
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightBlue;
@@ -275,30 +305,6 @@
             this.ItemBt4.Text = "ITEMS";
             this.ItemBt4.UseVisualStyleBackColor = true;
             this.ItemBt4.Click += new System.EventHandler(this.ItemBt4_Click);
-            // 
-            // FixedButton
-            // 
-            this.FixedButton.BackColor = System.Drawing.Color.Gray;
-            this.FixedButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.FixedButton.Location = new System.Drawing.Point(752, 461);
-            this.FixedButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.FixedButton.Name = "FixedButton";
-            this.FixedButton.Size = new System.Drawing.Size(83, 38);
-            this.FixedButton.TabIndex = 12;
-            this.FixedButton.Text = "FIXED";
-            this.FixedButton.UseVisualStyleBackColor = false;
-            // 
-            // ArchiveBt3
-            // 
-            this.ArchiveBt3.BackColor = System.Drawing.Color.Red;
-            this.ArchiveBt3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ArchiveBt3.Location = new System.Drawing.Point(852, 461);
-            this.ArchiveBt3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ArchiveBt3.Name = "ArchiveBt3";
-            this.ArchiveBt3.Size = new System.Drawing.Size(116, 38);
-            this.ArchiveBt3.TabIndex = 13;
-            this.ArchiveBt3.Text = "DELETE";
-            this.ArchiveBt3.UseVisualStyleBackColor = false;
             // 
             // MaintenanceAdminF6
             // 
