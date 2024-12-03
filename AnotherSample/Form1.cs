@@ -13,7 +13,7 @@ namespace AnotherSample
 
         private bool Login(string username, string password, string role)
         {
-            string connectionString = "Server=Jermaine;Database=inventory_system;Trusted_Connection=True;";
+            SqlConnection connection = DatabaseConnection.Instance.Connection;
             string query = @"
                 SELECT COUNT(*)
                 FROM users u
@@ -22,18 +22,14 @@ namespace AnotherSample
 
             try
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    connection.Open();
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        command.Parameters.AddWithValue("@username", username);
-                        command.Parameters.AddWithValue("@password", password);
-                        command.Parameters.AddWithValue("@role", role);
+                    command.Parameters.AddWithValue("@username", username);
+                    command.Parameters.AddWithValue("@password", password);
+                    command.Parameters.AddWithValue("@role", role);
 
-                        int result = (int)command.ExecuteScalar();
-                        return result > 0;
-                    }
+                    int result = (int)command.ExecuteScalar();
+                    return result > 0;
                 }
             }
             catch (Exception ex)
@@ -43,30 +39,27 @@ namespace AnotherSample
             }
         }
 
+
         private void LoadRolesToComboBox()
         {
-            string connectionString = "Server=localhost;Database=inventory_system;Trusted_Connection=True;";
+            SqlConnection connection = DatabaseConnection.Instance.Connection;
             string query = "SELECT role_name FROM roles";
 
             try
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    connection.Open();
-                    using (SqlCommand command = new SqlCommand(query, connection))
+                    using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        using (SqlDataReader reader = command.ExecuteReader())
+                        comboBox1.Items.Clear();
+                        while (reader.Read())
                         {
-                            comboBox1.Items.Clear();
-                            while (reader.Read())
-                            {
-                                comboBox1.Items.Add(reader["role_name"].ToString());
-                            }
+                            comboBox1.Items.Add(reader["role_name"].ToString());
+                        }
 
-                            if (comboBox1.Items.Count > 0)
-                            {
-                                comboBox1.SelectedIndex = 0;
-                            }
+                        if (comboBox1.Items.Count > 0)
+                        {
+                            comboBox1.SelectedIndex = 0;
                         }
                     }
                 }
@@ -76,6 +69,7 @@ namespace AnotherSample
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void LoginF1_Load(object sender, EventArgs e)
         {

@@ -46,7 +46,6 @@ C:\Users\jerma\source\repos\AnotherSample\AnotherSample\obj\Debug\AnotherSample.
 C:\Users\jerma\source\repos\AnotherSample\AnotherSample\obj\Debug\AnotherSample.AddStock.resources
 C:\Users\jerma\source\repos\AnotherSample\AnotherSample\obj\Debug\AnotherSample.Form15.resources
 C:\Users\jerma\source\repos\AnotherSample\AnotherSample\obj\Debug\AnotherSample.FixItem.resources
-<<<<<<< Updated upstream
 C:\Users\Ace\source\repos\ADBMS-borrowing-and-inventory-system\AnotherSample\bin\Debug\AnotherSample.exe.config
 C:\Users\Ace\source\repos\ADBMS-borrowing-and-inventory-system\AnotherSample\bin\Debug\AnotherSample.exe
 C:\Users\Ace\source\repos\ADBMS-borrowing-and-inventory-system\AnotherSample\bin\Debug\AnotherSample.pdb
@@ -75,7 +74,6 @@ C:\Users\Ace\source\repos\ADBMS-borrowing-and-inventory-system\AnotherSample\obj
 C:\Users\Ace\source\repos\ADBMS-borrowing-and-inventory-system\AnotherSample\obj\Debug\AnotherSample.csproj.CoreCompileInputs.cache
 C:\Users\Ace\source\repos\ADBMS-borrowing-and-inventory-system\AnotherSample\obj\Debug\AnotherSample.exe
 C:\Users\Ace\source\repos\ADBMS-borrowing-and-inventory-system\AnotherSample\obj\Debug\AnotherSample.pdb
-=======
 C:\Users\jerma\source\repos\ADBMS-borrowing-and-inventory-system\AnotherSample\bin\Debug\AnotherSample.exe.config
 C:\Users\jerma\source\repos\ADBMS-borrowing-and-inventory-system\AnotherSample\bin\Debug\AnotherSample.exe
 C:\Users\jerma\source\repos\ADBMS-borrowing-and-inventory-system\AnotherSample\bin\Debug\AnotherSample.pdb
@@ -104,4 +102,3 @@ C:\Users\jerma\source\repos\ADBMS-borrowing-and-inventory-system\AnotherSample\o
 C:\Users\jerma\source\repos\ADBMS-borrowing-and-inventory-system\AnotherSample\obj\Debug\AnotherSample.csproj.CoreCompileInputs.cache
 C:\Users\jerma\source\repos\ADBMS-borrowing-and-inventory-system\AnotherSample\obj\Debug\AnotherSample.exe
 C:\Users\jerma\source\repos\ADBMS-borrowing-and-inventory-system\AnotherSample\obj\Debug\AnotherSample.pdb
->>>>>>> Stashed changes

@@ -15,7 +15,7 @@ namespace AnotherSample
 
         private void LoadRoles()
         {
-            string connectionString = "Server=LAPTOP-5EJNA00V;Database=inventory_system;Trusted_Connection=True;";
+            string connectionString = "Server=localhost;Database=inventory_system;Trusted_Connection=True;";
             string query = "SELECT role_name FROM roles";
 
             try
@@ -108,7 +108,7 @@ namespace AnotherSample
                     return;
             }
 
-            string connectionString = "Server=LAPTOP-5EJNA00V;Database=inventory_system;Trusted_Connection=True;";
+            string connectionString = "Server=localhost;Database=inventory_system;Trusted_Connection=True;";
             string insertQuery = "INSERT INTO users " +
                                  "(role_id, user_uli, user_username, user_password, user_name, user_contact_number, user_address, user_birthday) " +
                                  "VALUES (@RoleId, @UserUli, @Username, @Password, @Name, @ContactNumber, @Address, @Birthday)";

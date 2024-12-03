@@ -16,7 +16,12 @@ namespace AnotherSample
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            var dbConnection = DatabaseConnection.Instance;
+
             Application.Run(new LoginF1());
+
+            dbConnection.CloseConnection();
         }
     }
 

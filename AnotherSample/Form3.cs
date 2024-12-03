@@ -19,7 +19,7 @@ namespace AnotherSample
         public ItemsAdminF3()
         {
             InitializeComponent();
-            connectionString = ConfigurationManager.ConnectionStrings["InventorySystemDB"].ConnectionString;
+            connectionString = "Server=localhost;Database=inventory_system;Trusted_Connection=True;";
         }
 
         private void Form3_Load(object sender, EventArgs e)
