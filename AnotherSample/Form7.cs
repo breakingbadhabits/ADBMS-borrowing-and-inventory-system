@@ -14,11 +14,16 @@ namespace AnotherSample
     public partial class HistoryAdminF7 : Form
     {
         private string connectionString;
+
         public HistoryAdminF7()
         {
             InitializeComponent();
-
+            connectionString = "Server=localhost;Database=inventory_system;Trusted_Connection=True;"; // Assign the connection string here
         }
+
+    // The rest of your code follows...
+
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -167,6 +172,11 @@ namespace AnotherSample
             {
                 MessageBox.Show($"Error searching items: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

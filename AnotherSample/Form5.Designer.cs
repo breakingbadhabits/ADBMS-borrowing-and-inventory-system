@@ -43,7 +43,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.LogoutBt11 = new System.Windows.Forms.Button();
-            this.ArchiveBt3 = new System.Windows.Forms.Button();
+            this.RuturnedBtn = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -78,6 +78,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightBlue;
+            this.panel1.Controls.Add(this.LogoutBt11);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.ArchivesBt10);
@@ -196,8 +197,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panel2.Controls.Add(this.LogoutBt11);
-            this.panel2.Controls.Add(this.ArchiveBt3);
+            this.panel2.Controls.Add(this.RuturnedBtn);
             this.panel2.Controls.Add(this.dateTimePicker1);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.textBox1);
@@ -206,7 +206,7 @@
             this.panel2.Location = new System.Drawing.Point(217, 108);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1023, 651);
+            this.panel2.Size = new System.Drawing.Size(1023, 517);
             this.panel2.TabIndex = 0;
             // 
             // LogoutBt11
@@ -214,26 +214,28 @@
             this.LogoutBt11.BackColor = System.Drawing.Color.Blue;
             this.LogoutBt11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogoutBt11.ForeColor = System.Drawing.Color.White;
-            this.LogoutBt11.Location = new System.Drawing.Point(900, 581);
+            this.LogoutBt11.Location = new System.Drawing.Point(1110, 635);
             this.LogoutBt11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LogoutBt11.Name = "LogoutBt11";
             this.LogoutBt11.Size = new System.Drawing.Size(112, 38);
             this.LogoutBt11.TabIndex = 11;
             this.LogoutBt11.Text = "LOGOUT";
             this.LogoutBt11.UseVisualStyleBackColor = false;
+            this.LogoutBt11.Click += new System.EventHandler(this.LogoutBt11_Click);
             // 
-            // ArchiveBt3
+            // RuturnedBtn
             // 
-            this.ArchiveBt3.BackColor = System.Drawing.Color.DarkGray;
-            this.ArchiveBt3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ArchiveBt3.ForeColor = System.Drawing.Color.Black;
-            this.ArchiveBt3.Location = new System.Drawing.Point(884, 461);
-            this.ArchiveBt3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ArchiveBt3.Name = "ArchiveBt3";
-            this.ArchiveBt3.Size = new System.Drawing.Size(83, 38);
-            this.ArchiveBt3.TabIndex = 10;
-            this.ArchiveBt3.Text = "RETURN";
-            this.ArchiveBt3.UseVisualStyleBackColor = false;
+            this.RuturnedBtn.BackColor = System.Drawing.Color.DarkGray;
+            this.RuturnedBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RuturnedBtn.ForeColor = System.Drawing.Color.Black;
+            this.RuturnedBtn.Location = new System.Drawing.Point(845, 465);
+            this.RuturnedBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.RuturnedBtn.Name = "RuturnedBtn";
+            this.RuturnedBtn.Size = new System.Drawing.Size(109, 38);
+            this.RuturnedBtn.TabIndex = 10;
+            this.RuturnedBtn.Text = "RETURNED";
+            this.RuturnedBtn.UseVisualStyleBackColor = false;
+            this.RuturnedBtn.Click += new System.EventHandler(this.ArchiveBt3_Click);
             // 
             // dateTimePicker1
             // 
@@ -318,7 +320,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button LogoutBt11;
-        private System.Windows.Forms.Button ArchiveBt3;
+        private System.Windows.Forms.Button RuturnedBtn;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;

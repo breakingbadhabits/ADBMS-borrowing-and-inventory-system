@@ -327,5 +327,13 @@ namespace AnotherSample
                 MessageBox.Show($"Error searching items: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MaintenanceHistory maintenanceHistory = new MaintenanceHistory();
+            this.Hide();
+            maintenanceHistory.ShowDialog();
+            this.Close();
+        }
     }
 }

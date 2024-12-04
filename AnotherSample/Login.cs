@@ -56,35 +56,7 @@ namespace AnotherSample
 
 
 
-        private void LoadRolesToComboBox()
-        {
-            SqlConnection connection = DatabaseConnection.Instance.Connection;
-            string query = "SELECT role_name FROM roles";
-
-            try
-            {
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        comboBox1.Items.Clear();
-                        while (reader.Read())
-                        {
-                            comboBox1.Items.Add(reader["role_name"].ToString());
-                        }
-
-                        if (comboBox1.Items.Count > 0)
-                        {
-                            comboBox1.SelectedIndex = 0;
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+      
 
 
         private void LoginF1_Load(object sender, EventArgs e)
@@ -155,6 +127,44 @@ namespace AnotherSample
             f2 = null;
             this.Show();
         }
+        private void LoadRolesToComboBox()
+        {
+            SqlConnection connection = DatabaseConnection.Instance.Connection;
+            string query = "SELECT role_name FROM roles";
+
+            try
+            {
+                connection.Open(); // Ensure the connection is open
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        comboBox1.Items.Clear(); // Clear previous items
+                        while (reader.Read())
+                        {
+                            string role = reader["role_name"].ToString();
+                            MessageBox.Show("Role: " + role); // Check if roles are being fetched
+                            comboBox1.Items.Add(role); // Add role to ComboBox
+                        }
+
+                        if (comboBox1.Items.Count > 0)
+                        {
+                            comboBox1.SelectedIndex = 0; // Select the first item
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                connection.Close(); // Ensure the connection is closed
+            }
+        }
+
+
 
         private void pictureBox2_Click(object sender, EventArgs e) { }
 

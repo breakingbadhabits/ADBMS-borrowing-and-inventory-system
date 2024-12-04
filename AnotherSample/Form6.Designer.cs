@@ -50,6 +50,7 @@
             this.ArchivesBt10 = new System.Windows.Forms.Button();
             this.MaintenanceBt6 = new System.Windows.Forms.Button();
             this.ItemBt4 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -210,6 +211,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.ArchiveBt3);
             this.panel2.Controls.Add(this.FixedButton);
             this.panel2.Controls.Add(this.dateTimePicker1);
@@ -307,6 +309,18 @@
             this.ItemBt4.UseVisualStyleBackColor = true;
             this.ItemBt4.Click += new System.EventHandler(this.ItemBt4_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Black;
+            this.button1.ForeColor = System.Drawing.SystemColors.Control;
+            this.button1.Location = new System.Drawing.Point(852, 121);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(103, 34);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "History";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MaintenanceAdminF6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -350,5 +364,6 @@
         private System.Windows.Forms.Button ItemBt4;
         private System.Windows.Forms.Button FixedButton;
         private System.Windows.Forms.Button ArchiveBt3;
+        private System.Windows.Forms.Button button1;
     }
 }
