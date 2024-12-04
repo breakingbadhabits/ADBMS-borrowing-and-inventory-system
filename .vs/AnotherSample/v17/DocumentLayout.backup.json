@@ -6,21 +6,24 @@
 <<<<<<< Updated upstream
       "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|c:\\users\\jerma\\source\\repos\\adbms-borrowing-and-inventory-system\\anothersample\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-=======
-      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|c:\\users\\ace\\source\\repos\\adbms-borrowing-and-inventory-system\\anothersample\\borrowerview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\borrowerview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
->>>>>>> Stashed changes
     },
     {
       "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-<<<<<<< Updated upstream
       "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
 =======
-      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|c:\\users\\ace\\source\\repos\\adbms-borrowing-and-inventory-system\\anothersample\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|c:\\users\\ace\\source\\repos\\adbms-borrowing-and-inventory-system\\anothersample\\borrowerview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\borrowerview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|c:\\users\\ace\\source\\repos\\adbms-borrowing-and-inventory-system\\anothersample\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|c:\\users\\ace\\source\\repos\\adbms-borrowing-and-inventory-system\\anothersample\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -157,44 +160,16 @@
           "DockedWidth": 200,
 <<<<<<< Updated upstream
           "SelectedChildIndex": 2,
-          "Children": [
-            {
 =======
           "SelectedChildIndex": 5,
+>>>>>>> Stashed changes
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Form2.cs",
-              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form2.cs",
-              "RelativeDocumentMoniker": "AnotherSample\\Form2.cs",
-              "ToolTip": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form2.cs",
-              "RelativeToolTip": "AnotherSample\\Form2.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAAA8wIYAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T07:37:02.584Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Form2.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form2.cs",
-              "RelativeDocumentMoniker": "AnotherSample\\Form2.cs",
-              "ToolTip": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form2.cs [Design]",
-              "RelativeToolTip": "AnotherSample\\Form2.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T07:37:02.905Z",
-              "EditorCaption": " [Design]"
-            },
-            {
->>>>>>> Stashed changes
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
-<<<<<<< Updated upstream
               "DocumentIndex": 1,
               "Title": "Form2.cs [Design]",
               "DocumentMoniker": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form2.cs",
@@ -221,6 +196,7 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
+<<<<<<< Updated upstream
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form1.cs",
               "RelativeDocumentMoniker": "AnotherSample\\Form1.cs",
@@ -241,13 +217,33 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-04T06:50:48.753Z"
+=======
+              "Title": "SignUp.cs",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\SignUp.cs",
+              "RelativeDocumentMoniker": "AnotherSample\\SignUp.cs",
+              "ToolTip": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\SignUp.cs",
+              "RelativeToolTip": "AnotherSample\\SignUp.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAA8wIYAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-02T07:37:02.584Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-=======
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
+              "Title": "SignUp.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\SignUp.cs",
+              "RelativeDocumentMoniker": "AnotherSample\\SignUp.cs",
+              "ToolTip": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\SignUp.cs [Design]",
+              "RelativeToolTip": "AnotherSample\\SignUp.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-02T07:37:02.905Z",
+              "EditorCaption": " [Design]"
 >>>>>>> Stashed changes
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form1.cs",
               "RelativeDocumentMoniker": "AnotherSample\\Form1.cs",
@@ -326,11 +322,7 @@
               "RelativeToolTip": "AnotherSample\\App.config",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-<<<<<<< Updated upstream
               "WhenOpened": "2024-12-04T06:50:48.758Z"
-=======
-              "WhenOpened": "2024-12-02T07:37:02.973Z"
->>>>>>> Stashed changes
             },
             {
               "$type": "Document",
@@ -362,8 +354,13 @@
               "RelativeDocumentMoniker": "AnotherSample\\inventory_systemDataSet.xsd",
               "ToolTip": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\inventory_systemDataSet.xsd",
               "RelativeToolTip": "AnotherSample\\inventory_systemDataSet.xsd",
+<<<<<<< Updated upstream
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000835|",
               "WhenOpened": "2024-12-04T06:50:48.762Z"
+=======
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003579|",
+              "WhenOpened": "2024-12-02T07:37:02.921Z"
+>>>>>>> Stashed changes
             },
             {
               "$type": "Document",

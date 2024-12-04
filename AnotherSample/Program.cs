@@ -19,10 +19,10 @@ namespace AnotherSample
 
             var dbConnection = DatabaseConnection.Instance;
 
-            //Application.Run(new LoginF1());
+            Application.Run(new LoginF1());
 
             // use for debug only, comment it to stop debugging
-            Application.Run(new BorrowerView());
+            //Application.Run(new BorrowerView());
             //end debug
 
             dbConnection.CloseConnection();
