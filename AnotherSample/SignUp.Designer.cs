@@ -31,6 +31,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignUpF2));
             this.RoleComboBox = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.BirthdayPicker = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
+            this.AddressBox = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.ContactNumberBox = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.NameBox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.UliBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -41,17 +52,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.PasswordBox = new System.Windows.Forms.TextBox();
             this.UsernameBox = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.UliBox = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.NameBox = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.ContactNumberBox = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.AddressBox = new System.Windows.Forms.TextBox();
-            this.BirthdayPicker = new System.Windows.Forms.DateTimePicker();
-            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
@@ -95,6 +95,111 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(717, 450);
             this.panel1.TabIndex = 1;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(484, 160);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(76, 20);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "Birthday:";
+            // 
+            // BirthdayPicker
+            // 
+            this.BirthdayPicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.BirthdayPicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.BirthdayPicker.Location = new System.Drawing.Point(486, 183);
+            this.BirthdayPicker.Name = "BirthdayPicker";
+            this.BirthdayPicker.Size = new System.Drawing.Size(219, 36);
+            this.BirthdayPicker.TabIndex = 23;
+            this.BirthdayPicker.Value = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
+            this.BirthdayPicker.ValueChanged += new System.EventHandler(this.BirthdayPicker_ValueChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(18, 229);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(76, 20);
+            this.label8.TabIndex = 22;
+            this.label8.Text = "Address:";
+            // 
+            // AddressBox
+            // 
+            this.AddressBox.Location = new System.Drawing.Point(20, 251);
+            this.AddressBox.Multiline = true;
+            this.AddressBox.Name = "AddressBox";
+            this.AddressBox.Size = new System.Drawing.Size(685, 37);
+            this.AddressBox.TabIndex = 21;
+            this.AddressBox.TextChanged += new System.EventHandler(this.AddressBox_TextChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(251, 160);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(136, 20);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "Contact Number:";
+            // 
+            // ContactNumberBox
+            // 
+            this.ContactNumberBox.Location = new System.Drawing.Point(253, 182);
+            this.ContactNumberBox.Multiline = true;
+            this.ContactNumberBox.Name = "ContactNumberBox";
+            this.ContactNumberBox.Size = new System.Drawing.Size(219, 37);
+            this.ContactNumberBox.TabIndex = 19;
+            this.ContactNumberBox.TextChanged += new System.EventHandler(this.ContactNumberBox_TextChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(18, 160);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(58, 20);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "Name:";
+            // 
+            // NameBox
+            // 
+            this.NameBox.Location = new System.Drawing.Point(20, 182);
+            this.NameBox.Multiline = true;
+            this.NameBox.Name = "NameBox";
+            this.NameBox.Size = new System.Drawing.Size(219, 37);
+            this.NameBox.TabIndex = 17;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(251, 99);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(40, 20);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "ULI:";
+            // 
+            // UliBox
+            // 
+            this.UliBox.Location = new System.Drawing.Point(253, 121);
+            this.UliBox.Multiline = true;
+            this.UliBox.Name = "UliBox";
+            this.UliBox.Size = new System.Drawing.Size(219, 37);
+            this.UliBox.TabIndex = 15;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(260, 298);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(48, 20);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Role:";
             // 
             // linkLabel1
             // 
@@ -197,110 +302,6 @@
             this.UsernameBox.Size = new System.Drawing.Size(219, 37);
             this.UsernameBox.TabIndex = 2;
             this.UsernameBox.TextChanged += new System.EventHandler(this.UsernameBox_TextChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(260, 298);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 20);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Role:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(251, 99);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 20);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "ULI:";
-            // 
-            // UliBox
-            // 
-            this.UliBox.Location = new System.Drawing.Point(253, 121);
-            this.UliBox.Multiline = true;
-            this.UliBox.Name = "UliBox";
-            this.UliBox.Size = new System.Drawing.Size(219, 37);
-            this.UliBox.TabIndex = 15;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(18, 160);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(58, 20);
-            this.label6.TabIndex = 18;
-            this.label6.Text = "Name:";
-            // 
-            // NameBox
-            // 
-            this.NameBox.Location = new System.Drawing.Point(20, 182);
-            this.NameBox.Multiline = true;
-            this.NameBox.Name = "NameBox";
-            this.NameBox.Size = new System.Drawing.Size(219, 37);
-            this.NameBox.TabIndex = 17;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(251, 160);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(136, 20);
-            this.label7.TabIndex = 20;
-            this.label7.Text = "Contact Number:";
-            // 
-            // ContactNumberBox
-            // 
-            this.ContactNumberBox.Location = new System.Drawing.Point(253, 182);
-            this.ContactNumberBox.Multiline = true;
-            this.ContactNumberBox.Name = "ContactNumberBox";
-            this.ContactNumberBox.Size = new System.Drawing.Size(219, 37);
-            this.ContactNumberBox.TabIndex = 19;
-            this.ContactNumberBox.TextChanged += new System.EventHandler(this.ContactNumberBox_TextChanged);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(18, 229);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(76, 20);
-            this.label8.TabIndex = 22;
-            this.label8.Text = "Address:";
-            // 
-            // AddressBox
-            // 
-            this.AddressBox.Location = new System.Drawing.Point(20, 251);
-            this.AddressBox.Multiline = true;
-            this.AddressBox.Name = "AddressBox";
-            this.AddressBox.Size = new System.Drawing.Size(685, 37);
-            this.AddressBox.TabIndex = 21;
-            // 
-            // BirthdayPicker
-            // 
-            this.BirthdayPicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.BirthdayPicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.BirthdayPicker.Location = new System.Drawing.Point(486, 183);
-            this.BirthdayPicker.Name = "BirthdayPicker";
-            this.BirthdayPicker.Size = new System.Drawing.Size(219, 36);
-            this.BirthdayPicker.TabIndex = 23;
-            this.BirthdayPicker.Value = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
-            this.BirthdayPicker.ValueChanged += new System.EventHandler(this.BirthdayPicker_ValueChanged);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(484, 160);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(76, 20);
-            this.label9.TabIndex = 24;
-            this.label9.Text = "Birthday:";
             // 
             // SignUpF2
             // 

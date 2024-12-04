@@ -165,5 +165,10 @@ namespace AnotherSample
         {
 
         }
+
+        private void AddressBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
