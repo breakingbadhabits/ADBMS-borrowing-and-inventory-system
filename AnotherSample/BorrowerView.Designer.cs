@@ -36,14 +36,14 @@
             this.ViewBorrow = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.BorrowBt = new System.Windows.Forms.Button();
+            this.BorrowDataGrid = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.BorrowDataGrid = new System.Windows.Forms.DataGridView();
-            this.BorrowBt = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BorrowDataGrid)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BorrowDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -110,6 +110,7 @@
             this.label3.Size = new System.Drawing.Size(510, 50);
             this.label3.TabIndex = 2;
             this.label3.Text = "Equipment Borrowing Management System";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // panel2
             // 
@@ -123,6 +124,35 @@
             this.panel2.Size = new System.Drawing.Size(909, 521);
             this.panel2.TabIndex = 0;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // BorrowBt
+            // 
+            this.BorrowBt.BackColor = System.Drawing.Color.Blue;
+            this.BorrowBt.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BorrowBt.Location = new System.Drawing.Point(55, 410);
+            this.BorrowBt.Name = "BorrowBt";
+            this.BorrowBt.Size = new System.Drawing.Size(105, 30);
+            this.BorrowBt.TabIndex = 13;
+            this.BorrowBt.Text = "BORROW";
+            this.BorrowBt.UseVisualStyleBackColor = false;
+            // 
+            // BorrowDataGrid
+            // 
+            this.BorrowDataGrid.AllowUserToAddRows = false;
+            this.BorrowDataGrid.AllowUserToDeleteRows = false;
+            this.BorrowDataGrid.AllowUserToOrderColumns = true;
+            this.BorrowDataGrid.AllowUserToResizeColumns = false;
+            this.BorrowDataGrid.AllowUserToResizeRows = false;
+            this.BorrowDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.BorrowDataGrid.BackgroundColor = System.Drawing.Color.LightBlue;
+            this.BorrowDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.BorrowDataGrid.Location = new System.Drawing.Point(55, 91);
+            this.BorrowDataGrid.Name = "BorrowDataGrid";
+            this.BorrowDataGrid.RowHeadersWidth = 51;
+            this.BorrowDataGrid.RowTemplate.Height = 24;
+            this.BorrowDataGrid.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.BorrowDataGrid.Size = new System.Drawing.Size(801, 299);
+            this.BorrowDataGrid.TabIndex = 12;
             // 
             // panel1
             // 
@@ -150,35 +180,6 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // BorrowDataGrid
-            // 
-            this.BorrowDataGrid.AllowUserToAddRows = false;
-            this.BorrowDataGrid.AllowUserToDeleteRows = false;
-            this.BorrowDataGrid.AllowUserToOrderColumns = true;
-            this.BorrowDataGrid.AllowUserToResizeColumns = false;
-            this.BorrowDataGrid.AllowUserToResizeRows = false;
-            this.BorrowDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.BorrowDataGrid.BackgroundColor = System.Drawing.Color.LightBlue;
-            this.BorrowDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.BorrowDataGrid.Location = new System.Drawing.Point(55, 91);
-            this.BorrowDataGrid.Name = "BorrowDataGrid";
-            this.BorrowDataGrid.RowHeadersWidth = 51;
-            this.BorrowDataGrid.RowTemplate.Height = 24;
-            this.BorrowDataGrid.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.BorrowDataGrid.Size = new System.Drawing.Size(801, 299);
-            this.BorrowDataGrid.TabIndex = 12;
-            // 
-            // BorrowBt
-            // 
-            this.BorrowBt.BackColor = System.Drawing.Color.Blue;
-            this.BorrowBt.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BorrowBt.Location = new System.Drawing.Point(55, 410);
-            this.BorrowBt.Name = "BorrowBt";
-            this.BorrowBt.Size = new System.Drawing.Size(105, 30);
-            this.BorrowBt.TabIndex = 13;
-            this.BorrowBt.Text = "BORROW";
-            this.BorrowBt.UseVisualStyleBackColor = false;
-            // 
             // BorrowerView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -189,9 +190,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Borrower View";
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.BorrowDataGrid)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BorrowDataGrid)).EndInit();
             this.ResumeLayout(false);
 
         }

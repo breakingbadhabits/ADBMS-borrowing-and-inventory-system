@@ -11,9 +11,9 @@ namespace AnotherSample
     {
         public static void Navigate(Form currentForm, Form nextForm)
         {
-            currentForm.Hide();  // Hide the current form
-            nextForm.ShowDialog();  // Show the next form modally
-            currentForm.Close();  // Close the current form after returning
+            currentForm.Hide();
+            nextForm.ShowDialog();
+            currentForm.Close();
         }
     }
 }

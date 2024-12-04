@@ -9,6 +9,7 @@ namespace AnotherSample
         public LoginF1()
         {
             InitializeComponent();
+            LoadRolesToComboBox();
         }
 
         private bool Login(string username, string password, string role)
@@ -22,7 +23,6 @@ namespace AnotherSample
 
             try
             {
-                connection.Open();
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@username", username);
@@ -47,22 +47,9 @@ namespace AnotherSample
             {
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            finally
-            {
-                connection.Close();
-            }
             return false;
         }
 
-
-
-      
-
-
-        private void LoginF1_Load(object sender, EventArgs e)
-        {
-            LoadRolesToComboBox();
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -84,13 +71,11 @@ namespace AnotherSample
 
                 if (role == "Admin")
                 {
-                    ItemsAdminF3 adminForm = new ItemsAdminF3();
-                    adminForm.ShowDialog();
+                    FormNavigator.Navigate(this, new ItemsAdminF3());
                 }
-                else if (role == "User")
+                else if (role == "Student")
                 {
-                    ItemsAdminF3 userForm = new ItemsAdminF3();
-                    userForm.ShowDialog();
+                    FormNavigator.Navigate(this, new BorrowerView());
                 }
 
                 this.Show();
@@ -134,7 +119,6 @@ namespace AnotherSample
 
             try
             {
-                connection.Open(); // Ensure the connection is open
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())
@@ -143,7 +127,6 @@ namespace AnotherSample
                         while (reader.Read())
                         {
                             string role = reader["role_name"].ToString();
-                            MessageBox.Show("Role: " + role); // Check if roles are being fetched
                             comboBox1.Items.Add(role); // Add role to ComboBox
                         }
 
@@ -157,10 +140,6 @@ namespace AnotherSample
             catch (Exception ex)
             {
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                connection.Close(); // Ensure the connection is closed
             }
         }
 
