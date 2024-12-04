@@ -207,7 +207,9 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(201, 26);
             this.textBox1.TabIndex = 5;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
+
             // 
             // label1
             // 
@@ -484,5 +486,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn itemisborrowedDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn itemisarchivedDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn itemtypeDataGridViewTextBoxColumn;
+
     }
 }
