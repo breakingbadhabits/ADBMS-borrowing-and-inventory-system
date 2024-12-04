@@ -27,15 +27,15 @@ namespace AnotherSample
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
-                            comboBox1.Items.Clear();
+                            RoleComboBox.Items.Clear();
                             while (reader.Read())
                             {
-                                comboBox1.Items.Add(reader["role_name"].ToString());
+                                RoleComboBox.Items.Add(reader["role_name"].ToString());
                             }
 
-                            if (comboBox1.Items.Count > 0)
+                            if (RoleComboBox.Items.Count > 0)
                             {
-                                comboBox1.SelectedIndex = 0;
+                                RoleComboBox.SelectedIndex = 0;
                             }
                         }
                     }
@@ -92,7 +92,7 @@ namespace AnotherSample
         private void SignUpButton_Click(object sender, EventArgs e)
         {
             int roleId;
-            switch (comboBox1.Text)
+            switch (RoleComboBox.Text)
             {
                 case "Admin":
                     roleId = 1;
@@ -123,13 +123,13 @@ namespace AnotherSample
                     {
                         // Add parameters
                         command.Parameters.AddWithValue("@RoleId", roleId);
-                        command.Parameters.AddWithValue("@UserUli", 23131434); // Replace with actual input
+                        command.Parameters.AddWithValue("@UserUli", UliBox.Text);
                         command.Parameters.AddWithValue("@Username", UsernameBox.Text);
                         command.Parameters.AddWithValue("@Password", PasswordBox.Text);
-                        command.Parameters.AddWithValue("@Name", "Sample User"); // Replace with actual input
-                        command.Parameters.AddWithValue("@ContactNumber", "09123456789"); // Replace with actual input
-                        command.Parameters.AddWithValue("@Address", "Address"); // Replace with actual input
-                        command.Parameters.AddWithValue("@Birthday", DateTime.Parse("2000-01-04")); // Replace with actual input
+                        command.Parameters.AddWithValue("@Name", NameBox.Text);
+                        command.Parameters.AddWithValue("@ContactNumber", ContactNumberBox.Text);
+                        command.Parameters.AddWithValue("@Address", AddressBox.Text);
+                        command.Parameters.AddWithValue("@Birthday", BirthdayPicker.Value);
 
                         int rowsAffected = command.ExecuteNonQuery();
                         if (rowsAffected > 0)
@@ -151,5 +151,19 @@ namespace AnotherSample
             }
         }
 
+        private void UsernameBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ContactNumberBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BirthdayPicker_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
