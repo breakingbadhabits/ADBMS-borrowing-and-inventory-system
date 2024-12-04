@@ -65,7 +65,6 @@ C:\Users\Ace\source\repos\ADBMS-borrowing-and-inventory-system\AnotherSample\obj
 C:\Users\Ace\source\repos\ADBMS-borrowing-and-inventory-system\AnotherSample\obj\Debug\AnotherSample.MaintenanceAdminF6.resources
 C:\Users\Ace\source\repos\ADBMS-borrowing-and-inventory-system\AnotherSample\obj\Debug\AnotherSample.HistoryAdminF7.resources
 C:\Users\Ace\source\repos\ADBMS-borrowing-and-inventory-system\AnotherSample\obj\Debug\AnotherSample.StocksAdminF8.resources
-C:\Users\Ace\source\repos\ADBMS-borrowing-and-inventory-system\AnotherSample\obj\Debug\AnotherSample.BorrowerAdminF9.resources
 C:\Users\Ace\source\repos\ADBMS-borrowing-and-inventory-system\AnotherSample\obj\Debug\AnotherSample.ItemBorrow.resources
 C:\Users\Ace\source\repos\ADBMS-borrowing-and-inventory-system\AnotherSample\obj\Debug\AnotherSample.Notification.resources
 C:\Users\Ace\source\repos\ADBMS-borrowing-and-inventory-system\AnotherSample\obj\Debug\AnotherSample.Properties.Resources.resources
@@ -102,3 +101,4 @@ C:\Users\jerma\source\repos\ADBMS-borrowing-and-inventory-system\AnotherSample\o
 C:\Users\jerma\source\repos\ADBMS-borrowing-and-inventory-system\AnotherSample\obj\Debug\AnotherSample.csproj.CoreCompileInputs.cache
 C:\Users\jerma\source\repos\ADBMS-borrowing-and-inventory-system\AnotherSample\obj\Debug\AnotherSample.exe
 C:\Users\jerma\source\repos\ADBMS-borrowing-and-inventory-system\AnotherSample\obj\Debug\AnotherSample.pdb
+C:\Users\Ace\source\repos\ADBMS-borrowing-and-inventory-system\AnotherSample\obj\Debug\AnotherSample.BorrowerView.resources
