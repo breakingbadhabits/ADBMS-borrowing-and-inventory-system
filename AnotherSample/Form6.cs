@@ -52,7 +52,7 @@ namespace AnotherSample
         {
             {
                 // Create an instance of the stock form
-                ItemsAdminF3 itemsAdmin = new ItemsAdminF3();
+                AdminView itemsAdmin = new AdminView();
 
                 // Hide the current form
                 this.Hide();

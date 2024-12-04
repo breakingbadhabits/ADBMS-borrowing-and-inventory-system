@@ -13,12 +13,12 @@ using System.Windows.Forms;
 
 namespace AnotherSample
 {
-    public partial class ItemsAdminF3 : Form
+    public partial class AdminView : Form
     {
         SqlConnection connection = DatabaseConnection.Instance.Connection;
         string query;
 
-        public ItemsAdminF3()
+        public AdminView()
         {
             InitializeComponent();
         }
@@ -127,6 +127,7 @@ namespace AnotherSample
         private void AddBt1_Click(object sender, EventArgs e)
         {
             FormNavigator.Navigate(this, new ItemList());
+            //ShowItemListPopup();
         }
 
         private void ShowItemListPopup()

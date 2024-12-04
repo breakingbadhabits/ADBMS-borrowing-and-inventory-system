@@ -71,7 +71,7 @@ namespace AnotherSample
 
                 if (role == "Admin")
                 {
-                    FormNavigator.Navigate(this, new ItemsAdminF3());
+                    FormNavigator.Navigate(this, new AdminView());
                 }
                 else if (role == "Student")
                 {

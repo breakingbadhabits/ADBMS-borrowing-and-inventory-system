@@ -252,29 +252,22 @@ namespace AnotherSample
         {
             try
             {
-                // Connection string from configuration
-                using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["InventorySystemDB"].ConnectionString))
+                SqlConnection connection = DatabaseConnection.Instance.Connection;
+                string query = "SELECT stock_name FROM stocks ORDER BY stock_name";
+                using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    // Query to get stock names
-                    string query = "SELECT stock_name FROM stocks ORDER BY stock_name";
-
-                    using (SqlCommand command = new SqlCommand(query, connection))
+                    using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        connection.Open();
+                        List<string> stockNames = new List<string>();
 
-                        using (SqlDataReader reader = command.ExecuteReader())
+                        // Read each stock_name and add it to the list
+                        while (reader.Read())
                         {
-                            List<string> stockNames = new List<string>();
-
-                            // Read each stock_name and add it to the list
-                            while (reader.Read())
-                            {
-                                stockNames.Add(reader["stock_name"].ToString());
-                            }
-
-                            // Bind the list of stock names to comboBox2
-                            comboBox2.DataSource = stockNames;
+                            stockNames.Add(reader["stock_name"].ToString());
                         }
+
+                        // Bind the list of stock names to comboBox2
+                        comboBox2.DataSource = stockNames;
                     }
                 }
             }

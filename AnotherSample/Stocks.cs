@@ -73,7 +73,7 @@ namespace AnotherSample
         // Button handlers to navigate to other forms (already in your code)
         private void ItemBt4_Click(object sender, EventArgs e)
         {
-            ItemsAdminF3 itemsAdmin = new ItemsAdminF3();
+            AdminView itemsAdmin = new AdminView();
             this.Hide();
             itemsAdmin.ShowDialog();
             this.Close();

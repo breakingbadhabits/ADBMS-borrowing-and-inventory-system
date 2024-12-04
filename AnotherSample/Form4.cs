@@ -88,7 +88,7 @@ namespace AnotherSample
 
         private void ItemBt4_Click(object sender, EventArgs e)
         {
-            ItemsAdminF3 itemForm = new ItemsAdminF3();
+            AdminView itemForm = new AdminView();
             this.Hide();
             itemForm.ShowDialog();
             this.Close();

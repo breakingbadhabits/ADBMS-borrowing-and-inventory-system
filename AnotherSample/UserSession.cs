@@ -12,7 +12,7 @@ namespace AnotherSample
         public static string Username { get; set; }
         public static string Role { get; set; }
 
-        // Clear session when the user logs out
+
         public static void Clear()
         {
             UserId = 0;
