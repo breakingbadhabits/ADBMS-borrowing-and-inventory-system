@@ -3,20 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|c:\\users\\ace\\source\\repos\\adbms-borrowing-and-inventory-system\\anothersample\\usersession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\usersession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|c:\\users\\ace\\source\\repos\\adbms-borrowing-and-inventory-system\\anothersample\\formnavigator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\formnavigator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|c:\\users\\ace\\source\\repos\\adbms-borrowing-and-inventory-system\\anothersample\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|c:\\users\\ace\\source\\repos\\adbms-borrowing-and-inventory-system\\anothersample\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|c:\\users\\ace\\source\\repos\\adbms-borrowing-and-inventory-system\\anothersample\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|c:\\users\\ace\\source\\repos\\adbms-borrowing-and-inventory-system\\anothersample\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|c:\\users\\ace\\source\\repos\\adbms-borrowing-and-inventory-system\\anothersample\\usersession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\usersession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,11 +38,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Program.cs",
+              "RelativeDocumentMoniker": "AnotherSample\\Program.cs",
+              "ToolTip": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Program.cs",
+              "RelativeToolTip": "AnotherSample\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T07:38:42.6Z",
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -40,14 +62,58 @@
               "RelativeDocumentMoniker": "AnotherSample\\Login.cs",
               "ToolTip": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Login.cs",
               "RelativeToolTip": "AnotherSample\\Login.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAYwE8AAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAmwKMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-04T08:09:59.909Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SignUp.cs",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\SignUp.cs",
+              "RelativeDocumentMoniker": "AnotherSample\\SignUp.cs",
+              "ToolTip": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\SignUp.cs",
+              "RelativeToolTip": "AnotherSample\\SignUp.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T08:23:31.336Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "FormNavigator.cs",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\FormNavigator.cs",
+              "RelativeDocumentMoniker": "AnotherSample\\FormNavigator.cs",
+              "ToolTip": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\FormNavigator.cs",
+              "RelativeToolTip": "AnotherSample\\FormNavigator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T08:28:22.572Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SignUp.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\SignUp.cs",
+              "RelativeDocumentMoniker": "AnotherSample\\SignUp.cs",
+              "ToolTip": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\SignUp.cs [Design]",
+              "RelativeToolTip": "AnotherSample\\SignUp.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T08:23:28.728Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "UserSession.cs",
               "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\UserSession.cs",
               "RelativeDocumentMoniker": "AnotherSample\\UserSession.cs",
@@ -60,7 +126,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "Login.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Login.cs",
               "RelativeDocumentMoniker": "AnotherSample\\Login.cs",
@@ -69,19 +135,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-04T07:44:47.603Z",
               "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Program.cs",
-              "RelativeDocumentMoniker": "AnotherSample\\Program.cs",
-              "ToolTip": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Program.cs",
-              "RelativeToolTip": "AnotherSample\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T07:38:42.6Z",
-              "EditorCaption": ""
             }
           ]
         }
