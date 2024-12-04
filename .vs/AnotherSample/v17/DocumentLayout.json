@@ -3,11 +3,19 @@
   "WorkspaceRootPath": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|c:\\users\\ace\\source\\repos\\adbms-borrowing-and-inventory-system\\anothersample\\usersession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\usersession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|c:\\users\\ace\\source\\repos\\adbms-borrowing-and-inventory-system\\anothersample\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|c:\\users\\ace\\source\\repos\\adbms-borrowing-and-inventory-system\\anothersample\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|c:\\users\\ace\\source\\repos\\adbms-borrowing-and-inventory-system\\anothersample\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -18,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,7 +34,33 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Login.cs",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Login.cs",
+              "RelativeDocumentMoniker": "AnotherSample\\Login.cs",
+              "ToolTip": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Login.cs",
+              "RelativeToolTip": "AnotherSample\\Login.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAYwE8AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T08:09:59.909Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "UserSession.cs",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\UserSession.cs",
+              "RelativeDocumentMoniker": "AnotherSample\\UserSession.cs",
+              "ToolTip": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\UserSession.cs",
+              "RelativeToolTip": "AnotherSample\\UserSession.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T08:05:24.988Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Login.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Login.cs",
               "RelativeDocumentMoniker": "AnotherSample\\Login.cs",
@@ -38,7 +72,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Program.cs",
               "RelativeDocumentMoniker": "AnotherSample\\Program.cs",

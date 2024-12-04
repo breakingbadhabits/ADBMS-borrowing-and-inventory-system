@@ -15,29 +15,45 @@ namespace AnotherSample
         {
             SqlConnection connection = DatabaseConnection.Instance.Connection;
             string query = @"
-                SELECT COUNT(*)
+                SELECT u.user_id, u.user_username, r.role_name
                 FROM users u
                 JOIN roles r ON u.role_id = r.role_id
                 WHERE u.user_username = @username AND u.user_password = @password AND r.role_name = @role";
 
             try
             {
+                connection.Open();
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@username", username);
                     command.Parameters.AddWithValue("@password", password);
                     command.Parameters.AddWithValue("@role", role);
 
-                    int result = (int)command.ExecuteScalar();
-                    return result > 0;
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            // Save user information in the session
+                            UserSession.UserId = Convert.ToInt32(reader["user_id"]);
+                            UserSession.Username = reader["user_username"].ToString();
+                            UserSession.Role = reader["role_name"].ToString();
+
+                            return true;
+                        }
+                    }
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
             }
+            finally
+            {
+                connection.Close();
+            }
+            return false;
         }
+
 
 
         private void LoadRolesToComboBox()

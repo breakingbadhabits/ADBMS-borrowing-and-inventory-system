@@ -163,6 +163,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserSession.cs" />
     <Compile Include="WarningSign.cs">
       <SubType>Form</SubType>
     </Compile>
