@@ -133,11 +133,11 @@
     <Compile Include="AdminBorrowRequest.Designer.cs">
       <DependentUpon>AdminBorrowRequest.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form6.cs">
+    <Compile Include="AdminMaintenance.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form6.Designer.cs">
-      <DependentUpon>Form6.cs</DependentUpon>
+    <Compile Include="AdminMaintenance.Designer.cs">
+      <DependentUpon>AdminMaintenance.cs</DependentUpon>
     </Compile>
     <Compile Include="History.cs">
       <SubType>Form</SubType>
@@ -231,8 +231,8 @@
     <EmbeddedResource Include="AdminBorrowRequest.resx">
       <DependentUpon>AdminBorrowRequest.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form6.resx">
-      <DependentUpon>Form6.cs</DependentUpon>
+    <EmbeddedResource Include="AdminMaintenance.resx">
+      <DependentUpon>AdminMaintenance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="History.resx">
       <DependentUpon>History.cs</DependentUpon>
