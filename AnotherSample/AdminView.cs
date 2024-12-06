@@ -33,46 +33,47 @@ namespace AnotherSample
         {
             try
             {
-                using (SqlCommand command = new SqlCommand(query, connection))
+                // Define the query
+                string query = @"
+        SELECT 
+            i.item_id AS 'ID',  
+            i.item_name AS 'ItemName', 
+            i.item_brand AS 'Brand', 
+            i.item_serial_number AS 'SerialNumber', 
+            i.item_type AS 'ItemType', 
+            i.item_condition AS 'Condition', 
+            CASE 
+                WHEN i.item_is_borrowed = 1 OR i.item_is_maintenance = 1 THEN 'Unavailable' 
+                ELSE 'Available' 
+            END AS 'ItemStatus'
+        FROM items i
+        INNER JOIN stocks s ON i.item_stock_id = s.stock_id
+        WHERE 
+            i.item_is_archived = 0 
+            AND i.item_is_maintenance = 0 
+            AND i.item_is_borrowed = 0";
+
+                // Create the DataTable to hold query results
+                DataTable dataTable = new DataTable();
+
+                // Use SqlDataAdapter to fill the DataTable
+                using (SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection))
                 {
-                    string query = @"
-                        SELECT 
-                            i.item_id AS 'ID',  -- Add the ID column to the query
-                            i.item_name AS 'ItemName', 
-                            i.item_brand AS 'Brand', 
-                            i.item_serial_number AS 'SerialNumber', 
-                            i.item_type AS 'ItemType', 
-                            i.item_condition AS 'Condition', 
-                            CASE 
-                                WHEN i.item_is_borrowed = 1 OR i.item_is_maintenance = 1 THEN 'Unavailable' 
-                                ELSE 'Available' 
-                            END AS 'ItemStatus'
-                        FROM items i
-                        INNER JOIN stocks s ON i.item_stock_id = s.stock_id
-                        WHERE 
-                            i.item_is_archived = 0 
-                            AND i.item_is_maintenance = 0 
-                            AND i.item_is_borrowed = 0";
-
-                    SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
-                    DataTable dataTable = new DataTable();
-
                     dataAdapter.Fill(dataTable);
+                }
 
-                    if (dataTable.Rows.Count > 0)
-                    {
-                        // Bind the data if rows are available
-                        dataGridView1.DataSource = dataTable;
-                        dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                // Bind data to DataGridView
+                if (dataTable.Rows.Count > 0)
+                {
+                    dataGridView1.DataSource = dataTable;
+                    dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-                        // Hide the ID column (the column we added in the query)
-                        dataGridView1.Columns["ID"].Visible = false;
-                    }
-                    else
-                    {
-                        // Clear the DataGridView if no rows are returned
-                        dataGridView1.DataSource = null;
-                    }
+                    // Hide the ID column
+                    dataGridView1.Columns["ID"].Visible = false;
+                }
+                else
+                {
+                    dataGridView1.DataSource = null;
                 }
             }
             catch (Exception ex)
@@ -81,7 +82,6 @@ namespace AnotherSample
                 dataGridView1.DataSource = null; // Clear the DataGridView in case of an error
             }
         }
-
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

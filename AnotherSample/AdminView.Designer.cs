@@ -84,7 +84,7 @@
             // 
             // LogoutBt11
             // 
-            this.LogoutBt11.BackColor = System.Drawing.Color.Blue;
+            this.LogoutBt11.BackColor = System.Drawing.Color.DarkRed;
             this.LogoutBt11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogoutBt11.ForeColor = System.Drawing.Color.White;
             this.LogoutBt11.Location = new System.Drawing.Point(1110, 635);
@@ -240,7 +240,7 @@
             // FixButton
             // 
             this.FixButton.BackColor = System.Drawing.Color.Gray;
-            this.FixButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.FixButton.ForeColor = System.Drawing.Color.Black;
             this.FixButton.Location = new System.Drawing.Point(53, 461);
             this.FixButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.FixButton.Name = "FixButton";
@@ -252,8 +252,8 @@
             // 
             // ArchiveBt3
             // 
-            this.ArchiveBt3.BackColor = System.Drawing.Color.Red;
-            this.ArchiveBt3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ArchiveBt3.BackColor = System.Drawing.Color.Orange;
+            this.ArchiveBt3.ForeColor = System.Drawing.Color.Black;
             this.ArchiveBt3.Location = new System.Drawing.Point(876, 461);
             this.ArchiveBt3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ArchiveBt3.Name = "ArchiveBt3";
@@ -265,8 +265,8 @@
             // 
             // EditBt2
             // 
-            this.EditBt2.BackColor = System.Drawing.Color.Green;
-            this.EditBt2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.EditBt2.BackColor = System.Drawing.Color.Yellow;
+            this.EditBt2.ForeColor = System.Drawing.Color.Black;
             this.EditBt2.Location = new System.Drawing.Point(786, 461);
             this.EditBt2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.EditBt2.Name = "EditBt2";
@@ -278,8 +278,8 @@
             // 
             // AddBt1
             // 
-            this.AddBt1.BackColor = System.Drawing.Color.Blue;
-            this.AddBt1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.AddBt1.BackColor = System.Drawing.Color.Green;
+            this.AddBt1.ForeColor = System.Drawing.Color.Black;
             this.AddBt1.Location = new System.Drawing.Point(696, 461);
             this.AddBt1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.AddBt1.Name = "AddBt1";

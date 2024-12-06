@@ -47,15 +47,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.itemidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itemstockidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itemnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itembrandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itemserialnumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itemconditionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itemisborrowedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.itemisarchivedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.itemtypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.inventory_systemDataSet = new AnotherSample.inventory_systemDataSet();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -73,7 +64,7 @@
             // 
             // LogoutBt11
             // 
-            this.LogoutBt11.BackColor = System.Drawing.Color.Blue;
+            this.LogoutBt11.BackColor = System.Drawing.Color.DarkRed;
             this.LogoutBt11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogoutBt11.ForeColor = System.Drawing.Color.White;
             this.LogoutBt11.Location = new System.Drawing.Point(1110, 635);
@@ -160,7 +151,7 @@
             // ArchiveBt3
             // 
             this.ArchiveBt3.BackColor = System.Drawing.Color.Red;
-            this.ArchiveBt3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ArchiveBt3.ForeColor = System.Drawing.Color.White;
             this.ArchiveBt3.Location = new System.Drawing.Point(852, 461);
             this.ArchiveBt3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ArchiveBt3.Name = "ArchiveBt3";
@@ -172,9 +163,9 @@
             // 
             // AddBt1
             // 
-            this.AddBt1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.AddBt1.BackColor = System.Drawing.Color.Green;
             this.AddBt1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddBt1.ForeColor = System.Drawing.Color.Black;
+            this.AddBt1.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.AddBt1.Location = new System.Drawing.Point(844, 118);
             this.AddBt1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.AddBt1.Name = "AddBt1";
@@ -269,16 +260,6 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.LightBlue;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.itemidDataGridViewTextBoxColumn,
-            this.itemstockidDataGridViewTextBoxColumn,
-            this.itemnameDataGridViewTextBoxColumn,
-            this.itembrandDataGridViewTextBoxColumn,
-            this.itemserialnumberDataGridViewTextBoxColumn,
-            this.itemconditionDataGridViewTextBoxColumn,
-            this.itemisborrowedDataGridViewCheckBoxColumn,
-            this.itemisarchivedDataGridViewCheckBoxColumn,
-            this.itemtypeDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.itemsBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(53, 162);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -289,79 +270,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(922, 291);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // itemidDataGridViewTextBoxColumn
-            // 
-            this.itemidDataGridViewTextBoxColumn.DataPropertyName = "item_id";
-            this.itemidDataGridViewTextBoxColumn.HeaderText = "item_id";
-            this.itemidDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.itemidDataGridViewTextBoxColumn.Name = "itemidDataGridViewTextBoxColumn";
-            this.itemidDataGridViewTextBoxColumn.ReadOnly = true;
-            this.itemidDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // itemstockidDataGridViewTextBoxColumn
-            // 
-            this.itemstockidDataGridViewTextBoxColumn.DataPropertyName = "item_stock_id";
-            this.itemstockidDataGridViewTextBoxColumn.HeaderText = "item_stock_id";
-            this.itemstockidDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.itemstockidDataGridViewTextBoxColumn.Name = "itemstockidDataGridViewTextBoxColumn";
-            this.itemstockidDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // itemnameDataGridViewTextBoxColumn
-            // 
-            this.itemnameDataGridViewTextBoxColumn.DataPropertyName = "item_name";
-            this.itemnameDataGridViewTextBoxColumn.HeaderText = "item_name";
-            this.itemnameDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.itemnameDataGridViewTextBoxColumn.Name = "itemnameDataGridViewTextBoxColumn";
-            this.itemnameDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // itembrandDataGridViewTextBoxColumn
-            // 
-            this.itembrandDataGridViewTextBoxColumn.DataPropertyName = "item_brand";
-            this.itembrandDataGridViewTextBoxColumn.HeaderText = "item_brand";
-            this.itembrandDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.itembrandDataGridViewTextBoxColumn.Name = "itembrandDataGridViewTextBoxColumn";
-            this.itembrandDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // itemserialnumberDataGridViewTextBoxColumn
-            // 
-            this.itemserialnumberDataGridViewTextBoxColumn.DataPropertyName = "item_serial_number";
-            this.itemserialnumberDataGridViewTextBoxColumn.HeaderText = "item_serial_number";
-            this.itemserialnumberDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.itemserialnumberDataGridViewTextBoxColumn.Name = "itemserialnumberDataGridViewTextBoxColumn";
-            this.itemserialnumberDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // itemconditionDataGridViewTextBoxColumn
-            // 
-            this.itemconditionDataGridViewTextBoxColumn.DataPropertyName = "item_condition";
-            this.itemconditionDataGridViewTextBoxColumn.HeaderText = "item_condition";
-            this.itemconditionDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.itemconditionDataGridViewTextBoxColumn.Name = "itemconditionDataGridViewTextBoxColumn";
-            this.itemconditionDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // itemisborrowedDataGridViewCheckBoxColumn
-            // 
-            this.itemisborrowedDataGridViewCheckBoxColumn.DataPropertyName = "item_is_borrowed";
-            this.itemisborrowedDataGridViewCheckBoxColumn.HeaderText = "item_is_borrowed";
-            this.itemisborrowedDataGridViewCheckBoxColumn.MinimumWidth = 8;
-            this.itemisborrowedDataGridViewCheckBoxColumn.Name = "itemisborrowedDataGridViewCheckBoxColumn";
-            this.itemisborrowedDataGridViewCheckBoxColumn.Width = 150;
-            // 
-            // itemisarchivedDataGridViewCheckBoxColumn
-            // 
-            this.itemisarchivedDataGridViewCheckBoxColumn.DataPropertyName = "item_is_archived";
-            this.itemisarchivedDataGridViewCheckBoxColumn.HeaderText = "item_is_archived";
-            this.itemisarchivedDataGridViewCheckBoxColumn.MinimumWidth = 8;
-            this.itemisarchivedDataGridViewCheckBoxColumn.Name = "itemisarchivedDataGridViewCheckBoxColumn";
-            this.itemisarchivedDataGridViewCheckBoxColumn.Width = 150;
-            // 
-            // itemtypeDataGridViewTextBoxColumn
-            // 
-            this.itemtypeDataGridViewTextBoxColumn.DataPropertyName = "item_type";
-            this.itemtypeDataGridViewTextBoxColumn.HeaderText = "item_type";
-            this.itemtypeDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.itemtypeDataGridViewTextBoxColumn.Name = "itemtypeDataGridViewTextBoxColumn";
-            this.itemtypeDataGridViewTextBoxColumn.Width = 150;
             // 
             // itemsBindingSource
             // 
@@ -479,14 +387,5 @@
         private inventory_systemDataSet inventory_systemDataSet;
         private System.Windows.Forms.BindingSource itemsBindingSource;
         private inventory_systemDataSetTableAdapters.itemsTableAdapter itemsTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn itemidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn itemstockidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn itemnameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn itembrandDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn itemserialnumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn itemconditionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn itemisborrowedDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn itemisarchivedDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn itemtypeDataGridViewTextBoxColumn;
     }
 }

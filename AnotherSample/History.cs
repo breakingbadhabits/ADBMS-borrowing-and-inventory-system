@@ -76,52 +76,57 @@ namespace AnotherSample
             try
             {
                 string query = @"
-                        SELECT 
-                            i.item_id AS 'ID', 
-                            i.item_name AS 'ItemName', 
-                            i.item_brand AS 'Brand', 
-                            i.item_serial_number AS 'SerialNumber', 
-                            i.item_type AS 'ItemType', 
-                            i.item_condition AS 'Condition', 
-                            CASE 
-                                WHEN i.item_is_borrowed = 1 OR i.item_is_maintenance = 1 THEN 'Unavailable' 
-                                ELSE 'Available' 
-                            END AS 'ItemStatus'
-                        FROM items i
-                        INNER JOIN stocks s ON i.item_stock_id = s.stock_id
-                        WHERE 
-                            i.item_is_archived = 0
-                            AND i.item_is_borrowed = 0   -- Exclude unavailable items
-                            AND i.item_is_maintenance = 0  -- Exclude unavailable items
-                            AND (
-                                i.item_name LIKE @SearchText
-                                OR i.item_brand LIKE @SearchText
-                                OR i.item_serial_number LIKE @SearchText
-                                OR i.item_type LIKE @SearchText
-                                OR i.item_condition LIKE @SearchText
-                            )";
-                using (SqlCommand command = new SqlCommand(query, connection))
+            SELECT 
+                i.item_id AS 'ID', 
+                i.item_name AS 'ItemName', 
+                i.item_brand AS 'Brand', 
+                i.item_serial_number AS 'SerialNumber', 
+                i.item_type AS 'ItemType', 
+                i.item_condition AS 'Condition', 
+                CASE 
+                    WHEN i.item_is_borrowed = 1 OR i.item_is_maintenance = 1 THEN 'Unavailable' 
+                    ELSE 'Available' 
+                END AS 'ItemStatus'
+            FROM items i
+            INNER JOIN stocks s ON i.item_stock_id = s.stock_id
+            WHERE 
+                i.item_is_archived = 0
+                AND i.item_is_borrowed = 0
+                AND i.item_is_maintenance = 0
+                AND (
+                    i.item_name LIKE @SearchText
+                    OR i.item_brand LIKE @SearchText
+                    OR i.item_serial_number LIKE @SearchText
+                    OR i.item_type LIKE @SearchText
+                    OR i.item_condition LIKE @SearchText
+                )";
+
+                using (SqlConnection localConnection = new SqlConnection(connection.ConnectionString))
                 {
-                    SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
-                    dataAdapter.SelectCommand.Parameters.AddWithValue("@SearchText", $"%{searchText}%");
+                    localConnection.Open();
 
-                    DataTable dataTable = new DataTable();
-
-                    connection.Open();
-                    dataAdapter.Fill(dataTable);
-
-                    if (dataTable.Rows.Count > 0)
+                    using (SqlCommand command = new SqlCommand(query, localConnection))
                     {
-                        dataGridView1.DataSource = dataTable;
-                        dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                        command.Parameters.AddWithValue("@SearchText", $"%{searchText}%");
 
-                        // Hide the ID column
-                        dataGridView1.Columns["ID"].Visible = false;
-                    }
-                    else
-                    {
-                        dataGridView1.DataSource = null;
-                        MessageBox.Show("No items found matching your search.", "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
+                        DataTable dataTable = new DataTable();
+
+                        dataAdapter.Fill(dataTable);
+
+                        if (dataTable.Rows.Count > 0)
+                        {
+                            dataGridView1.DataSource = dataTable;
+                            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+                            // Hide the ID column
+                            dataGridView1.Columns["ID"].Visible = false;
+                        }
+                        else
+                        {
+                            dataGridView1.DataSource = null;
+                            MessageBox.Show("No items found matching your search.", "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                 }
             }
@@ -130,6 +135,7 @@ namespace AnotherSample
                 MessageBox.Show($"Error searching items: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -159,50 +165,54 @@ namespace AnotherSample
             try
             {
                 string query = @"
-                    SELECT 
-                        transactions.transaction_id AS 'Transaction ID',
-                        ISNULL(users.user_name, 'No user assigned') AS 'User Name',
-                        items.item_name AS 'Item Name',
-                        transactions.transaction_borrow_date AS 'Borrow Date',
-                        transactions.transaction_due_date AS 'Due Date',
-                        transactions.transaction_return_date AS 'Return Date'
-                    FROM 
-                        transactions
-                    LEFT JOIN 
-                        users ON transactions.transaction_user_id = users.user_id
-                    INNER JOIN 
-                        items ON transactions.transaction_item_id = items.item_id
-                    WHERE 
-                        transactions.transaction_borrow_date IS NOT NULL
-                        AND transactions.transaction_return_date IS NOT NULL";
+            SELECT 
+                transactions.transaction_id AS 'Transaction ID',
+                ISNULL(users.user_name, 'No user assigned') AS 'User Name',
+                items.item_name AS 'Item Name',
+                transactions.transaction_borrow_date AS 'Borrow Date',
+                transactions.transaction_due_date AS 'Due Date',
+                transactions.transaction_return_date AS 'Return Date'
+            FROM 
+                transactions
+            LEFT JOIN 
+                users ON transactions.transaction_user_id = users.user_id
+            INNER JOIN 
+                items ON transactions.transaction_item_id = items.item_id
+            WHERE 
+                transactions.transaction_borrow_date IS NOT NULL
+                AND transactions.transaction_return_date IS NOT NULL";
 
-                using (SqlCommand command = new SqlCommand(query, connection))
+                using (SqlConnection localConnection = new SqlConnection(connection.ConnectionString))
                 {
-                    SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
-                    DataTable dataTable = new DataTable();
+                    localConnection.Open();
 
-                    connection.Open();
-                    dataAdapter.Fill(dataTable);
-
-                    if (dataTable.Rows.Count > 0)
+                    using (SqlCommand command = new SqlCommand(query, localConnection))
                     {
-                        dataGridView1.DataSource = dataTable;
-                        dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                        SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
+                        DataTable dataTable = new DataTable();
 
-                        // Optionally hide the "Transaction ID" column if needed
-                        dataGridView1.Columns["Transaction ID"].Visible = false;
+                        dataAdapter.Fill(dataTable);
 
-                        // Optionally format the columns (e.g., center-aligned headers)
-                        foreach (DataGridViewColumn column in dataGridView1.Columns)
+                        if (dataTable.Rows.Count > 0)
                         {
-                            column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                            column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                            dataGridView1.DataSource = dataTable;
+                            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+                            // Optionally hide the "Transaction ID" column
+                            dataGridView1.Columns["Transaction ID"].Visible = false;
+
+                            // Optionally format columns
+                            foreach (DataGridViewColumn column in dataGridView1.Columns)
+                            {
+                                column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                                column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                            }
                         }
-                    }
-                    else
-                    {
-                        dataGridView1.DataSource = null;
-                        MessageBox.Show("No transactions found with non-null borrow and return dates.", "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        else
+                        {
+                            dataGridView1.DataSource = null;
+                            MessageBox.Show("No transactions found with non-null borrow and return dates.", "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                 }
             }
