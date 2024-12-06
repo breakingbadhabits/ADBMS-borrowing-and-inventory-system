@@ -35,7 +35,6 @@ namespace AnotherSample
             this.label1 = new System.Windows.Forms.Label();
             this.ViewHistory = new System.Windows.Forms.Button();
             this.ViewCurrent = new System.Windows.Forms.Button();
-            this.LogoutBt = new System.Windows.Forms.Button();
             this.ViewBorrow = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -43,6 +42,7 @@ namespace AnotherSample
             this.BorrowDataGrid = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.LogoutBt11 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BorrowDataGrid)).BeginInit();
             this.panel1.SuspendLayout();
@@ -83,20 +83,6 @@ namespace AnotherSample
             this.ViewCurrent.UseVisualStyleBackColor = true;
             this.ViewCurrent.Click += new System.EventHandler(this.ViewCurrent_Click);
             // 
-            // LogoutBt
-            // 
-            this.LogoutBt.BackColor = System.Drawing.Color.Blue;
-            this.LogoutBt.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogoutBt.ForeColor = System.Drawing.Color.White;
-            this.LogoutBt.Location = new System.Drawing.Point(898, 599);
-            this.LogoutBt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.LogoutBt.Name = "LogoutBt";
-            this.LogoutBt.Size = new System.Drawing.Size(112, 38);
-            this.LogoutBt.TabIndex = 11;
-            this.LogoutBt.Text = "LOGOUT";
-            this.LogoutBt.UseVisualStyleBackColor = false;
-            this.LogoutBt.Click += new System.EventHandler(this.LogoutBt11_Click);
-            // 
             // ViewBorrow
             // 
             this.ViewBorrow.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -122,14 +108,13 @@ namespace AnotherSample
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panel2.Controls.Add(this.BorrowBt);
             this.panel2.Controls.Add(this.BorrowDataGrid);
-            this.panel2.Controls.Add(this.LogoutBt);
             this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.BorrowBt);
             this.panel2.Location = new System.Drawing.Point(217, 108);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1023, 651);
+            this.panel2.Size = new System.Drawing.Size(1023, 518);
             this.panel2.TabIndex = 0;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -137,7 +122,7 @@ namespace AnotherSample
             // 
             this.BorrowBt.BackColor = System.Drawing.Color.Blue;
             this.BorrowBt.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BorrowBt.Location = new System.Drawing.Point(62, 512);
+            this.BorrowBt.Location = new System.Drawing.Point(80, 465);
             this.BorrowBt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BorrowBt.Name = "BorrowBt";
             this.BorrowBt.Size = new System.Drawing.Size(118, 38);
@@ -162,13 +147,14 @@ namespace AnotherSample
             this.BorrowDataGrid.RowHeadersWidth = 51;
             this.BorrowDataGrid.RowTemplate.Height = 24;
             this.BorrowDataGrid.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.BorrowDataGrid.Size = new System.Drawing.Size(901, 374);
+            this.BorrowDataGrid.Size = new System.Drawing.Size(922, 334);
             this.BorrowDataGrid.TabIndex = 12;
             this.BorrowDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.BorrowDataGrid_CellContentClick);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightBlue;
+            this.panel1.Controls.Add(this.LogoutBt11);
             this.panel1.Controls.Add(this.ViewHistory);
             this.panel1.Controls.Add(this.ViewCurrent);
             this.panel1.Controls.Add(this.ViewBorrow);
@@ -179,7 +165,7 @@ namespace AnotherSample
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1241, 759);
+            this.panel1.Size = new System.Drawing.Size(1241, 695);
             this.panel1.TabIndex = 3;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -194,16 +180,30 @@ namespace AnotherSample
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // LogoutBt11
+            // 
+            this.LogoutBt11.BackColor = System.Drawing.Color.DarkRed;
+            this.LogoutBt11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogoutBt11.ForeColor = System.Drawing.Color.White;
+            this.LogoutBt11.Location = new System.Drawing.Point(1110, 635);
+            this.LogoutBt11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.LogoutBt11.Name = "LogoutBt11";
+            this.LogoutBt11.Size = new System.Drawing.Size(112, 38);
+            this.LogoutBt11.TabIndex = 14;
+            this.LogoutBt11.Text = "LOGOUT";
+            this.LogoutBt11.UseVisualStyleBackColor = false;
+            // 
             // BorrowerView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1241, 759);
+            this.ClientSize = new System.Drawing.Size(1241, 695);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "BorrowerView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Borrower View";
+            this.Load += new System.EventHandler(this.BorrowerView_Load);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.BorrowDataGrid)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -219,7 +219,6 @@ namespace AnotherSample
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button ViewHistory;
         private System.Windows.Forms.Button ViewCurrent;
-        private System.Windows.Forms.Button LogoutBt;
         private System.Windows.Forms.Button ViewBorrow;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
@@ -227,5 +226,6 @@ namespace AnotherSample
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView BorrowDataGrid;
         private System.Windows.Forms.Button BorrowBt;
+        private Button LogoutBt11;
     }
 }

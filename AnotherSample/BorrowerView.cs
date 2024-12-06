@@ -181,5 +181,10 @@ namespace AnotherSample
         {
 
         }
+
+        private void BorrowerView_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
