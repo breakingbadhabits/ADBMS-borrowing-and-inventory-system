@@ -83,8 +83,6 @@
                     }
                     else
                     {
-                        // Show a message if no records are found
-                        MessageBox.Show("No borrowed transactions found.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         dataGridView1.DataSource = null; // Clear the grid if no data is found
                     }
                 }
@@ -191,58 +189,37 @@
 
         private void ItemBt4_Click(object sender, EventArgs e)
         {
-            AdminView adminView = new AdminView();
-            this.Hide();
-            adminView.ShowDialog();
-            this.Close();
+            FormNavigator.Navigate(this, new AdminView());
         }
 
         private void StockBt5_Click(object sender, EventArgs e)
         {
-            StocksAdmin itemStocks = new StocksAdmin();
-            this.Hide();
-            itemStocks.ShowDialog();
-            this.Close();
+            FormNavigator.Navigate(this, new StocksAdmin());
         }
 
         private void MaintenanceBt6_Click(object sender, EventArgs e)
         {
-            MaintenanceAdminF6 maintenanceAdminF6 = new MaintenanceAdminF6();
-            this.Hide();
-            maintenanceAdminF6.ShowDialog();
-            this.Close();
+            FormNavigator.Navigate(this, new MaintenanceAdminF6());
         }
 
         private void RequestBt7_Click(object sender, EventArgs e)
         {
-            StocksAdmin itemStocks = new StocksAdmin();
-            this.Hide();
-            itemStocks.ShowDialog();
-            this.Close();
+            FormNavigator.Navigate(this, new AdminBorrowRequest());
         }
 
         private void BorrowedBt8_Click(object sender, EventArgs e)
         {
-            AdminBorrowedItem borrower = new AdminBorrowedItem();
-            this.Hide();
-            borrower.ShowDialog();
-            this.Close();
+            FormNavigator.Navigate(this, new AdminBorrowedItem());
         }
 
         private void HistoriesBt9_Click(object sender, EventArgs e)
         {
-            HistoryAdminF7 historyAdminF7 = new HistoryAdminF7();
-            this.Hide();
-            historyAdminF7.ShowDialog();
-            this.Close();
+            FormNavigator.Navigate(this, new HistoryAdminF7());
         }
 
         private void ArchivesBt10_Click(object sender, EventArgs e)
         {
-            ArchiveAdminF4 archiveAdminF4 = new ArchiveAdminF4();
-            this.Hide();
-            archiveAdminF4.ShowDialog();
-            this.Close();
+            FormNavigator.Navigate(this, new ArchiveAdminF4());
         }
     }
 }

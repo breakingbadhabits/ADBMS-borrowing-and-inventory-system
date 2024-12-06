@@ -343,7 +343,7 @@ namespace AnotherSample
 
         private void RequestBt7_Click(object sender, EventArgs e)
         {
-            BorrowedAdminF5 borrowReq = new BorrowedAdminF5();
+            AdminBorrowRequest borrowReq = new AdminBorrowRequest();
             this.Hide();
             borrowReq.ShowDialog();
             this.Close();

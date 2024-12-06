@@ -144,7 +144,7 @@ namespace AnotherSample
 
         private void RequestBt7_Click(object sender, EventArgs e)
         {
-            FormNavigator.Navigate(this, new BorrowedAdminF5());
+            FormNavigator.Navigate(this, new AdminBorrowRequest());
         }
 
         private void BorrowedBt8_Click(object sender, EventArgs e)
