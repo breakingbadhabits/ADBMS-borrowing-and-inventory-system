@@ -305,6 +305,8 @@ namespace AnotherSample
             this.dataGridView1.Size = new System.Drawing.Size(922, 291);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellFormatting += DataGridView1_CellFormatting;
+
             // 
             // label1
             // 
