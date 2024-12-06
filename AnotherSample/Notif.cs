@@ -16,61 +16,96 @@ namespace AnotherSample
         public Notif()
         {
             InitializeComponent();
+            LoadNotif();
         }
 
-        //public void LoadNotif ()
-        //{
-        //    try
-        //    {
-        //        string connectionString = "Server=localhost;Database=inventory_system;Trusted_Connection=True;";
+        public void LoadNotif ()
+        {
+            try
+            {
+                // Define your connection string
+                string connectionString = "Server=localhost;Database=inventory_system;Trusted_Connection=True;";
 
-        //        string query = @"
-        //            SELECT 
-        //                transactions.transaction_id AS [Transaction ID],
-        //                users.user_name AS [User Name],
-        //                items.item_name AS [Item Name],
-        //                transactions.transaction_borrow_date AS [Borrow Date],
-        //                transactions.transaction_due_date AS [Due Date]
-        //            FROM 
-        //                transactions
-        //            LEFT JOIN 
-        //                users ON transactions.transaction_user_id = users.user_id
-        //            LEFT JOIN 
-        //                items ON transactions.transaction_item_id = items.item_id
-        //            WHERE 
-        //                transactions.transaction_borrow_date IS NOT NULL
-        //                AND transactions.transaction_return_date IS NULL";
+                // Your SQL query (adjust as needed)
+                string query = @"
+                SELECT 
+                    transaction_id, 
+                    user_name, 
+                    item_name, 
+                    transaction_borrow_date
+                FROM 
+                    transactions
+                LEFT JOIN 
+                    users ON transactions.transaction_user_id = users.user_id
+                LEFT JOIN 
+                    items ON transactions.transaction_item_id = items.item_id
+                WHERE 
+                    transactions.transaction_borrow_date IS NOT NULL
+                    AND transactions.transaction_return_date IS NULL
+                ORDER BY transactions.transaction_due_date";
 
-        //        using (SqlConnection connection = new SqlConnection(connectionString))
-        //        {
-        //            DataTable dataTable = new DataTable();
+                // Create a DataTable to hold the query results
+                DataTable dataTable = new DataTable();
 
-        //            // Use a data adapter to fill the DataTable
-        //            using (SqlDataAdapter adapter = new SqlDataAdapter(query, connection))
-        //            {
-        //                adapter.Fill(dataTable);
-        //            }
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
 
-        //            // Bind the data to the DataGridView
-        //            if (dataTable.Rows.Count > 0)
-        //            {
-        //                NotifGridView.AutoGenerateColumns = true; // Automatically generate columns
-        //                NotifGridView.DataSource = dataTable;     // Bind the data
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(query, connection))
+                    {
+                        adapter.Fill(dataTable);
+                    }
+                }
 
-        //                // Auto-size columns to fit the content
-        //                NotifGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-        //            }
-        //            else
-        //            {
-        //                NotifGridView.DataSource = null;
-        //            }
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show($"An error occurred while fetching data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-        //}
+                // If there are results, show each row as a notification
+                if (dataTable.Rows.Count > 0)
+                {
+                    // Create a DataTable to hold formatted notifications
+                    var notificationsTable = new DataTable();
+                    notificationsTable.Columns.Add("Notification");
+
+                    foreach (DataRow row in dataTable.Rows)
+                    {
+                        DateTime dueDate = Convert.ToDateTime(row["transaction_due_date"]);
+                        if (dueDate < DateTime.Now)
+                        {
+                            // String interpolation to format the notification message
+                            string message = $"User: {row["user_name"]}, Did not return the Item: {row["item_name"]} on time, Borrowed on: {row["transaction_borrow_date"]} with Due date: {row["transaction_due_date"]}";
+                            notificationsTable.Rows.Add(message);
+                        } else if (dueDate == DateTime.Now) {
+                            string message = $"User: {row["user_name"]}, need to return the Item: {row["item_name"]} today, Borrowed on: {row["transaction_borrow_date"]}";
+                            notificationsTable.Rows.Add(message);
+                        } else if (dueDate > DateTime.Now.AddDays(3)) {
+                            string message = $"User: {row["user_name"]}, need to return the Item: {row["item_name"]} within 3 days, Borrowed on: {row["transaction_borrow_date"]} with Due date: {row["transaction_due_date"]}";
+                            notificationsTable.Rows.Add(message);
+                        }
+                    }
+
+                    // Bind the notifications to the DataGridView
+                    NotifGridView.DataSource = notificationsTable;
+
+                    // Optional: Hide the column headers
+                    NotifGridView.ColumnHeadersVisible = false;
+
+                    NotifGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    NotifGridView.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+                    NotifGridView.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+                    NotifGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+                }
+                else
+                {
+                    // show message and goes back to admin view if no notifs
+                    MessageBox.Show("No active transactions to display.", "No Transactions", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    FormNavigator.Navigate(this, new AdminView());
+                }
+            }
+            catch (Exception ex)
+            {
+                // Display any errors that occur during the query
+                MessageBox.Show($"An error occurred while fetching data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         private void Notif_Load(object sender, EventArgs e)
         {

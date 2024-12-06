@@ -11,9 +11,17 @@ namespace AnotherSample
     {
         public static void Navigate(Form currentForm, Form nextForm)
         {
-            currentForm.Hide();
-            nextForm.ShowDialog();
-            currentForm.Close();
+            try
+            {
+                currentForm.Hide();
+                nextForm.ShowDialog();
+                currentForm.Close();
+            }
+            catch
+            {
+                Application.Exit();
+            }
+            
         }
     }
 }
