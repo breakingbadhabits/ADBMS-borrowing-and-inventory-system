@@ -297,7 +297,7 @@ namespace AnotherSample
 
         private void BorrowedBt8_Click(object sender, EventArgs e)
         {
-            Borrower borrowReq = new Borrower();
+            AdminBorrowedItem borrowReq = new AdminBorrowedItem();
             this.Hide();
             borrowReq.ShowDialog();
             this.Close();

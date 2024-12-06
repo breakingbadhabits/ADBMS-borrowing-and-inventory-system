@@ -258,7 +258,7 @@ namespace AnotherSample
 
         private void BorrowedBt8_Click(object sender, EventArgs e)
         {
-            FormNavigator.Navigate(this, new Borrower());
+            FormNavigator.Navigate(this, new AdminBorrowedItem());
         }
 
         private void StocksAdmin_Load(object sender, EventArgs e)

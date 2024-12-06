@@ -223,12 +223,10 @@
             // 
             this.DeleteBt3.BackColor = System.Drawing.Color.Red;
             this.DeleteBt3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-<<<<<<< Updated upstream
-            this.DeleteBt3.Location = new System.Drawing.Point(758, 371);
-=======
+
             this.DeleteBt3.Location = new System.Drawing.Point(849, 464);
             this.DeleteBt3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
->>>>>>> Stashed changes
+
             this.DeleteBt3.Name = "DeleteBt3";
             this.DeleteBt3.Size = new System.Drawing.Size(80, 25);
             this.DeleteBt3.TabIndex = 13;

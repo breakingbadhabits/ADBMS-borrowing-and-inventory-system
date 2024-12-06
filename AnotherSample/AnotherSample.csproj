@@ -47,11 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Borrower.cs">
+    <Compile Include="AdminBorrowedItem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Borrower.Designer.cs">
-      <DependentUpon>Borrower.cs</DependentUpon>
+    <Compile Include="AdminBorrowedItem.Designer.cs">
+      <DependentUpon>AdminBorrowedItem.cs</DependentUpon>
     </Compile>
     <Compile Include="DatabaseConnection.cs" />
     <Compile Include="FormNavigator.cs" />
@@ -67,11 +67,11 @@
     <Compile Include="Form10.Designer.cs">
       <DependentUpon>Form10.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form11.cs">
+    <Compile Include="StudentHistoryView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form11.Designer.cs">
-      <DependentUpon>Form11.cs</DependentUpon>
+    <Compile Include="StudentHistoryView.Designer.cs">
+      <DependentUpon>StudentHistoryView.cs</DependentUpon>
     </Compile>
     <Compile Include="ItemList.cs">
       <SubType>Form</SubType>
@@ -183,8 +183,8 @@
     <Compile Include="WarningSign.Designer.cs">
       <DependentUpon>WarningSign.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Borrower.resx">
-      <DependentUpon>Borrower.cs</DependentUpon>
+    <EmbeddedResource Include="AdminBorrowedItem.resx">
+      <DependentUpon>AdminBorrowedItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -192,8 +192,8 @@
     <EmbeddedResource Include="Form10.resx">
       <DependentUpon>Form10.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form11.resx">
-      <DependentUpon>Form11.cs</DependentUpon>
+    <EmbeddedResource Include="StudentHistoryView.resx">
+      <DependentUpon>StudentHistoryView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ItemList.resx">
       <DependentUpon>ItemList.cs</DependentUpon>

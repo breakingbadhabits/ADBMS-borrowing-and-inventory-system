@@ -158,5 +158,10 @@ namespace AnotherSample
             borrowReq.ShowDialog();
             this.Close();
         }
+
+        private void BorrowedBt8_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

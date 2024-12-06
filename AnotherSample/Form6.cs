@@ -351,7 +351,7 @@ namespace AnotherSample
 
         private void BorrowedBt8_Click(object sender, EventArgs e)
         {
-            Borrower borrower = new Borrower();
+            AdminBorrowedItem borrower = new AdminBorrowedItem();
             this.Hide();
             borrower.ShowDialog();
             this.Close();

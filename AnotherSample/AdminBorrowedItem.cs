@@ -11,9 +11,9 @@
 
     namespace AnotherSample
     {
-        public partial class Borrower : Form
+        public partial class AdminBorrowedItem : Form
         {
-            public Borrower()
+            public AdminBorrowedItem()
             {
                 InitializeComponent();
             }
@@ -223,7 +223,7 @@
 
         private void BorrowedBt8_Click(object sender, EventArgs e)
         {
-            Borrower borrower = new Borrower();
+            AdminBorrowedItem borrower = new AdminBorrowedItem();
             this.Hide();
             borrower.ShowDialog();
             this.Close();
