@@ -114,7 +114,7 @@ namespace AnotherSample
 
             private void ArchivesBt10_Click(object sender, EventArgs e)
             {
-                FormNavigator.Navigate(this, new ArchiveAdminF4());
+                FormNavigator.Navigate(this, new AdminArchive());
             }
 
             private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -264,12 +264,12 @@ private void DeleteBt3_Click(object sender, EventArgs e)
 
         private void RequestBt7_Click(object sender, EventArgs e)
         {
-            FormNavigator.Navigate(this, new BorrowedAdminF5());
+            FormNavigator.Navigate(this, new AdminBorrowRequest());
         }
 
         private void BorrowedBt8_Click(object sender, EventArgs e)
         {
-            FormNavigator.Navigate(this, new Borrower());
+            FormNavigator.Navigate(this, new AdminBorrowedItem());
         }
 
         private void StocksAdmin_Load(object sender, EventArgs e)

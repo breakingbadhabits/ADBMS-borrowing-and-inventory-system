@@ -1,6 +1,6 @@
 ﻿namespace AnotherSample
 {
-    partial class BorrowedAdminF5
+    partial class AdminBorrowRequest
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BorrowedAdminF5));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminBorrowRequest));
             this.label5 = new System.Windows.Forms.Label();
             this.ArchivesBt10 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -59,19 +59,18 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(75, 431);
+            this.label5.Location = new System.Drawing.Point(67, 345);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 20);
+            this.label5.Size = new System.Drawing.Size(64, 16);
             this.label5.TabIndex = 18;
             this.label5.Text = "Borrower:";
             // 
             // ArchivesBt10
             // 
             this.ArchivesBt10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ArchivesBt10.Location = new System.Drawing.Point(14, 588);
-            this.ArchivesBt10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ArchivesBt10.Location = new System.Drawing.Point(12, 470);
             this.ArchivesBt10.Name = "ArchivesBt10";
-            this.ArchivesBt10.Size = new System.Drawing.Size(188, 60);
+            this.ArchivesBt10.Size = new System.Drawing.Size(167, 48);
             this.ArchivesBt10.TabIndex = 17;
             this.ArchivesBt10.Text = "ARCHIVES";
             this.ArchivesBt10.UseVisualStyleBackColor = true;
@@ -95,9 +94,8 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1241, 759);
+            this.panel1.Size = new System.Drawing.Size(1103, 607);
             this.panel1.TabIndex = 2;
             // 
             // LogoutBt11
@@ -105,10 +103,9 @@
             this.LogoutBt11.BackColor = System.Drawing.Color.DarkRed;
             this.LogoutBt11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogoutBt11.ForeColor = System.Drawing.Color.White;
-            this.LogoutBt11.Location = new System.Drawing.Point(1110, 635);
-            this.LogoutBt11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.LogoutBt11.Location = new System.Drawing.Point(987, 508);
             this.LogoutBt11.Name = "LogoutBt11";
-            this.LogoutBt11.Size = new System.Drawing.Size(112, 38);
+            this.LogoutBt11.Size = new System.Drawing.Size(100, 30);
             this.LogoutBt11.TabIndex = 11;
             this.LogoutBt11.Text = "LOGOUT";
             this.LogoutBt11.UseVisualStyleBackColor = false;
@@ -117,19 +114,18 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(73, 122);
+            this.label4.Location = new System.Drawing.Point(65, 98);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 20);
+            this.label4.Size = new System.Drawing.Size(64, 16);
             this.label4.TabIndex = 2;
             this.label4.Text = "Inventory:";
             // 
             // HistoriesBt9
             // 
             this.HistoriesBt9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HistoriesBt9.Location = new System.Drawing.Point(15, 520);
-            this.HistoriesBt9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.HistoriesBt9.Location = new System.Drawing.Point(13, 416);
             this.HistoriesBt9.Name = "HistoriesBt9";
-            this.HistoriesBt9.Size = new System.Drawing.Size(188, 60);
+            this.HistoriesBt9.Size = new System.Drawing.Size(167, 48);
             this.HistoriesBt9.TabIndex = 16;
             this.HistoriesBt9.Text = "HISTORIES";
             this.HistoriesBt9.UseVisualStyleBackColor = true;
@@ -138,10 +134,9 @@
             // BorrowedBt8
             // 
             this.BorrowedBt8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BorrowedBt8.Location = new System.Drawing.Point(14, 452);
-            this.BorrowedBt8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.BorrowedBt8.Location = new System.Drawing.Point(12, 362);
             this.BorrowedBt8.Name = "BorrowedBt8";
-            this.BorrowedBt8.Size = new System.Drawing.Size(188, 60);
+            this.BorrowedBt8.Size = new System.Drawing.Size(167, 48);
             this.BorrowedBt8.TabIndex = 15;
             this.BorrowedBt8.Text = "BORROWED ITEM";
             this.BorrowedBt8.UseVisualStyleBackColor = true;
@@ -150,10 +145,9 @@
             // RequestBt7
             // 
             this.RequestBt7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RequestBt7.Location = new System.Drawing.Point(14, 346);
-            this.RequestBt7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.RequestBt7.Location = new System.Drawing.Point(12, 277);
             this.RequestBt7.Name = "RequestBt7";
-            this.RequestBt7.Size = new System.Drawing.Size(188, 60);
+            this.RequestBt7.Size = new System.Drawing.Size(167, 48);
             this.RequestBt7.TabIndex = 14;
             this.RequestBt7.Text = "BORROWER REQ";
             this.RequestBt7.UseVisualStyleBackColor = true;
@@ -162,10 +156,9 @@
             // MaintenanceBt6
             // 
             this.MaintenanceBt6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MaintenanceBt6.Location = new System.Drawing.Point(14, 279);
-            this.MaintenanceBt6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaintenanceBt6.Location = new System.Drawing.Point(12, 223);
             this.MaintenanceBt6.Name = "MaintenanceBt6";
-            this.MaintenanceBt6.Size = new System.Drawing.Size(188, 60);
+            this.MaintenanceBt6.Size = new System.Drawing.Size(167, 48);
             this.MaintenanceBt6.TabIndex = 13;
             this.MaintenanceBt6.Text = "MAINTENANCE";
             this.MaintenanceBt6.UseVisualStyleBackColor = true;
@@ -174,10 +167,9 @@
             // StockBt5
             // 
             this.StockBt5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StockBt5.Location = new System.Drawing.Point(14, 211);
-            this.StockBt5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.StockBt5.Location = new System.Drawing.Point(12, 169);
             this.StockBt5.Name = "StockBt5";
-            this.StockBt5.Size = new System.Drawing.Size(188, 60);
+            this.StockBt5.Size = new System.Drawing.Size(167, 48);
             this.StockBt5.TabIndex = 12;
             this.StockBt5.Text = "STOCKS";
             this.StockBt5.UseVisualStyleBackColor = true;
@@ -186,10 +178,9 @@
             // ItemBt4
             // 
             this.ItemBt4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ItemBt4.Location = new System.Drawing.Point(14, 144);
-            this.ItemBt4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ItemBt4.Location = new System.Drawing.Point(12, 115);
             this.ItemBt4.Name = "ItemBt4";
-            this.ItemBt4.Size = new System.Drawing.Size(188, 60);
+            this.ItemBt4.Size = new System.Drawing.Size(167, 48);
             this.ItemBt4.TabIndex = 11;
             this.ItemBt4.Text = "ITEMS";
             this.ItemBt4.UseVisualStyleBackColor = true;
@@ -198,19 +189,18 @@
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Bodoni MT Condensed", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(410, 22);
+            this.label3.Location = new System.Drawing.Point(364, 18);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(574, 62);
+            this.label3.Size = new System.Drawing.Size(510, 50);
             this.label3.TabIndex = 2;
             this.label3.Text = "Equipment Borrowing Management System";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(24, 24);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(21, 19);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(220, 71);
+            this.pictureBox1.Size = new System.Drawing.Size(196, 57);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -225,10 +215,9 @@
             this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(217, 108);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel2.Location = new System.Drawing.Point(193, 86);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1023, 517);
+            this.panel2.Size = new System.Drawing.Size(909, 414);
             this.panel2.TabIndex = 0;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -237,10 +226,9 @@
             this.button1.BackColor = System.Drawing.Color.Red;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(837, 461);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Location = new System.Drawing.Point(744, 369);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 38);
+            this.button1.Size = new System.Drawing.Size(97, 30);
             this.button1.TabIndex = 11;
             this.button1.Text = "Reject";
             this.button1.UseVisualStyleBackColor = false;
@@ -250,10 +238,9 @@
             this.ApproveBtn.BackColor = System.Drawing.Color.Green;
             this.ApproveBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ApproveBtn.ForeColor = System.Drawing.Color.White;
-            this.ApproveBtn.Location = new System.Drawing.Point(722, 461);
-            this.ApproveBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ApproveBtn.Location = new System.Drawing.Point(642, 369);
             this.ApproveBtn.Name = "ApproveBtn";
-            this.ApproveBtn.Size = new System.Drawing.Size(109, 38);
+            this.ApproveBtn.Size = new System.Drawing.Size(97, 30);
             this.ApproveBtn.TabIndex = 10;
             this.ApproveBtn.Text = "Approve";
             this.ApproveBtn.UseVisualStyleBackColor = false;
@@ -262,28 +249,26 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Enabled = false;
-            this.dateTimePicker1.Location = new System.Drawing.Point(695, 15);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dateTimePicker1.Location = new System.Drawing.Point(618, 12);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(272, 26);
+            this.dateTimePicker1.Size = new System.Drawing.Size(242, 22);
             this.dateTimePicker1.TabIndex = 7;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(80, 131);
+            this.label2.Location = new System.Drawing.Point(71, 105);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(122, 20);
+            this.label2.Size = new System.Drawing.Size(105, 16);
             this.label2.TabIndex = 6;
             this.label2.Text = "Search Name:";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(209, 128);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox1.Location = new System.Drawing.Point(186, 102);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(201, 26);
+            this.textBox1.Size = new System.Drawing.Size(179, 22);
             this.textBox1.TabIndex = 5;
             // 
             // dataGridView1
@@ -294,33 +279,31 @@
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.LightBlue;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(75, 162);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(67, 130);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(892, 291);
+            this.dataGridView1.Size = new System.Drawing.Size(793, 233);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Bodoni MT Condensed", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(363, 15);
+            this.label1.Location = new System.Drawing.Point(323, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(381, 51);
+            this.label1.Size = new System.Drawing.Size(339, 41);
             this.label1.TabIndex = 3;
             this.label1.Text = "BORROW REQUEST";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // BorrowedAdminF5
+            // AdminBorrowRequest
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1241, 759);
+            this.ClientSize = new System.Drawing.Size(1103, 607);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "BorrowedAdminF5";
+            this.Name = "AdminBorrowRequest";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BorrowedItem";
             this.Load += new System.EventHandler(this.BorrowedAdminF5_Load);

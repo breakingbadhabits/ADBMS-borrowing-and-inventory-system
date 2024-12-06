@@ -96,7 +96,7 @@ namespace AnotherSample
 
         private void ArchivesBt10_Click(object sender, EventArgs e)
         {
-            ArchiveAdminF4 archiveAdminF4 = new ArchiveAdminF4();
+            AdminArchive archiveAdminF4 = new AdminArchive();
             this.Hide();
             archiveAdminF4.ShowDialog();
             this.Close();
@@ -153,10 +153,15 @@ namespace AnotherSample
 
         private void RequestBt7_Click(object sender, EventArgs e)
         {
-            BorrowedAdminF5 borrowReq = new BorrowedAdminF5();
+            AdminBorrowRequest borrowReq = new AdminBorrowRequest();
             this.Hide();
             borrowReq.ShowDialog();
             this.Close();
+        }
+
+        private void BorrowedBt8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
