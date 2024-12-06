@@ -30,8 +30,8 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.NotifGridView = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.NotifGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -50,28 +50,29 @@
             this.label2.Size = new System.Drawing.Size(0, 16);
             this.label2.TabIndex = 1;
             // 
-            // dataGridView1
+            // NotifGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(659, 426);
-            this.dataGridView1.TabIndex = 2;
+            this.NotifGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.NotifGridView.Location = new System.Drawing.Point(12, 12);
+            this.NotifGridView.Name = "NotifGridView";
+            this.NotifGridView.RowHeadersWidth = 51;
+            this.NotifGridView.RowTemplate.Height = 24;
+            this.NotifGridView.Size = new System.Drawing.Size(659, 426);
+            this.NotifGridView.TabIndex = 2;
+            this.NotifGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Notif
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(683, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.NotifGridView);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Notif";
             this.Text = "Notifications";
             this.Load += new System.EventHandler(this.Notif_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NotifGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -81,6 +82,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView NotifGridView;
     }
 }
