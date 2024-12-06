@@ -121,8 +121,36 @@ namespace AnotherSample
             {
 
             }
+        private void DataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // Check if the current column is the "Available" column
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "Available")
+            {
+                if (e.Value != null && int.TryParse(e.Value.ToString(), out int available))
+                {
+                    // Change the cell's background color based on the available quantity
+                    if (available == 0)
+                    {
+                        e.CellStyle.BackColor = Color.Red;
+                        e.CellStyle.ForeColor = Color.White; // Optional: For better text visibility
+                    }
+                    else if (available < 6)
+                    {
+                        e.CellStyle.BackColor = Color.Yellow;
+                        e.CellStyle.ForeColor = Color.Black;
+                    }
+                    else
+                    {
+                        e.CellStyle.BackColor = Color.Green;
+                        e.CellStyle.ForeColor = Color.White;
+                    }
+                }
+            }
+        }
 
-            private void button1_Click(object sender, EventArgs e)
+
+
+        private void button1_Click(object sender, EventArgs e)
             {
                 ShowItemListPopup();
             }
