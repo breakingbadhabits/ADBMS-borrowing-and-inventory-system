@@ -215,18 +215,13 @@
 
         private void RequestBt7_Click(object sender, EventArgs e)
         {
-            StocksAdmin itemStocks = new StocksAdmin();
-            this.Hide();
-            itemStocks.ShowDialog();
-            this.Close();
+            FormNavigator.Navigate(this, new BorrowedAdminF5());
+
         }
 
         private void BorrowedBt8_Click(object sender, EventArgs e)
         {
-            Borrower borrower = new Borrower();
-            this.Hide();
-            borrower.ShowDialog();
-            this.Close();
+            FormNavigator.Navigate(this, new Borrower());
         }
 
         private void HistoriesBt9_Click(object sender, EventArgs e)
