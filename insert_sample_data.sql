@@ -7,7 +7,7 @@ INSERT INTO roles (role_name) VALUES
 ('Student');
 
 -- Insert sample users
-INSERT INTO users (role_id, user_uli, user_username, user_password, user_name, user_contact_number, user_address, user_birthday) VALUES
+INSERT INTO users (user_role_id, user_uli, user_username, user_password, user_name, user_contact_number, user_address, user_birthday) VALUES
 (1, 123456789, 'ajoaquin', 'admin_password', 'Angelo Joaquin', '09123456789', '123 Admin St, Comteq', '1999-01-01'),
 (2, 987654321, 'aavecilla', 'art_password', 'Arthur Avecilla', '09123456780', '456 Tool Keeper Rd, Comteq', '1999-01-01'),
 (3, 135792468, 'jroque', 'jim_password', 'Jimmiel Roque', '09123456781', '789 Student Ln, Comteq', '1999-12-27');
@@ -31,9 +31,9 @@ INSERT INTO maintenance (maintenance_item_id, maintenance_start_date, maintenanc
 (2, '2024-01-01', '2024-02-01', 'Replaced antenna');
 
 -- Insert sample transactions
-INSERT INTO transactions (transaction_user_id, transaction_item_id, transaction_borrow_date, transaction_return_date, transaction_due_date, transaction_return_condition, transaction_status) VALUES
-(3, 2, '2024-11-20', '2024-11-25', '2024-11-25', 'Good', 'Approved'),
-(3, 1, '2024-11-21', '2024-11-23', '2024-11-23', 'Good', 'Approved');
+INSERT INTO transactions (transaction_user_id, transaction_item_id, transaction_borrow_date, transaction_return_date, transaction_due_date, transaction_return_condition) VALUES
+(3, 2, '2024-11-20', '2024-11-25', '2024-11-25', 'Good'),
+(3, 1, '2024-11-21', '2024-11-23', '2024-11-23', 'Good');
 
 -- Insert sample notifications
 INSERT INTO notifications (notification_transaction_id, notification_date, notification_description) VALUES

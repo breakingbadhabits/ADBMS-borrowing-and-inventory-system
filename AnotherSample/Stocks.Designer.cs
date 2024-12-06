@@ -305,6 +305,7 @@
             this.Name = "StocksAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StocksAdmin";
+            this.Load += new System.EventHandler(this.StocksAdmin_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

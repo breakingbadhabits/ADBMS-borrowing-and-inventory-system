@@ -7,7 +7,7 @@ CREATE TABLE roles (
 
 CREATE TABLE users (
 	user_id INT PRIMARY KEY IDENTITY(1,1),
-	role_id INT NOT NULL,
+	user_role_id INT NOT NULL,
 	user_uli INT NOT NULL,
 	user_username varchar(50) NOT NULL,
 	user_password varchar(50) NOT NULL,
@@ -63,11 +63,10 @@ CREATE TABLE transactions (
 	transaction_id INT PRIMARY KEY IDENTITY(1,1),
 	transaction_user_id INT NOT NULL,
 	transaction_item_id INT NOT NULL,
-	transaction_borrow_date DATE,
+	transaction_borrow_date DATE NOT NULL,
 	transaction_return_date DATE,
 	transaction_due_date DATE,
 	transaction_return_condition VARCHAR(200),
-	transaction_status VARCHAR(20) DEFAULT 'Pending',
 	CONSTRAINT FK_transaction_user_id_user_id FOREIGN KEY (transaction_user_id)
         REFERENCES users(user_id)
 	ON DELETE CASCADE

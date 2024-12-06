@@ -6,6 +6,7 @@ public class DatabaseConnection
     private static DatabaseConnection _instance;
     private SqlConnection _connection;
 
+    public string ConnectionString = "Server=localhost;Database=inventory_system;Trusted_Connection=True;";
     // Replace with your actual connection string
     private readonly string _connectionString = "Server=localhost;Database=inventory_system;Trusted_Connection=True;";
 
