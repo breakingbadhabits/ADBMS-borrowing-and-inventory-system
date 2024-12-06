@@ -401,5 +401,10 @@ namespace AnotherSample
                 }
             }
         }
+
+        private void NotifBt_Click(object sender, EventArgs e)
+        {
+            FormNavigator.Navigate(this, new Notif());
+        }
     }
 }

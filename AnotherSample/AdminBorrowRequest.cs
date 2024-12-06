@@ -310,5 +310,10 @@ namespace AnotherSample
             archiveAdminF4.ShowDialog();
             this.Close();
         }
+
+        private void NotifBt_Click(object sender, EventArgs e)
+        {
+            FormNavigator.Navigate(this, new Notif());
+        }
     }
 }

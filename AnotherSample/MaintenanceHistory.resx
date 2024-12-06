@@ -118,6 +118,19 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="NotifBt.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAjCAYAAACD1LrRAAAABGdBTUEAALGPC/xhBQAAAaBJREFUWEft
+        l21RxEAMhisBCUhAAg7AAUjAATgAB+AACUhAAhKQAHkyvDd7d93dtJP845nJXD+2l775arvs4MLs0ezd
+        7MPsxezSrBQcfJv9mH2a4ZjtL7NS5zg4dcI2x7iJEq7NUHfne8c8mHHuyvcSIa/klD9n+xSOce7Z95Kg
+        kJTXJw504BxrCPtaVMKQOxUPv4R6BmsoOq55NVuLzhAu4M5Res+BjUj95oJ7M+PCiMoeKrhw3lHIBaN8
+        RmG4hAWoVzMgZaRrGvJRr+5F+R4WmvKyuRoHSMyN73UgJ4QmE0TgGFFdqOas/LbgeFis/46zmDqm3zaP
+        uQCIYXavwkOBO8vsYaFuWW1ThbniFUa9fDa3M+dzD83to7cUlFYUVcvZ3JbaW9+rRSPZn1a8S1WrbUG1
+        V3hVC/U4+KOau6WejFrWFavU1eSVhkDs0LIUGPJV3a2xUDc2s9lafIRf+hWe4fP0D/VqGiiJFKBUpaH+
+        G81xvjhma3aBEv4YBy10AzOYc4Q6HRzQejhQ6PlcUUGVOG2h/XCCY6Ye2z4C4yzLL6a/onlLxTkgAAAA
+        AElFTkSuQmCC
+</value>
+  </data>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAACTUAAAJkCAYAAADK5leOAAAABGdBTUEAALGOfPtRkwAAACBjSFJNAACH
@@ -6565,7 +6578,7 @@
   <data name="NotificationBt.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAjCAYAAACD1LrRAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EgAACxIB0t1+/AAAAaBJREFUWEftl21RxEAMhisBCUhAAg7AAUjAATgAB+AACUhAAhKQAHkyvDd7d93d
+        EQAACxEBf2RfkQAAAaBJREFUWEftl21RxEAMhisBCUhAAg7AAUjAATgAB+AACUhAAhKQAHkyvDd7d93d
         tJP845nJXD+2l775arvs4MLs0ezd7MPsxezSrBQcfJv9mH2a4ZjtL7NS5zg4dcI2x7iJEq7NUHfne8c8
         mHHuyvcSIa/klD9n+xSOce7Z95KgkJTXJw504BxrCPtaVMKQOxUPv4R6BmsoOq55NVuLzhAu4M5Res+B
         jUj95oJ7M+PCiMoeKrhw3lHIBaN8RmG4hAWoVzMgZaRrGvJRr+5F+R4WmvKyuRoHSMyN73UgJ4QmE0Tg

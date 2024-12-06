@@ -63,6 +63,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.ArchivesBt10 = new System.Windows.Forms.Button();
             this.itemsTableAdapter = new AnotherSample.inventory_systemDataSetTableAdapters.itemsTableAdapter();
+            this.NotifBt = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -362,6 +363,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightBlue;
+            this.panel1.Controls.Add(this.NotifBt);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.LogoutBt11);
             this.panel1.Controls.Add(this.label4);
@@ -413,6 +415,17 @@
             // itemsTableAdapter
             // 
             this.itemsTableAdapter.ClearBeforeFill = true;
+            // 
+            // NotifBt
+            // 
+            this.NotifBt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("NotifBt.BackgroundImage")));
+            this.NotifBt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.NotifBt.Location = new System.Drawing.Point(1022, 12);
+            this.NotifBt.Name = "NotifBt";
+            this.NotifBt.Size = new System.Drawing.Size(69, 64);
+            this.NotifBt.TabIndex = 19;
+            this.NotifBt.UseVisualStyleBackColor = true;
+            this.NotifBt.Click += new System.EventHandler(this.NotifBt_Click);
             // 
             // AdminArchive
             // 
@@ -471,5 +484,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn itemisborrowedDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn itemisarchivedDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn itemtypeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button NotifBt;
     }
 }

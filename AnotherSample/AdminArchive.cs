@@ -345,5 +345,10 @@ namespace AnotherSample
         {
             FormNavigator.Navigate(this, new AdminBorrowedItem());
         }
+
+        private void NotifBt_Click(object sender, EventArgs e)
+        {
+            FormNavigator.Navigate(this, new Notif());
+        }
     }
 }

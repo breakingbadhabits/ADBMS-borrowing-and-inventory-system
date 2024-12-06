@@ -436,5 +436,10 @@ namespace AnotherSample
             borrower.ShowDialog();
             this.Close();
         }
+
+        private void NotifBt_Click(object sender, EventArgs e)
+        {
+            FormNavigator.Navigate(this, new Notif());
+        }
     }
 }

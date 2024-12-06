@@ -396,5 +396,10 @@ private void DeleteBt3_Click(object sender, EventArgs e)
                 MessageBox.Show("Please select a stock to delete.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void NotifBt_Click(object sender, EventArgs e)
+        {
+            FormNavigator.Navigate(this, new Notif());
+        }
     }
 }
