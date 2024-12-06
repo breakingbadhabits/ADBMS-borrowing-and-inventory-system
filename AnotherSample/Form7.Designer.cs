@@ -59,7 +59,7 @@
             this.LogoutBt11.BackColor = System.Drawing.Color.Blue;
             this.LogoutBt11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogoutBt11.ForeColor = System.Drawing.Color.White;
-            this.LogoutBt11.Location = new System.Drawing.Point(900, 581);
+            this.LogoutBt11.Location = new System.Drawing.Point(1110, 635);
             this.LogoutBt11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LogoutBt11.Name = "LogoutBt11";
             this.LogoutBt11.Size = new System.Drawing.Size(112, 38);
@@ -87,7 +87,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(201, 128);
+            this.textBox1.Location = new System.Drawing.Point(213, 128);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(201, 26);
@@ -96,6 +96,11 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.LightBlue;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(75, 162);
@@ -145,6 +150,7 @@
             this.HistoriesBt9.TabIndex = 16;
             this.HistoriesBt9.Text = "HISTORIES";
             this.HistoriesBt9.UseVisualStyleBackColor = true;
+            this.HistoriesBt9.Click += new System.EventHandler(this.HistoriesBt9_Click);
             // 
             // BorrowedBt8
             // 
@@ -156,6 +162,7 @@
             this.BorrowedBt8.TabIndex = 15;
             this.BorrowedBt8.Text = "BORROWED ITEM";
             this.BorrowedBt8.UseVisualStyleBackColor = true;
+            this.BorrowedBt8.Click += new System.EventHandler(this.BorrowedBt8_Click);
             // 
             // RequestBt7
             // 
@@ -167,6 +174,7 @@
             this.RequestBt7.TabIndex = 14;
             this.RequestBt7.Text = "BORROWER REQ";
             this.RequestBt7.UseVisualStyleBackColor = true;
+            this.RequestBt7.Click += new System.EventHandler(this.RequestBt7_Click);
             // 
             // StockBt5
             // 
@@ -203,7 +211,6 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panel2.Controls.Add(this.LogoutBt11);
             this.panel2.Controls.Add(this.dateTimePicker1);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.textBox1);
@@ -212,12 +219,13 @@
             this.panel2.Location = new System.Drawing.Point(217, 108);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1023, 651);
+            this.panel2.Size = new System.Drawing.Size(1023, 517);
             this.panel2.TabIndex = 0;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightBlue;
+            this.panel1.Controls.Add(this.LogoutBt11);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.ArchivesBt10);
@@ -283,6 +291,7 @@
             this.Name = "HistoryAdminF7";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HistoryAdmin";
+            this.Load += new System.EventHandler(this.HistoryAdminF7_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);

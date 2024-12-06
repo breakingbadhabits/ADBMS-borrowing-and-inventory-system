@@ -1,4 +1,7 @@
-﻿namespace AnotherSample
+﻿using System;
+using System.Windows.Forms;
+
+namespace AnotherSample
 {
     partial class BorrowerView
     {
@@ -49,9 +52,9 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Bodoni MT Condensed", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(48, 27);
+            this.label1.Location = new System.Drawing.Point(401, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(169, 41);
+            this.label1.Size = new System.Drawing.Size(279, 89);
             this.label1.TabIndex = 3;
             this.label1.Text = "BORROW ITEM";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -59,9 +62,10 @@
             // ViewHistory
             // 
             this.ViewHistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ViewHistory.Location = new System.Drawing.Point(12, 254);
+            this.ViewHistory.Location = new System.Drawing.Point(14, 318);
+            this.ViewHistory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ViewHistory.Name = "ViewHistory";
-            this.ViewHistory.Size = new System.Drawing.Size(167, 48);
+            this.ViewHistory.Size = new System.Drawing.Size(188, 60);
             this.ViewHistory.TabIndex = 16;
             this.ViewHistory.Text = "BORROWED HISTORY";
             this.ViewHistory.UseVisualStyleBackColor = true;
@@ -70,9 +74,10 @@
             // ViewCurrent
             // 
             this.ViewCurrent.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ViewCurrent.Location = new System.Drawing.Point(12, 191);
+            this.ViewCurrent.Location = new System.Drawing.Point(14, 239);
+            this.ViewCurrent.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ViewCurrent.Name = "ViewCurrent";
-            this.ViewCurrent.Size = new System.Drawing.Size(167, 48);
+            this.ViewCurrent.Size = new System.Drawing.Size(188, 60);
             this.ViewCurrent.TabIndex = 15;
             this.ViewCurrent.Text = "CURRENT BORROWED";
             this.ViewCurrent.UseVisualStyleBackColor = true;
@@ -83,9 +88,10 @@
             this.LogoutBt.BackColor = System.Drawing.Color.Blue;
             this.LogoutBt.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogoutBt.ForeColor = System.Drawing.Color.White;
-            this.LogoutBt.Location = new System.Drawing.Point(798, 479);
+            this.LogoutBt.Location = new System.Drawing.Point(898, 599);
+            this.LogoutBt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LogoutBt.Name = "LogoutBt";
-            this.LogoutBt.Size = new System.Drawing.Size(100, 30);
+            this.LogoutBt.Size = new System.Drawing.Size(112, 38);
             this.LogoutBt.TabIndex = 11;
             this.LogoutBt.Text = "LOGOUT";
             this.LogoutBt.UseVisualStyleBackColor = false;
@@ -94,9 +100,10 @@
             // ViewBorrow
             // 
             this.ViewBorrow.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ViewBorrow.Location = new System.Drawing.Point(12, 128);
+            this.ViewBorrow.Location = new System.Drawing.Point(14, 160);
+            this.ViewBorrow.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ViewBorrow.Name = "ViewBorrow";
-            this.ViewBorrow.Size = new System.Drawing.Size(167, 48);
+            this.ViewBorrow.Size = new System.Drawing.Size(188, 60);
             this.ViewBorrow.TabIndex = 11;
             this.ViewBorrow.Text = "BORROW";
             this.ViewBorrow.UseVisualStyleBackColor = true;
@@ -105,9 +112,9 @@
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Bodoni MT Condensed", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(364, 18);
+            this.label3.Location = new System.Drawing.Point(410, 22);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(510, 50);
+            this.label3.Size = new System.Drawing.Size(574, 62);
             this.label3.TabIndex = 2;
             this.label3.Text = "Equipment Borrowing Management System";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -119,9 +126,10 @@
             this.panel2.Controls.Add(this.BorrowDataGrid);
             this.panel2.Controls.Add(this.LogoutBt);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(193, 86);
+            this.panel2.Location = new System.Drawing.Point(217, 108);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(909, 521);
+            this.panel2.Size = new System.Drawing.Size(1023, 651);
             this.panel2.TabIndex = 0;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -129,12 +137,14 @@
             // 
             this.BorrowBt.BackColor = System.Drawing.Color.Blue;
             this.BorrowBt.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BorrowBt.Location = new System.Drawing.Point(55, 410);
+            this.BorrowBt.Location = new System.Drawing.Point(62, 512);
+            this.BorrowBt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BorrowBt.Name = "BorrowBt";
-            this.BorrowBt.Size = new System.Drawing.Size(105, 30);
+            this.BorrowBt.Size = new System.Drawing.Size(118, 38);
             this.BorrowBt.TabIndex = 13;
             this.BorrowBt.Text = "BORROW";
             this.BorrowBt.UseVisualStyleBackColor = false;
+            this.BorrowBt.Click += new System.EventHandler(this.BorrowBt_Click);
             // 
             // BorrowDataGrid
             // 
@@ -146,13 +156,15 @@
             this.BorrowDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.BorrowDataGrid.BackgroundColor = System.Drawing.Color.LightBlue;
             this.BorrowDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.BorrowDataGrid.Location = new System.Drawing.Point(55, 91);
+            this.BorrowDataGrid.Location = new System.Drawing.Point(62, 114);
+            this.BorrowDataGrid.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BorrowDataGrid.Name = "BorrowDataGrid";
             this.BorrowDataGrid.RowHeadersWidth = 51;
             this.BorrowDataGrid.RowTemplate.Height = 24;
             this.BorrowDataGrid.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.BorrowDataGrid.Size = new System.Drawing.Size(801, 299);
+            this.BorrowDataGrid.Size = new System.Drawing.Size(901, 374);
             this.BorrowDataGrid.TabIndex = 12;
+            this.BorrowDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.BorrowDataGrid_CellContentClick);
             // 
             // panel1
             // 
@@ -165,27 +177,30 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1103, 607);
+            this.panel1.Size = new System.Drawing.Size(1241, 759);
             this.panel1.TabIndex = 3;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(21, 19);
+            this.pictureBox1.Location = new System.Drawing.Point(24, 24);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(196, 57);
+            this.pictureBox1.Size = new System.Drawing.Size(220, 71);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
             // BorrowerView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1103, 607);
+            this.ClientSize = new System.Drawing.Size(1241, 759);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "BorrowerView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Borrower View";
@@ -196,6 +211,8 @@
             this.ResumeLayout(false);
 
         }
+
+        
 
         #endregion
 

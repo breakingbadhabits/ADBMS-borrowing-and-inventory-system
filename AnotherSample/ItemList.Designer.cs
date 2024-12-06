@@ -230,7 +230,7 @@
             this.Name = "ItemList";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ItemList";
+            this.Text = "x`";
             this.Load += new System.EventHandler(this.ItemList_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

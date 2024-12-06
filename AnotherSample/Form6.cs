@@ -84,7 +84,10 @@ namespace AnotherSample
 
         private void MaintenanceBt6_Click(object sender, EventArgs e)
         {
-
+            MaintenanceAdminF6 maintenanceAdminF6 = new MaintenanceAdminF6();
+            this.Hide();
+            maintenanceAdminF6.ShowDialog();
+            this.Close();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -123,6 +126,8 @@ namespace AnotherSample
 
                     // Hide the ID column
                     dataGridView1.Columns["ID"].Visible = false;
+                    dataGridView1.Columns["EndDate"].Visible = false;
+
 
                     // Format the StartDate and EndDate columns
                     dataGridView1.Columns["StartDate"].DefaultCellStyle.Format = "yyyy-MM-dd";
@@ -333,6 +338,30 @@ namespace AnotherSample
             MaintenanceHistory maintenanceHistory = new MaintenanceHistory();
             this.Hide();
             maintenanceHistory.ShowDialog();
+            this.Close();
+        }
+
+        private void RequestBt7_Click(object sender, EventArgs e)
+        {
+            BorrowedAdminF5 borrowReq = new BorrowedAdminF5();
+            this.Hide();
+            borrowReq.ShowDialog();
+            this.Close();
+        }
+
+        private void BorrowedBt8_Click(object sender, EventArgs e)
+        {
+            Borrower borrower = new Borrower();
+            this.Hide();
+            borrower.ShowDialog();
+            this.Close();
+        }
+
+        private void ArchivesBt10_Click(object sender, EventArgs e)
+        {
+            ArchiveAdminF4 archiveAdminF4 = new ArchiveAdminF4();
+            this.Hide();
+            archiveAdminF4.ShowDialog();
             this.Close();
         }
     }

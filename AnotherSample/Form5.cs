@@ -17,6 +17,77 @@ namespace AnotherSample
         {
             InitializeComponent();
         }
+        private void BorrowedAdminF5_Load(object sender, EventArgs e)
+        {
+            ShowTransactionsWithNullBorrowDate();
+        }
+
+        private void ShowTransactionsWithNullBorrowDate()
+        {
+            try
+            {
+                string connectionString = "Server=localhost;Database=inventory_system;Trusted_Connection=True;";
+                string query = @"
+            SELECT 
+                transactions.transaction_id AS [Transaction ID],
+                users.user_name AS [User Name],
+                items.item_name AS [Item Name],
+                transactions.transaction_due_date AS [Due Date]
+            FROM 
+                transactions
+            LEFT JOIN 
+                users ON transactions.transaction_user_id = users.user_id
+            LEFT JOIN 
+                items ON transactions.transaction_item_id = items.item_id
+            WHERE 
+                transactions.transaction_borrow_date IS NULL";
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    DataTable dataTable = new DataTable();
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(query, connection))
+                    {
+                        adapter.Fill(dataTable);
+                    }
+
+                    if (dataTable.Rows.Count > 0)
+                    {
+                        dataGridView1.AutoGenerateColumns = true;
+                        dataGridView1.DataSource = dataTable;
+
+                        // Hide the "Transaction ID" column
+                        if (dataGridView1.Columns["Transaction ID"] != null)
+                        {
+                            dataGridView1.Columns["Transaction ID"].Visible = false;
+                        }
+
+                        // Auto-size columns to fill the DataGridView
+                        dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+                        // Optional: Adjust alignment and minimum width
+                        foreach (DataGridViewColumn column in dataGridView1.Columns)
+                        {
+                            column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+                            column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                            column.MinimumWidth = 100;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No data found with NULL transaction_borrow_date.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        dataGridView1.DataSource = null;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while fetching data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -25,7 +96,10 @@ namespace AnotherSample
 
         private void HistoriesBt9_Click(object sender, EventArgs e)
         {
-
+            HistoryAdminF7 historyAdminF7 = new HistoryAdminF7();
+            this.Hide();
+            historyAdminF7.ShowDialog();
+            this.Close();
         }
 
         private void LogoutBt11_Click(object sender, EventArgs e)
@@ -67,60 +141,174 @@ namespace AnotherSample
 
         private void ArchiveBt3_Click(object sender, EventArgs e)
         {
-            // Make sure that a row is selected
+            // Check if a row is selected
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 try
                 {
-                    // Get the item ID from the selected row
-                    int selectedItemId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["ID"].Value);
-
-                    // SQL connection string (you should replace this with your actual connection string)
-                    string connectionString = "Server=localhost;Database=inventory_system;Trusted_Connection=True;";
-
-                    using (SqlConnection connection = new SqlConnection(connectionString))
+                    // Retrieve the "Transaction ID" from the selected row
+                    if (dataGridView1.SelectedRows[0].Cells["Transaction ID"] != null)
                     {
-                        // SQL query to update the item_is_borrowed column to 0
-                        string query = @"
-                    UPDATE items
-                    SET item_is_borrowed = 0
-                    WHERE item_id = @ItemId";
+                        int transactionId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["Transaction ID"].Value);
 
-                        // Create a SqlCommand object
-                        using (SqlCommand command = new SqlCommand(query, connection))
+                        // SQL connection string
+                        string connectionString = "Server=localhost;Database=inventory_system;Trusted_Connection=True;";
+
+                        using (SqlConnection connection = new SqlConnection(connectionString))
                         {
-                            // Add parameter to SQL query
-                            command.Parameters.AddWithValue("@ItemId", selectedItemId);
+                            // First, fetch the `transaction_item_id` for the given `transaction_id`
+                            string selectQuery = @"
+                        SELECT transaction_item_id
+                        FROM transactions
+                        WHERE transaction_id = @TransactionId";
 
-                            // Open the connection
-                            connection.Open();
+                            int transactionItemId = 0;
 
-                            // Execute the query
-                            int rowsAffected = command.ExecuteNonQuery();
-
-                            if (rowsAffected > 0)
+                            using (SqlCommand selectCommand = new SqlCommand(selectQuery, connection))
                             {
-                                // Inform the user that the item was updated
-                                MessageBox.Show("Item is now marked as not borrowed.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                // Add parameter to prevent SQL injection
+                                selectCommand.Parameters.AddWithValue("@TransactionId", transactionId);
+
+                                // Open the connection
+                                connection.Open();
+
+                                // Execute the SELECT query and retrieve the result
+                                object result = selectCommand.ExecuteScalar();
+                                if (result != null)
+                                {
+                                    transactionItemId = Convert.ToInt32(result);
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Transaction Item ID not found for the selected Transaction ID.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    return; // Exit the method if no item ID is found
+                                }
                             }
-                            else
+
+                            // Update the `item_is_borrowed` column to 1 for the retrieved `transaction_item_id`
+                            string updateItemQuery = @"
+                        UPDATE items
+                        SET item_is_borrowed = 1
+                        WHERE item_id = @ItemId";
+
+                            using (SqlCommand updateItemCommand = new SqlCommand(updateItemQuery, connection))
                             {
-                                MessageBox.Show("No item found with the selected ID.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                // Add parameter to prevent SQL injection
+                                updateItemCommand.Parameters.AddWithValue("@ItemId", transactionItemId);
+
+                                // Execute the UPDATE query
+                                int rowsAffected = updateItemCommand.ExecuteNonQuery();
+
+                                if (rowsAffected > 0)
+                                {
+                                    // Also update the `transaction_borrow_date` column to the current date and time
+                                    string updateTransactionQuery = @"
+                                UPDATE transactions
+                                SET transaction_borrow_date = @BorrowDate
+                                WHERE transaction_id = @TransactionId";
+
+                                    using (SqlCommand updateTransactionCommand = new SqlCommand(updateTransactionQuery, connection))
+                                    {
+                                        // Add parameters for the query
+                                        updateTransactionCommand.Parameters.AddWithValue("@BorrowDate", DateTime.Now); // Current date and time
+                                        updateTransactionCommand.Parameters.AddWithValue("@TransactionId", transactionId);
+
+                                        // Execute the UPDATE query
+                                        updateTransactionCommand.ExecuteNonQuery();
+                                    }
+
+                                    // Success message
+                                    MessageBox.Show("Item is now marked as borrowed and borrow date has been updated.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                    // Refresh the DataGridView to reflect changes
+                                    ShowTransactionsWithNullBorrowDate();
+                                }
+                                else
+                                {
+                                    // No rows updated, possibly incorrect Transaction ID
+                                    MessageBox.Show($"No item found with the selected Transaction Item ID: {transactionItemId}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
                             }
                         }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Selected row does not contain a valid Transaction ID.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception ex)
                 {
-                    // Handle errors
-                    MessageBox.Show($"Error updating the item: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // Handle unexpected errors
+                    MessageBox.Show($"An error occurred while updating the item: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
+                // No row selected
                 MessageBox.Show("Please select a row to archive.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
+
+
+
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void ItemBt4_Click(object sender, EventArgs e)
+        {
+            AdminView adminView = new AdminView();
+            this.Hide();
+            adminView.ShowDialog();
+            this.Close();
+        }
+
+        private void RequestBt7_Click(object sender, EventArgs e)
+        {
+            BorrowedAdminF5 borrowReq = new BorrowedAdminF5();
+            this.Hide();
+            borrowReq.ShowDialog();
+            this.Close();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void StockBt5_Click(object sender, EventArgs e)
+        {
+            StocksAdminF8 itemStocks = new StocksAdminF8();
+            this.Hide();
+            itemStocks.ShowDialog();
+            this.Close();
+        }
+
+        private void MaintenanceBt6_Click(object sender, EventArgs e)
+        {
+            MaintenanceAdminF6 maintenanceAdminF6 = new MaintenanceAdminF6();
+            this.Hide();
+            maintenanceAdminF6.ShowDialog();
+            this.Close();
+        }
+
+        private void BorrowedBt8_Click(object sender, EventArgs e)
+        {
+            Borrower borrowReq = new Borrower();
+            this.Hide();
+            borrowReq.ShowDialog();
+            this.Close();
+        }
+
+        private void ArchivesBt10_Click(object sender, EventArgs e)
+        {
+            ArchiveAdminF4 archiveAdminF4 = new ArchiveAdminF4();
+            this.Hide();
+            archiveAdminF4.ShowDialog();
+            this.Close();
+        }
     }
 }

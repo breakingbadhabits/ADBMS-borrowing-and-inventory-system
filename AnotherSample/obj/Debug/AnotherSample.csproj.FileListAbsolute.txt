@@ -85,7 +85,6 @@ C:\Users\jerma\source\repos\ADBMS-borrowing-and-inventory-system\AnotherSample\o
 C:\Users\jerma\source\repos\ADBMS-borrowing-and-inventory-system\AnotherSample\obj\Debug\AnotherSample.Form15.resources
 C:\Users\jerma\source\repos\ADBMS-borrowing-and-inventory-system\AnotherSample\obj\Debug\AnotherSample.FixItem.resources
 C:\Users\jerma\source\repos\ADBMS-borrowing-and-inventory-system\AnotherSample\obj\Debug\AnotherSample.SignUpF2.resources
-C:\Users\jerma\source\repos\ADBMS-borrowing-and-inventory-system\AnotherSample\obj\Debug\AnotherSample.ItemsAdminF3.resources
 C:\Users\jerma\source\repos\ADBMS-borrowing-and-inventory-system\AnotherSample\obj\Debug\AnotherSample.ArchiveAdminF4.resources
 C:\Users\jerma\source\repos\ADBMS-borrowing-and-inventory-system\AnotherSample\obj\Debug\AnotherSample.BorrowedAdminF5.resources
 C:\Users\jerma\source\repos\ADBMS-borrowing-and-inventory-system\AnotherSample\obj\Debug\AnotherSample.MaintenanceAdminF6.resources
@@ -104,3 +103,5 @@ C:\Users\jerma\source\repos\ADBMS-borrowing-and-inventory-system\AnotherSample\o
 C:\Users\Ace\source\repos\ADBMS-borrowing-and-inventory-system\AnotherSample\obj\Debug\AnotherSample.BorrowerView.resources
 C:\Users\Ace\source\repos\ADBMS-borrowing-and-inventory-system\AnotherSample\obj\Debug\AnotherSample.MaintenanceHistory.resources
 C:\Users\Ace\source\repos\ADBMS-borrowing-and-inventory-system\AnotherSample\obj\Debug\AnotherSample.AdminView.resources
+C:\Users\jerma\source\repos\ADBMS-borrowing-and-inventory-system\AnotherSample\obj\Debug\AnotherSample.AdminView.resources
+C:\Users\jerma\source\repos\ADBMS-borrowing-and-inventory-system\AnotherSample\obj\Debug\AnotherSample.Borrower.resources

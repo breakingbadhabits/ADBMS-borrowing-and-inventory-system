@@ -35,6 +35,7 @@ namespace AnotherSample
             this.ArchivesBt10 = new System.Windows.Forms.Button();
             this.HistoriesBt9 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.LogoutBt11 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.BorrowedBt8 = new System.Windows.Forms.Button();
@@ -45,7 +46,7 @@ namespace AnotherSample
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.LogoutBt11 = new System.Windows.Forms.Button();
+            this.ArchiveBt3 = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -67,6 +68,7 @@ namespace AnotherSample
             this.ArchivesBt10.TabIndex = 17;
             this.ArchivesBt10.Text = "ARCHIVES";
             this.ArchivesBt10.UseVisualStyleBackColor = true;
+            this.ArchivesBt10.Click += new System.EventHandler(this.ArchivesBt10_Click);
             // 
             // HistoriesBt9
             // 
@@ -82,6 +84,7 @@ namespace AnotherSample
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightBlue;
+            this.panel1.Controls.Add(this.LogoutBt11);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.ArchivesBt10);
@@ -100,6 +103,20 @@ namespace AnotherSample
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1240, 735);
             this.panel1.TabIndex = 4;
+            // 
+            // LogoutBt11
+            // 
+            this.LogoutBt11.BackColor = System.Drawing.Color.Blue;
+            this.LogoutBt11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogoutBt11.ForeColor = System.Drawing.Color.White;
+            this.LogoutBt11.Location = new System.Drawing.Point(1110, 635);
+            this.LogoutBt11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.LogoutBt11.Name = "LogoutBt11";
+            this.LogoutBt11.Size = new System.Drawing.Size(112, 38);
+            this.LogoutBt11.TabIndex = 11;
+            this.LogoutBt11.Text = "LOGOUT";
+            this.LogoutBt11.UseVisualStyleBackColor = false;
+            this.LogoutBt11.Click += new System.EventHandler(this.LogoutBt11_Click);
             // 
             // label5
             // 
@@ -140,6 +157,7 @@ namespace AnotherSample
             this.RequestBt7.TabIndex = 14;
             this.RequestBt7.Text = "BORROWER REQ";
             this.RequestBt7.UseVisualStyleBackColor = true;
+            this.RequestBt7.Click += new System.EventHandler(this.RequestBt7_Click);
             // 
             // MaintenanceBt6
             // 
@@ -151,6 +169,7 @@ namespace AnotherSample
             this.MaintenanceBt6.TabIndex = 13;
             this.MaintenanceBt6.Text = "MAINTENANCE";
             this.MaintenanceBt6.UseVisualStyleBackColor = true;
+            this.MaintenanceBt6.Click += new System.EventHandler(this.MaintenanceBt6_Click);
             // 
             // StockBt5
             // 
@@ -162,6 +181,7 @@ namespace AnotherSample
             this.StockBt5.TabIndex = 12;
             this.StockBt5.Text = "STOCKS";
             this.StockBt5.UseVisualStyleBackColor = true;
+            this.StockBt5.Click += new System.EventHandler(this.StockBt5_Click_1);
             // 
             // ItemBt4
             // 
@@ -173,6 +193,7 @@ namespace AnotherSample
             this.ItemBt4.TabIndex = 11;
             this.ItemBt4.Text = "ITEMS";
             this.ItemBt4.UseVisualStyleBackColor = true;
+            this.ItemBt4.Click += new System.EventHandler(this.ItemBt4_Click_1);
             // 
             // label3
             // 
@@ -197,7 +218,7 @@ namespace AnotherSample
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panel2.Controls.Add(this.LogoutBt11);
+            this.panel2.Controls.Add(this.ArchiveBt3);
             this.panel2.Controls.Add(this.dateTimePicker1);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.textBox1);
@@ -206,21 +227,21 @@ namespace AnotherSample
             this.panel2.Location = new System.Drawing.Point(217, 108);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1023, 651);
+            this.panel2.Size = new System.Drawing.Size(1023, 517);
             this.panel2.TabIndex = 0;
             // 
-            // LogoutBt11
+            // ArchiveBt3
             // 
-            this.LogoutBt11.BackColor = System.Drawing.Color.Blue;
-            this.LogoutBt11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogoutBt11.ForeColor = System.Drawing.Color.White;
-            this.LogoutBt11.Location = new System.Drawing.Point(900, 581);
-            this.LogoutBt11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.LogoutBt11.Name = "LogoutBt11";
-            this.LogoutBt11.Size = new System.Drawing.Size(112, 38);
-            this.LogoutBt11.TabIndex = 11;
-            this.LogoutBt11.Text = "LOGOUT";
-            this.LogoutBt11.UseVisualStyleBackColor = false;
+            this.ArchiveBt3.BackColor = System.Drawing.Color.Red;
+            this.ArchiveBt3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ArchiveBt3.Location = new System.Drawing.Point(836, 469);
+            this.ArchiveBt3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ArchiveBt3.Name = "ArchiveBt3";
+            this.ArchiveBt3.Size = new System.Drawing.Size(110, 32);
+            this.ArchiveBt3.TabIndex = 15;
+            this.ArchiveBt3.Text = "DELETE";
+            this.ArchiveBt3.UseVisualStyleBackColor = false;
+            this.ArchiveBt3.Click += new System.EventHandler(this.ArchiveBt3_Click);
             // 
             // dateTimePicker1
             // 
@@ -236,20 +257,26 @@ namespace AnotherSample
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(80, 131);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(122, 20);
+            this.label2.Size = new System.Drawing.Size(112, 20);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Search Name:";
+            this.label2.Text = "Search Item:";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(201, 128);
+            this.textBox1.Location = new System.Drawing.Point(196, 128);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(201, 26);
+            this.textBox1.Size = new System.Drawing.Size(159, 26);
             this.textBox1.TabIndex = 5;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.LightBlue;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(75, 162);
@@ -279,6 +306,7 @@ namespace AnotherSample
             this.Name = "MaintenanceHistory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MaintenanceHistory";
+            this.Load += new System.EventHandler(this.MaintenanceHistory_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -289,10 +317,7 @@ namespace AnotherSample
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+       
 
         #endregion
 
@@ -315,5 +340,6 @@ namespace AnotherSample
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
+        private Button ArchiveBt3;
     }
 }

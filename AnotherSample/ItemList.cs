@@ -91,34 +91,60 @@ namespace AnotherSample
         {
             try
             {
-                // Fetch the stock_id based on the selected stock_name from comboBox2
-                string stockName = comboBox2.SelectedItem.ToString();
-                int? stockId = GetStockIdByStockName(stockName);
+                string insertQuery = @"
+            INSERT INTO items 
+            (item_stock_id, item_name, item_brand, item_serial_number, item_type, item_condition, item_is_borrowed, item_is_archived, item_is_maintenance)
+            VALUES 
+            (@ItemStockId, @ItemName, @Brand, @SerialNumber, @ItemType, @Condition, @ItemIsBorrowed, @ItemIsArchived, @ItemIsMaintenance)";
 
-                if (stockId == null)
+                using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["InventorySystemDB"].ConnectionString))
                 {
-                    MessageBox.Show("Invalid stock selected. Please select a valid stock.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return false;
+                    connection.Open();
+
+                    using (SqlTransaction transaction = connection.BeginTransaction()) // Start a transaction
+                    {
+                        try
+                        {
+                            using (SqlCommand insertCommand = new SqlCommand(insertQuery, connection, transaction))
+                            {
+                                // Retrieve stock ID using stockName
+                                string stockName = comboBox2.SelectedItem.ToString();
+                                int? stockId = GetStockIdByStockName(stockName);
+                                if (stockId == null)
+                                {
+                                    MessageBox.Show("Invalid stock selected. Please select a valid stock.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    return false;
+                                }
+
+                                // Add parameters for the INSERT query
+                                insertCommand.Parameters.AddWithValue("@ItemStockId", stockId);
+                                insertCommand.Parameters.AddWithValue("@ItemName", itemName);
+                                insertCommand.Parameters.AddWithValue("@Brand", brand);
+                                insertCommand.Parameters.AddWithValue("@SerialNumber", serialNumber);
+                                insertCommand.Parameters.AddWithValue("@ItemType", itemType);
+                                insertCommand.Parameters.AddWithValue("@Condition", condition);
+                                insertCommand.Parameters.AddWithValue("@ItemIsBorrowed", 0);
+                                insertCommand.Parameters.AddWithValue("@ItemIsArchived", 0);
+                                insertCommand.Parameters.AddWithValue("@ItemIsMaintenance", 0);
+
+                                // Execute the INSERT command
+                                insertCommand.ExecuteNonQuery();
+
+                                // Now that the item is added, update the stock quantity
+                                UpdateStockTotalQuantity(stockId.Value, connection, transaction);
+
+                                transaction.Commit(); // Commit the transaction
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            transaction.Rollback(); // Rollback the transaction on error
+                            MessageBox.Show($"Error adding item: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return false;
+                        }
+                    }
                 }
 
-
-                string query = @"
-                INSERT INTO items (item_stock_id, item_name, item_brand, item_serial_number, item_type, item_condition, item_is_borrowed, item_is_archived, item_is_maintenance)
-                VALUES (@ItemStockId, @ItemName, @Brand, @SerialNumber, @ItemType, @Condition, @ItemIsBorrowed, @ItemIsArchived, @ItemIsMaintenance)";
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@ItemStockId", stockId);
-                    command.Parameters.AddWithValue("@ItemName", itemName);
-                    command.Parameters.AddWithValue("@Brand", brand);
-                    command.Parameters.AddWithValue("@SerialNumber", serialNumber);
-                    command.Parameters.AddWithValue("@ItemType", itemType);
-                    command.Parameters.AddWithValue("@Condition", condition);
-
-                    // Set item_is_borrowed, item_is_archive, and item_is_maintenance to 0
-                    command.Parameters.AddWithValue("@ItemIsBorrowed", 0);
-                    command.Parameters.AddWithValue("@ItemIsArchived", 0);
-                    command.Parameters.AddWithValue("@ItemIsMaintenance", 0);
-                }
                 return true;
             }
             catch (Exception ex)
@@ -127,6 +153,9 @@ namespace AnotherSample
                 return false;
             }
         }
+
+
+
 
         private int? GetStockIdByStockName(string stockName)
         {
@@ -276,6 +305,37 @@ namespace AnotherSample
                 MessageBox.Show($"Error loading stock names: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void UpdateStockTotalQuantity(int stockId, SqlConnection connection, SqlTransaction transaction)
+        {
+            try
+            {
+                // Query to calculate the total number of items in the stock
+                string countQuery = "SELECT COUNT(*) FROM items WHERE item_stock_id = @StockId";
 
+                // Query to update the total quantity in the stocks table
+                string updateQuery = "UPDATE stocks SET stock_total_quantity = @TotalQuantity WHERE stock_id = @StockId";
+
+                int totalQuantity = 0;
+
+                // Calculate the total number of items
+                using (SqlCommand countCommand = new SqlCommand(countQuery, connection, transaction))
+                {
+                    countCommand.Parameters.AddWithValue("@StockId", stockId);
+                    totalQuantity = Convert.ToInt32(countCommand.ExecuteScalar());
+                }
+
+                // Update the stock_total_quantity in the stocks table
+                using (SqlCommand updateCommand = new SqlCommand(updateQuery, connection, transaction))
+                {
+                    updateCommand.Parameters.AddWithValue("@TotalQuantity", totalQuantity);
+                    updateCommand.Parameters.AddWithValue("@StockId", stockId);
+                    updateCommand.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error updating stock total quantity: {ex.Message}");
+            }
+        }
     }
 }

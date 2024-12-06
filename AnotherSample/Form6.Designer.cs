@@ -44,13 +44,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.ArchiveBt3 = new System.Windows.Forms.Button();
             this.FixedButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ArchivesBt10 = new System.Windows.Forms.Button();
             this.MaintenanceBt6 = new System.Windows.Forms.Button();
             this.ItemBt4 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -164,6 +164,7 @@
             this.BorrowedBt8.TabIndex = 15;
             this.BorrowedBt8.Text = "BORROWED ITEM";
             this.BorrowedBt8.UseVisualStyleBackColor = true;
+            this.BorrowedBt8.Click += new System.EventHandler(this.BorrowedBt8_Click);
             // 
             // RequestBt7
             // 
@@ -175,6 +176,7 @@
             this.RequestBt7.TabIndex = 14;
             this.RequestBt7.Text = "BORROWER REQ";
             this.RequestBt7.UseVisualStyleBackColor = true;
+            this.RequestBt7.Click += new System.EventHandler(this.RequestBt7_Click);
             // 
             // StockBt5
             // 
@@ -224,6 +226,18 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1023, 517);
             this.panel2.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Black;
+            this.button1.ForeColor = System.Drawing.SystemColors.Control;
+            this.button1.Location = new System.Drawing.Point(852, 121);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(103, 34);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "History";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ArchiveBt3
             // 
@@ -284,6 +298,7 @@
             this.ArchivesBt10.TabIndex = 17;
             this.ArchivesBt10.Text = "ARCHIVES";
             this.ArchivesBt10.UseVisualStyleBackColor = true;
+            this.ArchivesBt10.Click += new System.EventHandler(this.ArchivesBt10_Click);
             // 
             // MaintenanceBt6
             // 
@@ -308,18 +323,6 @@
             this.ItemBt4.Text = "ITEMS";
             this.ItemBt4.UseVisualStyleBackColor = true;
             this.ItemBt4.Click += new System.EventHandler(this.ItemBt4_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Black;
-            this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(852, 121);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 34);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "History";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MaintenanceAdminF6
             // 

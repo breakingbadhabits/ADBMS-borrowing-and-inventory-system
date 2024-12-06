@@ -20,56 +20,143 @@ namespace AnotherSample
             InitializeComponent();
             connectionString = "Server=localhost;Database=inventory_system;Trusted_Connection=True;"; // Replace with your connection string
         }
-
-        private void Form_Load(object sender, EventArgs e)
+        private void MaintenanceHistory_Load(object sender, EventArgs e)
         {
-            LoadMaintenanceHistory();
+            LoadMaintenanceData();
+
         }
 
-        private void LoadMaintenanceHistory()
+
+        private void LoadMaintenanceData()
         {
             try
             {
-                // Open connection to the database
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
+                    // Updated query with JOIN
                     string query = @"
-                        SELECT 
-                            maintenance_id AS 'MaintenanceID', 
-                            item_id AS 'ItemID', 
-                            maintenance_date AS 'MaintenanceDate', 
-                            maintenance_description AS 'Description', 
-                            maintenance_status AS 'Status'
-                        FROM maintenance
-                        ORDER BY maintenance_date DESC"; // Adjust the query as per your table structure
+                SELECT 
+                    maintenance.maintenance_id AS 'Maintenance ID',
+                    items.item_name AS 'Item Name',
+                    maintenance.maintenance_start_date AS 'Start Date',
+                    maintenance.maintenance_complete_date AS 'Complete Date',
+                    maintenance.maintenance_description AS 'Description'
+                FROM maintenance
+                INNER JOIN items ON maintenance.maintenance_item_id = items.item_id";
 
-                    // Set up the DataAdapter to fill the DataTable
                     SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
                     DataTable dataTable = new DataTable();
 
-                    connection.Open(); // Open the connection
-                    dataAdapter.Fill(dataTable); // Fill the DataTable with the data
+                    // Fill the DataTable with data
+                    dataAdapter.Fill(dataTable);
 
-                    // Check if there are records to display
-                    if (dataTable.Rows.Count > 0)
-                    {
-                        // Bind the data to the DataGridView
-                        dataGridView1.DataSource = dataTable;
-                        dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                    }
-                    else
-                    {
-                        // If no records are found, display a message
-                        MessageBox.Show("No maintenance history available.", "No Data", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        dataGridView1.DataSource = null; // Clear any previous data
-                    }
+                    // Bind the data to the DataGridView
+                    dataGridView1.DataSource = dataTable;
+
+                    // Automatically resize the columns to fit the content
+                    dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+                    // Hide the 'Maintenance ID' column
+                    dataGridView1.Columns["Maintenance ID"].Visible = false;
+
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error loading maintenance history: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                dataGridView1.DataSource = null; // Clear the DataGridView in case of an error
+                MessageBox.Show($"Error loading maintenance data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+
+
+
+        private void ItemBt4_Click_1(object sender, EventArgs e)
+        {
+            AdminView itemsAdminF3 = new AdminView();
+            this.Hide();
+            itemsAdminF3.ShowDialog();
+            this.Close();
+        }
+
+        private void StockBt5_Click_1(object sender, EventArgs e)
+        {
+            StocksAdminF8 itemStocks = new StocksAdminF8();
+            this.Hide();
+            itemStocks.ShowDialog();
+            this.Close();
+        }
+
+        private void MaintenanceBt6_Click(object sender, EventArgs e)
+        {
+            MaintenanceAdminF6 maintenanceAdminF6 = new MaintenanceAdminF6();
+            this.Hide();
+            maintenanceAdminF6.ShowDialog();
+            this.Close();
+        }
+
+        private void ArchivesBt10_Click(object sender, EventArgs e)
+        {
+            ArchiveAdminF4 archiveAdminF4 = new ArchiveAdminF4();
+            this.Hide();
+            archiveAdminF4.ShowDialog();
+            this.Close();
+        }
+
+        private void LogoutBt11_Click(object sender, EventArgs e)
+        {
+            Logout();
+        }
+        private void Logout()
+        {
+            // Confirm logout action
+            var result = MessageBox.Show(
+                "Are you sure you want to log out?",
+                "Confirm Logout",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    // Assuming there's a login form named `LoginF1`
+                    LoginF1 loginForm = new LoginF1();
+
+                    // Hide the current form
+                    this.Hide();
+
+                    // Show the login form and wait for it to close
+                    loginForm.ShowDialog();
+
+                    // After the login form is closed, exit the application to ensure all forms are closed
+                    Application.Exit();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred while logging out: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+            private void ArchiveBt3_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+        }
+
+        private void RequestBt7_Click(object sender, EventArgs e)
+        {
+            BorrowedAdminF5 borrowReq = new BorrowedAdminF5();
+            this.Hide();
+            borrowReq.ShowDialog();
+            this.Close();
         }
     }
 }

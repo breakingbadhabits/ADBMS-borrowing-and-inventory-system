@@ -107,6 +107,7 @@
             this.BorrowedBt8.TabIndex = 15;
             this.BorrowedBt8.Text = "BORROWED ITEM";
             this.BorrowedBt8.UseVisualStyleBackColor = true;
+            this.BorrowedBt8.Click += new System.EventHandler(this.BorrowedBt8_Click);
             // 
             // RequestBt7
             // 
@@ -118,6 +119,7 @@
             this.RequestBt7.TabIndex = 14;
             this.RequestBt7.Text = "BORROWER REQ";
             this.RequestBt7.UseVisualStyleBackColor = true;
+            this.RequestBt7.Click += new System.EventHandler(this.RequestBt7_Click);
             // 
             // MaintenanceBt6
             // 
@@ -209,7 +211,6 @@
             this.textBox1.TabIndex = 5;
             this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
-
             // 
             // label1
             // 
@@ -486,6 +487,5 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn itemisborrowedDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn itemisarchivedDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn itemtypeDataGridViewTextBoxColumn;
-
     }
 }

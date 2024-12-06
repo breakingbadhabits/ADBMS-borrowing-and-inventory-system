@@ -43,13 +43,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.DeleteBt3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.DeleteBt3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -78,6 +78,7 @@
             this.BorrowedBt8.TabIndex = 15;
             this.BorrowedBt8.Text = "BORROWED ITEM";
             this.BorrowedBt8.UseVisualStyleBackColor = true;
+            this.BorrowedBt8.Click += new System.EventHandler(this.BorrowedBt8_Click);
             // 
             // panel1
             // 
@@ -155,6 +156,7 @@
             this.RequestBt7.TabIndex = 14;
             this.RequestBt7.Text = "BORROWER REQ";
             this.RequestBt7.UseVisualStyleBackColor = true;
+            this.RequestBt7.Click += new System.EventHandler(this.RequestBt7_Click);
             // 
             // MaintenanceBt6
             // 
@@ -228,6 +230,19 @@
             this.panel2.Size = new System.Drawing.Size(1023, 517);
             this.panel2.TabIndex = 0;
             // 
+            // DeleteBt3
+            // 
+            this.DeleteBt3.BackColor = System.Drawing.Color.Red;
+            this.DeleteBt3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DeleteBt3.Location = new System.Drawing.Point(853, 464);
+            this.DeleteBt3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.DeleteBt3.Name = "DeleteBt3";
+            this.DeleteBt3.Size = new System.Drawing.Size(90, 31);
+            this.DeleteBt3.TabIndex = 13;
+            this.DeleteBt3.Text = "DELETE";
+            this.DeleteBt3.UseVisualStyleBackColor = false;
+            this.DeleteBt3.Click += new System.EventHandler(this.DeleteBt3_Click);
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Blue;
@@ -295,19 +310,6 @@
             this.label1.Size = new System.Drawing.Size(128, 51);
             this.label1.TabIndex = 3;
             this.label1.Text = "STOCKS";
-            // 
-            // DeleteBt3
-            // 
-            this.DeleteBt3.BackColor = System.Drawing.Color.Red;
-            this.DeleteBt3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.DeleteBt3.Location = new System.Drawing.Point(853, 464);
-            this.DeleteBt3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.DeleteBt3.Name = "DeleteBt3";
-            this.DeleteBt3.Size = new System.Drawing.Size(90, 31);
-            this.DeleteBt3.TabIndex = 13;
-            this.DeleteBt3.Text = "DELETE";
-            this.DeleteBt3.UseVisualStyleBackColor = false;
-            this.DeleteBt3.Click += new System.EventHandler(this.DeleteBt3_Click);
             // 
             // StocksAdminF8
             // 

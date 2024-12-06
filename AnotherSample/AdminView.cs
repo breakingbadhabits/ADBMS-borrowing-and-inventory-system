@@ -25,6 +25,7 @@ namespace AnotherSample
 
         private void Form3_Load(object sender, EventArgs e)
         {
+
             LoadItems();
         }
 
@@ -126,8 +127,8 @@ namespace AnotherSample
 
         private void AddBt1_Click(object sender, EventArgs e)
         {
-            FormNavigator.Navigate(this, new ItemList());
-            //ShowItemListPopup();
+            //FormNavigator.Navigate(this, new ItemList());
+            ShowItemListPopup();
         }
 
         private void ShowItemListPopup()
@@ -202,17 +203,24 @@ namespace AnotherSample
                 {
                     int selectedItemId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["ID"].Value);
 
-                    using (SqlCommand command = new SqlCommand(query, connection))
+                    using (SqlCommand command = new SqlCommand())
                     {
-                        string query = @"
-                            UPDATE items
-                            SET 
-                                item_is_archived = 1, 
-                                item_is_maintenance = 0, 
-                                item_is_borrowed = 0
-                            WHERE item_id = @ItemId";
+                        command.Connection = connection; // Set the connection
+                        command.CommandText = @"
+                    UPDATE items
+                    SET 
+                        item_is_archived = 1, 
+                        item_is_maintenance = 0, 
+                        item_is_borrowed = 0
+                    WHERE item_id = @ItemId";
 
                         command.Parameters.AddWithValue("@ItemId", selectedItemId);
+
+                        // Ensure the connection is open
+                        if (connection.State != ConnectionState.Open)
+                        {
+                            connection.Open();
+                        }
 
                         int rowsAffected = command.ExecuteNonQuery();
 
@@ -239,9 +247,13 @@ namespace AnotherSample
         }
 
 
+
         private void RequestBt7_Click(object sender, EventArgs e)
         {
-
+            BorrowedAdminF5 borrowReq = new BorrowedAdminF5();
+            this.Hide();
+            borrowReq.ShowDialog();
+            this.Close();
         }
 
         private void ItemBt4_Click(object sender, EventArgs e)
@@ -333,7 +345,10 @@ namespace AnotherSample
 
         private void HistoriesBt9_Click(object sender, EventArgs e)
         {
-
+            HistoryAdminF7 historyAdminF7 = new HistoryAdminF7();
+            this.Hide();
+            historyAdminF7.ShowDialog();
+            this.Close();
         }
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
@@ -412,6 +427,14 @@ namespace AnotherSample
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void BorrowedBt8_Click(object sender, EventArgs e)
+        {
+            Borrower borrower = new Borrower();
+            this.Hide();
+            borrower.ShowDialog();
+            this.Close();
         }
     }
 }

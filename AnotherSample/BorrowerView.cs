@@ -17,16 +17,26 @@ namespace AnotherSample
         {
             InitializeComponent();
             loadBorrowDataGrid();
+
+            // Bind the CellClick event
+            BorrowDataGrid.CellClick += BorrowDataGrid_CellClick;
         }
+
 
         public void loadBorrowDataGrid()
         {
             SqlConnection connection = DatabaseConnection.Instance.Connection;
+
+            // Query to fetch items with specific conditions
             string query = @"
         SELECT  
-            stock_name AS 'Name',
-            stock_available AS 'Available Items'
-        FROM stocks";
+            item_name AS 'Name',
+            item_type AS 'Type'
+        FROM items
+        WHERE 
+            item_is_borrowed = 0 AND 
+            item_is_maintenance = 0 AND 
+            item_is_archived = 0"; // Filter: Only items meeting all conditions
 
             try
             {
@@ -42,15 +52,17 @@ namespace AnotherSample
                 // Bind the DataTable to the DataGridView
                 BorrowDataGrid.DataSource = dataTable;
 
-                // Optional: Format the DataGridView
+                // Format the DataGridView for better presentation
                 BorrowDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                BorrowDataGrid.ReadOnly = true;
+                BorrowDataGrid.ReadOnly = true; // Make it read-only to prevent editing
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
 
 
 
@@ -94,6 +106,78 @@ namespace AnotherSample
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BorrowDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                // Highlight the selected row
+                BorrowDataGrid.CurrentRow.Selected = true;
+            }
+        }
+
+
+        private void ShowItemBorrowPopup(string itemName)
+        {
+            // Create overlay form
+            Form overlay = new Form
+            {
+                FormBorderStyle = FormBorderStyle.None,
+                BackColor = Color.Black,
+                Opacity = 0.5,
+                ShowInTaskbar = false,
+                StartPosition = FormStartPosition.Manual,
+                Bounds = this.Bounds,
+                Owner = this
+            };
+
+            try
+            {
+                overlay.Show();
+
+                // Show the ItemBorrow form
+                ItemBorrow itemBorrowPopup = new ItemBorrow(itemName)
+                {
+                    StartPosition = FormStartPosition.CenterParent,
+                    Owner = this
+                };
+
+                itemBorrowPopup.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                overlay.Close();
+            }
+        }
+
+
+        private void BorrowBt_Click(object sender, EventArgs e)
+        {
+            if (BorrowDataGrid.SelectedRows.Count > 0)
+            {
+                // Get the selected row
+                DataGridViewRow selectedRow = BorrowDataGrid.SelectedRows[0];
+
+                // Retrieve the 'Name' value from the selected row
+                string selectedName = selectedRow.Cells["Name"].Value.ToString();
+
+                // Open the ItemBorrow popup form with the selected name
+                ShowItemBorrowPopup(selectedName);
+            }
+            else
+            {
+                MessageBox.Show("Please select an item before borrowing.", "No Item Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void BorrowDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

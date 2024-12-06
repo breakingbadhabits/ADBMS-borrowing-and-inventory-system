@@ -32,6 +32,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.ArchivesBt10 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.LogoutBt11 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.HistoriesBt9 = new System.Windows.Forms.Button();
             this.BorrowedBt8 = new System.Windows.Forms.Button();
@@ -42,8 +43,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.LogoutBt11 = new System.Windows.Forms.Button();
-            this.RuturnedBtn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.ApproveBtn = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -74,6 +75,7 @@
             this.ArchivesBt10.TabIndex = 17;
             this.ArchivesBt10.Text = "ARCHIVES";
             this.ArchivesBt10.UseVisualStyleBackColor = true;
+            this.ArchivesBt10.Click += new System.EventHandler(this.ArchivesBt10_Click);
             // 
             // panel1
             // 
@@ -97,6 +99,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1241, 759);
             this.panel1.TabIndex = 2;
+            // 
+            // LogoutBt11
+            // 
+            this.LogoutBt11.BackColor = System.Drawing.Color.Blue;
+            this.LogoutBt11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogoutBt11.ForeColor = System.Drawing.Color.White;
+            this.LogoutBt11.Location = new System.Drawing.Point(1110, 635);
+            this.LogoutBt11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.LogoutBt11.Name = "LogoutBt11";
+            this.LogoutBt11.Size = new System.Drawing.Size(112, 38);
+            this.LogoutBt11.TabIndex = 11;
+            this.LogoutBt11.Text = "LOGOUT";
+            this.LogoutBt11.UseVisualStyleBackColor = false;
+            this.LogoutBt11.Click += new System.EventHandler(this.LogoutBt11_Click);
             // 
             // label4
             // 
@@ -129,6 +145,7 @@
             this.BorrowedBt8.TabIndex = 15;
             this.BorrowedBt8.Text = "BORROWED ITEM";
             this.BorrowedBt8.UseVisualStyleBackColor = true;
+            this.BorrowedBt8.Click += new System.EventHandler(this.BorrowedBt8_Click);
             // 
             // RequestBt7
             // 
@@ -140,6 +157,7 @@
             this.RequestBt7.TabIndex = 14;
             this.RequestBt7.Text = "BORROWER REQ";
             this.RequestBt7.UseVisualStyleBackColor = true;
+            this.RequestBt7.Click += new System.EventHandler(this.RequestBt7_Click);
             // 
             // MaintenanceBt6
             // 
@@ -151,6 +169,7 @@
             this.MaintenanceBt6.TabIndex = 13;
             this.MaintenanceBt6.Text = "MAINTENANCE";
             this.MaintenanceBt6.UseVisualStyleBackColor = true;
+            this.MaintenanceBt6.Click += new System.EventHandler(this.MaintenanceBt6_Click);
             // 
             // StockBt5
             // 
@@ -162,6 +181,7 @@
             this.StockBt5.TabIndex = 12;
             this.StockBt5.Text = "STOCKS";
             this.StockBt5.UseVisualStyleBackColor = true;
+            this.StockBt5.Click += new System.EventHandler(this.StockBt5_Click);
             // 
             // ItemBt4
             // 
@@ -173,6 +193,7 @@
             this.ItemBt4.TabIndex = 11;
             this.ItemBt4.Text = "ITEMS";
             this.ItemBt4.UseVisualStyleBackColor = true;
+            this.ItemBt4.Click += new System.EventHandler(this.ItemBt4_Click);
             // 
             // label3
             // 
@@ -197,7 +218,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panel2.Controls.Add(this.RuturnedBtn);
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.ApproveBtn);
             this.panel2.Controls.Add(this.dateTimePicker1);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.textBox1);
@@ -208,34 +230,34 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1023, 517);
             this.panel2.TabIndex = 0;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // LogoutBt11
+            // button1
             // 
-            this.LogoutBt11.BackColor = System.Drawing.Color.Blue;
-            this.LogoutBt11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LogoutBt11.ForeColor = System.Drawing.Color.White;
-            this.LogoutBt11.Location = new System.Drawing.Point(1110, 635);
-            this.LogoutBt11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.LogoutBt11.Name = "LogoutBt11";
-            this.LogoutBt11.Size = new System.Drawing.Size(112, 38);
-            this.LogoutBt11.TabIndex = 11;
-            this.LogoutBt11.Text = "LOGOUT";
-            this.LogoutBt11.UseVisualStyleBackColor = false;
-            this.LogoutBt11.Click += new System.EventHandler(this.LogoutBt11_Click);
+            this.button1.BackColor = System.Drawing.Color.Red;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(837, 461);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(109, 38);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Reject";
+            this.button1.UseVisualStyleBackColor = false;
             // 
-            // RuturnedBtn
+            // ApproveBtn
             // 
-            this.RuturnedBtn.BackColor = System.Drawing.Color.DarkGray;
-            this.RuturnedBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RuturnedBtn.ForeColor = System.Drawing.Color.Black;
-            this.RuturnedBtn.Location = new System.Drawing.Point(845, 465);
-            this.RuturnedBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.RuturnedBtn.Name = "RuturnedBtn";
-            this.RuturnedBtn.Size = new System.Drawing.Size(109, 38);
-            this.RuturnedBtn.TabIndex = 10;
-            this.RuturnedBtn.Text = "RETURNED";
-            this.RuturnedBtn.UseVisualStyleBackColor = false;
-            this.RuturnedBtn.Click += new System.EventHandler(this.ArchiveBt3_Click);
+            this.ApproveBtn.BackColor = System.Drawing.Color.Green;
+            this.ApproveBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ApproveBtn.ForeColor = System.Drawing.Color.White;
+            this.ApproveBtn.Location = new System.Drawing.Point(722, 461);
+            this.ApproveBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ApproveBtn.Name = "ApproveBtn";
+            this.ApproveBtn.Size = new System.Drawing.Size(109, 38);
+            this.ApproveBtn.TabIndex = 10;
+            this.ApproveBtn.Text = "Approve";
+            this.ApproveBtn.UseVisualStyleBackColor = false;
+            this.ApproveBtn.Click += new System.EventHandler(this.ArchiveBt3_Click);
             // 
             // dateTimePicker1
             // 
@@ -257,7 +279,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(201, 128);
+            this.textBox1.Location = new System.Drawing.Point(209, 128);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(201, 26);
@@ -265,6 +287,10 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.LightBlue;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(75, 162);
@@ -274,15 +300,16 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(892, 291);
             this.dataGridView1.TabIndex = 4;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Bodoni MT Condensed", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(363, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(237, 51);
+            this.label1.Size = new System.Drawing.Size(381, 51);
             this.label1.TabIndex = 3;
-            this.label1.Text = "BORROWED ITEM";
+            this.label1.Text = "BORROW REQUEST";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // BorrowedAdminF5
@@ -293,7 +320,9 @@
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "BorrowedAdminF5";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BorrowedItem";
+            this.Load += new System.EventHandler(this.BorrowedAdminF5_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -320,11 +349,12 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button LogoutBt11;
-        private System.Windows.Forms.Button RuturnedBtn;
+        private System.Windows.Forms.Button ApproveBtn;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }
