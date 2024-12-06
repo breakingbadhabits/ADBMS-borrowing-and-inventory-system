@@ -72,19 +72,21 @@ namespace AnotherSample
 
                 // Define query
                 string query = @"
-            INSERT INTO transactions (transaction_item_id, transaction_due_date)
-            VALUES (@itemId, @dueDate);
-        ";
+                    INSERT INTO transactions (transaction_item_id, transaction_due_date, transaction_user_id)
+                    VALUES (@itemId, @dueDate, @userId);
+                ";
 
                 // Get necessary data
                 int itemId = GetSelectedItemId(textBox1.Text); // Replace with your method to fetch item ID by name
                 DateTime dueDate = dateTimePicker1.Value.Date;
+                int userId = UserSession.UserId; // Get the user_id of the logged-in user from UserSession
 
                 // Execute query
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@itemId", itemId);
                     command.Parameters.AddWithValue("@dueDate", dueDate);
+                    command.Parameters.AddWithValue("@userId", userId);
 
                     connection.Open();
                     int rowsAffected = command.ExecuteNonQuery();

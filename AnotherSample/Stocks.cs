@@ -19,28 +19,27 @@ namespace AnotherSample
 
             private Timer autoUpdateTimer;
 
-            public StocksAdmin()
-            {
-                InitializeComponent();
-                LoadStockData();
+        public StocksAdmin()
+        {
+            InitializeComponent();
+            LoadStockData();
 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-          
-      
+            dataGridView1.CellFormatting += DataGridView1_CellFormatting;
 
-
-            // Kung nasa Panel ang DataGridView, i-configure ang Panel
+            // Configuration for the panel
             panel1.Margin = new Padding(0);
             panel1.Padding = new Padding(0);
 
             // Initialize and configure the timer
             autoUpdateTimer = new Timer
-                {
-                    Interval = 5000 // 5 seconds (adjust as needed)
-                };
-                autoUpdateTimer.Tick += AutoUpdateTimer_Tick;
-                autoUpdateTimer.Start();
-            }
+            {
+                Interval = 5000 // 5 seconds (adjust as needed)
+            };
+            autoUpdateTimer.Tick += AutoUpdateTimer_Tick;
+            autoUpdateTimer.Start();
+        }
+
 
 
         private void LoadStockData()
@@ -128,13 +127,13 @@ namespace AnotherSample
             {
                 if (e.Value != null && int.TryParse(e.Value.ToString(), out int available))
                 {
-                    // Change the cell's background color based on the available quantity
+                    // Change the "Available" cell's background color based on its value
                     if (available == 0)
                     {
                         e.CellStyle.BackColor = Color.Red;
                         e.CellStyle.ForeColor = Color.White; // Optional: For better text visibility
                     }
-                    else if (available < 6)
+                    else if (available <= 4)
                     {
                         e.CellStyle.BackColor = Color.Yellow;
                         e.CellStyle.ForeColor = Color.Black;
@@ -147,6 +146,8 @@ namespace AnotherSample
                 }
             }
         }
+
+
 
 
 
@@ -340,6 +341,59 @@ private void DeleteBt3_Click(object sender, EventArgs e)
                 {
                     MessageBox.Show($"An error occurred while logging out: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        private void ArchiveBt3_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                // Retrieve the selected stock name from the DataGridView
+                string selectedStockName = dataGridView1.SelectedRows[0].Cells["StockName"].Value.ToString();
+
+                // Create overlay form
+                Form overlay = new Form
+                {
+                    FormBorderStyle = FormBorderStyle.None,
+                    BackColor = Color.Black,
+                    Opacity = 0.5,
+                    ShowInTaskbar = false,
+                    StartPosition = FormStartPosition.Manual,
+                    Bounds = this.Bounds,
+                    Owner = this
+                };
+
+                try
+                {
+                    overlay.Show();
+
+                    // Create and show the confirmation form (Form15)
+                    Form15 confirmationForm = new Form15
+                    {
+                        SelectedStockName = selectedStockName, // Pass the selected stock name to Form15
+                        StartPosition = FormStartPosition.CenterParent,
+                        Owner = this
+                    };
+
+                    // Show the dialog and check if the deletion is confirmed
+                    if (confirmationForm.ShowDialog() == DialogResult.OK)
+                    {
+                        // If deletion is successful, refresh the DataGridView
+                        LoadStockData();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred while deleting the stock: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    overlay.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a stock to delete.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }
