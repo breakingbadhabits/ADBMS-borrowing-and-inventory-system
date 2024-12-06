@@ -174,6 +174,7 @@
                                 MessageBox.Show($"An error occurred while updating the transaction: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
+                        connection.Close();
                     }
                 }
                 catch (Exception ex)

@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 namespace AnotherSample
 {
+
     public partial class AdminArchive : Form
     {
-        private string connectionString = "Data Source=JERMAINE;Initial Catalog=inventory_system;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
-
+        
         public AdminArchive()
         {
             InitializeComponent();
@@ -29,39 +29,38 @@ namespace AnotherSample
         {
             try
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    connection.Open();
+                SqlConnection connection = DatabaseConnection.Instance.Connection;
 
-                    // Query to fetch only archived items
-                    string query = @"
-                SELECT 
-                    i.item_id AS 'ID', 
-                    i.item_name AS 'ItemName', 
-                    i.item_brand AS 'Brand', 
-                    i.item_serial_number AS 'SerialNumber', 
-                    i.item_type AS 'ItemType', 
-                    i.item_condition AS 'Condition', 
-                    CASE 
-                        WHEN i.item_is_borrowed = 1 THEN 'Unavailable' 
-                        ELSE 'Available' 
-                    END AS 'ItemStatus'
-                FROM items i
-                INNER JOIN stocks s ON i.item_stock_id = s.stock_id
-                WHERE i.item_is_archived = 1";
+                connection.Open();
 
-                    SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
-                    DataTable dataTable = new DataTable();
-                    dataAdapter.Fill(dataTable);
+                // Query to fetch only archived items
+                string query = @"
+                    SELECT 
+                        i.item_id AS 'ID', 
+                        i.item_name AS 'ItemName', 
+                        i.item_brand AS 'Brand', 
+                        i.item_serial_number AS 'SerialNumber', 
+                        i.item_type AS 'ItemType', 
+                        i.item_condition AS 'Condition', 
+                        CASE 
+                            WHEN i.item_is_borrowed = 1 THEN 'Unavailable' 
+                            ELSE 'Available' 
+                        END AS 'ItemStatus'
+                    FROM items i
+                    INNER JOIN stocks s ON i.item_stock_id = s.stock_id
+                    WHERE i.item_is_archived = 1";
 
-                    dataGridView1.AutoGenerateColumns = true; // Ensure columns are always generated
-                    dataGridView1.Visible = true;
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                DataTable dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
 
-                    // Bind data to DataGridView
-                    dataGridView1.DataSource = dataTable;
+                dataGridView1.AutoGenerateColumns = true; // Ensure columns are always generated
+                dataGridView1.Visible = true;
 
-                    // No message is shown if no data is fetched
-                }
+                // Bind data to DataGridView
+                dataGridView1.DataSource = dataTable;
+
+                connection.Close();
             }
             catch (Exception ex)
             {
@@ -183,9 +182,9 @@ namespace AnotherSample
         {
             try
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    string query = @"
+                SqlConnection connection = DatabaseConnection.Instance.Connection;
+
+                string query = @"
             SELECT 
                 i.item_id AS 'ID', 
                 i.item_name AS 'ItemName', 
@@ -215,6 +214,7 @@ namespace AnotherSample
                     DataTable dataTable = new DataTable();
 
                     connection.Open();
+
                     dataAdapter.Fill(dataTable);
 
                     // Make sure columns are visible
@@ -232,7 +232,8 @@ namespace AnotherSample
                     {
                         MessageBox.Show("No items found matching your search.", "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                }
+
+                    connection.Close();
             }
             catch (Exception ex)
             {
@@ -264,28 +265,28 @@ namespace AnotherSample
                     // Get the ID of the selected item
                     int selectedItemId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["ID"].Value);
 
-                    using (SqlConnection connection = new SqlConnection(connectionString))
+                    SqlConnection connection = DatabaseConnection.Instance.Connection;
+
+                    connection.Open();
+
+                    // Query to update the item_is_archived value to 0
+                    string query = "UPDATE items SET item_is_archived = 0 WHERE item_id = @ItemId";
+                    using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        connection.Open();
+                        command.Parameters.AddWithValue("@ItemId", selectedItemId);
+                        int rowsAffected = command.ExecuteNonQuery();
 
-                        // Query to update the item_is_archived value to 0
-                        string query = "UPDATE items SET item_is_archived = 0 WHERE item_id = @ItemId";
-                        using (SqlCommand command = new SqlCommand(query, connection))
+                        if (rowsAffected > 0)
                         {
-                            command.Parameters.AddWithValue("@ItemId", selectedItemId);
-                            int rowsAffected = command.ExecuteNonQuery();
-
-                            if (rowsAffected > 0)
-                            {
-                                MessageBox.Show("Item successfully restored.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                LoadItems(); // Refresh the DataGridView to reflect changes
-                            }
-                            else
-                            {
-                                MessageBox.Show("Failed to restore the item. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
+                            MessageBox.Show("Item successfully restored.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LoadItems(); // Refresh the DataGridView to reflect changes
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to restore the item. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
+                    connection.Close();
                 }
                 catch (Exception ex)
                 {
@@ -304,10 +305,7 @@ namespace AnotherSample
 
         private void ArchivesBt10_Click(object sender, EventArgs e)
         {
-            AdminArchive archiveAdminF4 = new AdminArchive();
-            this.Hide();
-            archiveAdminF4.ShowDialog();
-            this.Close();
+            FormNavigator.Navigate(this, new AdminArchive());
         }
 
         private void LogoutBt11_Click(object sender, EventArgs e)
@@ -328,16 +326,7 @@ namespace AnotherSample
             {
                 try
                 {
-                    // Assuming there's a login form named `LoginF1`
-                    LoginF1 loginForm = new LoginF1();
-
-                    // Hide the current form
-                    this.Hide();
-
-                    // Show the login form and wait for it to close
-                    loginForm.ShowDialog();
-
-                    // After the login form is closed, exit the application to ensure all forms are closed
+                    FormNavigator.Navigate(this, new LoginF1());
                     Application.Exit();
                 }
                 catch (Exception ex)
@@ -349,18 +338,12 @@ namespace AnotherSample
 
         private void RequestBt7_Click(object sender, EventArgs e)
         {
-            AdminBorrowRequest borrowReq = new AdminBorrowRequest();
-            this.Hide();
-            borrowReq.ShowDialog();
-            this.Close();
+            FormNavigator.Navigate(this, new AdminBorrowRequest());
         }
 
         private void BorrowedBt8_Click(object sender, EventArgs e)
         {
-            AdminBorrowedItem borrower = new AdminBorrowedItem();
-            this.Hide();
-            borrower.ShowDialog();
-            this.Close();
+            FormNavigator.Navigate(this, new AdminBorrowedItem());
         }
     }
 }
