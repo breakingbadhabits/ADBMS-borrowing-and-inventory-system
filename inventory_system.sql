@@ -7,7 +7,7 @@ CREATE TABLE roles (
 
 CREATE TABLE users (
 	user_id INT PRIMARY KEY IDENTITY(1,1),
-	user_role_id INT NOT NULL,
+	role_id INT NOT NULL,
 	user_uli INT UNIQUE NOT NULL,
 	user_username varchar(50) UNIQUE NOT NULL,
 	user_password varchar(50) NOT NULL,
@@ -15,7 +15,7 @@ CREATE TABLE users (
 	user_contact_number varchar(11),
 	user_address varchar(200),
 	user_birthday DATE,
-	CONSTRAINT FK_user_role_id_role_id FOREIGN KEY (user_role_id)
+	CONSTRAINT FK_user_role_id_role_id FOREIGN KEY (role_id)
         REFERENCES roles(role_id)
     ON DELETE CASCADE
     ON UPDATE CASCADE
