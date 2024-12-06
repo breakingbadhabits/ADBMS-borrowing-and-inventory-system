@@ -10,43 +10,9 @@ namespace AnotherSample
         public SignUpF2()
         {
             InitializeComponent();
-            LoadRoles();
         }
 
-        private void LoadRoles()
-        {
-            string connectionString = "Server=localhost;Database=inventory_system;Trusted_Connection=True;";
-            string query = "SELECT role_name FROM roles";
-
-            try
-            {
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    connection.Open();
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            RoleComboBox.Items.Clear();
-                            while (reader.Read())
-                            {
-                                RoleComboBox.Items.Add(reader["role_name"].ToString());
-                            }
-
-                            if (RoleComboBox.Items.Count > 0)
-                            {
-                                RoleComboBox.SelectedIndex = 0;
-                            }
-                        }
-                    }
-                    connection.Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error loading roles: " + ex.Message);
-            }
-        }
+        
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -91,6 +57,20 @@ namespace AnotherSample
 
         private void SignUpButton_Click(object sender, EventArgs e)
         {
+            // Check if any required field is empty
+            if (string.IsNullOrWhiteSpace(UliBox.Text) ||
+                string.IsNullOrWhiteSpace(UsernameBox.Text) ||
+                string.IsNullOrWhiteSpace(PasswordBox.Text) ||
+                string.IsNullOrWhiteSpace(NameBox.Text) ||
+                string.IsNullOrWhiteSpace(ContactNumberBox.Text) ||
+                string.IsNullOrWhiteSpace(AddressBox.Text) ||
+                RoleComboBox.SelectedIndex == -1) // Ensure a role is selected
+            {
+                MessageBox.Show("Please fill out all fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Ensure a valid role is selected
             int roleId;
             switch (RoleComboBox.Text)
             {
@@ -104,10 +84,11 @@ namespace AnotherSample
                     roleId = 3;
                     break;
                 default:
-                    MessageBox.Show("Please select a valid role.");
+                    MessageBox.Show("Please select a valid role.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
             }
 
+            // Database connection string and query
             string connectionString = "Server=localhost;Database=inventory_system;Trusted_Connection=True;";
             string insertQuery = "INSERT INTO users " +
                                  "(role_id, user_uli, user_username, user_password, user_name, user_contact_number, user_address, user_birthday) " +
@@ -134,22 +115,21 @@ namespace AnotherSample
                         int rowsAffected = command.ExecuteNonQuery();
                         if (rowsAffected > 0)
                         {
-                            MessageBox.Show("User added successfully!");
+                            MessageBox.Show("User added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else
                         {
-                            MessageBox.Show("Failed to add user.");
+                            MessageBox.Show("Failed to add user.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
-
-                    connection.Close();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error inserting user: " + ex.Message);
+                MessageBox.Show("Error inserting user: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void UsernameBox_TextChanged(object sender, EventArgs e)
         {
