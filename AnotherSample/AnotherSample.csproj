@@ -67,6 +67,12 @@
     <Compile Include="Form10.Designer.cs">
       <DependentUpon>Form10.cs</DependentUpon>
     </Compile>
+    <Compile Include="Notif.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Notif.Designer.cs">
+      <DependentUpon>Notif.cs</DependentUpon>
+    </Compile>
     <Compile Include="StudentHistoryView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,6 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form10.resx">
       <DependentUpon>Form10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notif.resx">
+      <DependentUpon>Notif.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StudentHistoryView.resx">
       <DependentUpon>StudentHistoryView.cs</DependentUpon>
