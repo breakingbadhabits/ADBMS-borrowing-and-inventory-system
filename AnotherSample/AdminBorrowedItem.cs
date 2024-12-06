@@ -259,5 +259,11 @@
                 }
             }
         }
+
+        private void NotifBt_Click(object sender, EventArgs e)
+        {
+            Notif NotifVeiw = new Notif();
+            NotifVeiw.ShowDialog();
+        }
     }
 }

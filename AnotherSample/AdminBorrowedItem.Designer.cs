@@ -289,11 +289,12 @@ namespace AnotherSample
             // 
             this.NotifBt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("NotifBt.BackgroundImage")));
             this.NotifBt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.NotifBt.Location = new System.Drawing.Point(1041, 12);
+            this.NotifBt.Location = new System.Drawing.Point(1022, 12);
             this.NotifBt.Name = "NotifBt";
-            this.NotifBt.Size = new System.Drawing.Size(50, 46);
+            this.NotifBt.Size = new System.Drawing.Size(69, 64);
             this.NotifBt.TabIndex = 12;
             this.NotifBt.UseVisualStyleBackColor = true;
+            this.NotifBt.Click += new System.EventHandler(this.NotifBt_Click);
             // 
             // AdminBorrowedItem
             // 
