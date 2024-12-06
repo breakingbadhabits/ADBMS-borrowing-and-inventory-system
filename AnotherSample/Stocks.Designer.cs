@@ -52,6 +52,7 @@ namespace AnotherSample
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.ArchiveBt3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -220,6 +221,7 @@ namespace AnotherSample
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.panel2.Controls.Add(this.ArchiveBt3);
             this.panel2.Controls.Add(this.DeleteBt3);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.dateTimePicker1);
@@ -305,8 +307,6 @@ namespace AnotherSample
             this.dataGridView1.Size = new System.Drawing.Size(922, 291);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            this.dataGridView1.CellFormatting += DataGridView1_CellFormatting;
-
             // 
             // label1
             // 
@@ -316,6 +316,19 @@ namespace AnotherSample
             this.label1.Size = new System.Drawing.Size(128, 51);
             this.label1.TabIndex = 3;
             this.label1.Text = "STOCKS";
+            // 
+            // ArchiveBt3
+            // 
+            this.ArchiveBt3.BackColor = System.Drawing.Color.Red;
+            this.ArchiveBt3.ForeColor = System.Drawing.Color.White;
+            this.ArchiveBt3.Location = new System.Drawing.Point(853, 464);
+            this.ArchiveBt3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ArchiveBt3.Name = "ArchiveBt3";
+            this.ArchiveBt3.Size = new System.Drawing.Size(98, 31);
+            this.ArchiveBt3.TabIndex = 14;
+            this.ArchiveBt3.Text = "DELETE";
+            this.ArchiveBt3.UseVisualStyleBackColor = false;
+            this.ArchiveBt3.Click += new System.EventHandler(this.ArchiveBt3_Click);
             // 
             // StocksAdmin
             // 
@@ -361,5 +374,6 @@ namespace AnotherSample
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button DeleteBt3;
+        private Button ArchiveBt3;
     }
 }

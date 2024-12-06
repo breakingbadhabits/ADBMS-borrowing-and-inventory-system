@@ -165,22 +165,22 @@ namespace AnotherSample
             try
             {
                 string query = @"
-            SELECT 
-                transactions.transaction_id AS 'Transaction ID',
-                ISNULL(users.user_name, 'No user assigned') AS 'User Name',
-                items.item_name AS 'Item Name',
-                transactions.transaction_borrow_date AS 'Borrow Date',
-                transactions.transaction_due_date AS 'Due Date',
-                transactions.transaction_return_date AS 'Return Date'
-            FROM 
-                transactions
-            LEFT JOIN 
-                users ON transactions.transaction_user_id = users.user_id
-            INNER JOIN 
-                items ON transactions.transaction_item_id = items.item_id
-            WHERE 
-                transactions.transaction_borrow_date IS NOT NULL
-                AND transactions.transaction_return_date IS NOT NULL";
+        SELECT 
+            transactions.transaction_id AS 'Transaction ID',
+            ISNULL(users.user_name, 'No user assigned') AS 'User Name',
+            items.item_name AS 'Item Name',
+            transactions.transaction_borrow_date AS 'Borrow Date',
+            transactions.transaction_due_date AS 'Due Date',
+            transactions.transaction_return_date AS 'Return Date'
+        FROM 
+            transactions
+        LEFT JOIN 
+            users ON transactions.transaction_user_id = users.user_id
+        INNER JOIN 
+            items ON transactions.transaction_item_id = items.item_id
+        WHERE 
+            transactions.transaction_borrow_date IS NOT NULL
+            AND transactions.transaction_return_date IS NOT NULL";
 
                 using (SqlConnection localConnection = new SqlConnection(connection.ConnectionString))
                 {
@@ -211,7 +211,7 @@ namespace AnotherSample
                         else
                         {
                             dataGridView1.DataSource = null;
-                            MessageBox.Show("No transactions found with non-null borrow and return dates.", "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            // Remove the message box here
                         }
                     }
                 }
@@ -221,6 +221,7 @@ namespace AnotherSample
                 MessageBox.Show($"Error fetching transaction history: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void LogoutBt11_Click(object sender, EventArgs e)
         {

@@ -51,16 +51,17 @@ namespace AnotherSample
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // Validate inputs
+            // Validate if an item is selected
             if (string.IsNullOrEmpty(textBox1.Text) || textBox1.Text == "No selected item")
             {
                 MessageBox.Show("Please select a valid item to borrow.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (dateTimePicker1.Value.Date < DateTime.Now.Date)
+            // Validate if the selected due date is greater than the current date
+            if (dateTimePicker1.Value.Date <= DateTime.Now.Date)
             {
-                MessageBox.Show("The due date cannot be in the past.", "Invalid Date", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please choose a due date greater than the current date.", "Invalid Date", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -71,19 +72,21 @@ namespace AnotherSample
 
                 // Define query
                 string query = @"
-            INSERT INTO transactions ( transaction_item_id, transaction_due_date)
-            VALUES ( @itemId, @dueDate);
-        ";
+                    INSERT INTO transactions (transaction_item_id, transaction_due_date, transaction_user_id)
+                    VALUES (@itemId, @dueDate, @userId);
+                ";
 
                 // Get necessary data
                 int itemId = GetSelectedItemId(textBox1.Text); // Replace with your method to fetch item ID by name
                 DateTime dueDate = dateTimePicker1.Value.Date;
+                int userId = UserSession.UserId; // Get the user_id of the logged-in user from UserSession
 
                 // Execute query
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@itemId", itemId);
                     command.Parameters.AddWithValue("@dueDate", dueDate);
+                    command.Parameters.AddWithValue("@userId", userId);
 
                     connection.Open();
                     int rowsAffected = command.ExecuteNonQuery();
@@ -105,6 +108,7 @@ namespace AnotherSample
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private int GetSelectedItemId(string itemName)
         {
             int itemId = -1; // Default value for invalid item ID
