@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace AnotherSample
 {
-    public partial class ArchiveAdminF4 : Form
+    public partial class AdminArchive : Form
     {
         private string connectionString = "Data Source=JERMAINE;Initial Catalog=inventory_system;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
 
-        public ArchiveAdminF4()
+        public AdminArchive()
         {
             InitializeComponent();
         }
@@ -304,7 +304,7 @@ namespace AnotherSample
 
         private void ArchivesBt10_Click(object sender, EventArgs e)
         {
-            ArchiveAdminF4 archiveAdminF4 = new ArchiveAdminF4();
+            AdminArchive archiveAdminF4 = new AdminArchive();
             this.Hide();
             archiveAdminF4.ShowDialog();
             this.Close();

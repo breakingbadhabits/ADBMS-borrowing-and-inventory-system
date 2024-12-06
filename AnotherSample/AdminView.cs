@@ -184,7 +184,7 @@ namespace AnotherSample
 
         private void ArchivesBt10_Click(object sender, EventArgs e)
         {
-            ArchiveAdminF4 itemArchive = new ArchiveAdminF4();
+            AdminArchive itemArchive = new AdminArchive();
             this.Hide();
             itemArchive.ShowDialog();
             this.Close();

@@ -52,7 +52,7 @@ namespace AnotherSample
         private void ArchivesBt10_Click(object sender, EventArgs e)
         {
             {
-                FormNavigator.Navigate(this, new ArchiveAdminF4());
+                FormNavigator.Navigate(this, new AdminArchive());
             }
         }
 
