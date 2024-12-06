@@ -64,7 +64,7 @@ CREATE TABLE transactions (
 	transaction_id INT PRIMARY KEY IDENTITY(1,1),
 	transaction_user_id INT NOT NULL,
 	transaction_item_id INT NOT NULL,
-	transaction_borrow_date DATE NOT NULL,
+	transaction_borrow_date DATE,
 	transaction_return_date DATE,
 	transaction_due_date DATE,
 	transaction_return_condition VARCHAR(200),
