@@ -52,6 +52,7 @@ namespace AnotherSample
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.NotificationBt = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -219,6 +220,7 @@ namespace AnotherSample
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.panel2.Controls.Add(this.NotificationBt);
             this.panel2.Controls.Add(this.ArchiveBt3);
             this.panel2.Controls.Add(this.dateTimePicker1);
             this.panel2.Controls.Add(this.label2);
@@ -299,6 +301,16 @@ namespace AnotherSample
             this.label1.TabIndex = 3;
             this.label1.Text = "MAINTENANCE HISTORY";
             // 
+            // NotificationBt
+            // 
+            this.NotificationBt.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.NotificationBt.Image = ((System.Drawing.Image)(resources.GetObject("NotificationBt.Image")));
+            this.NotificationBt.Location = new System.Drawing.Point(919, 71);
+            this.NotificationBt.Name = "NotificationBt";
+            this.NotificationBt.Size = new System.Drawing.Size(48, 43);
+            this.NotificationBt.TabIndex = 16;
+            this.NotificationBt.UseVisualStyleBackColor = false;
+            // 
             // MaintenanceHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -344,5 +356,6 @@ namespace AnotherSample
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
         private Button ArchiveBt3;
+        private Button NotificationBt;
     }
 }
