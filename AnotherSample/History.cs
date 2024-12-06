@@ -38,7 +38,7 @@ namespace AnotherSample
         private void StockBt5_Click(object sender, EventArgs e)
         {
             {
-                FormNavigator.Navigate(this, new StocksAdminF8());
+                FormNavigator.Navigate(this, new StocksAdmin());
             }
         }
 

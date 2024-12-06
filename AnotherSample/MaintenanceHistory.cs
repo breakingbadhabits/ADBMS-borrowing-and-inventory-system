@@ -80,7 +80,7 @@ namespace AnotherSample
 
         private void StockBt5_Click_1(object sender, EventArgs e)
         {
-            StocksAdminF8 itemStocks = new StocksAdminF8();
+            StocksAdmin itemStocks = new StocksAdmin();
             this.Hide();
             itemStocks.ShowDialog();
             this.Close();

@@ -35,7 +35,7 @@ namespace AnotherSample
         {
             {
                 // Create an instance of the stock form
-                StocksAdminF8 stockForm = new StocksAdminF8();
+                StocksAdmin stockForm = new StocksAdmin();
 
                 // Hide the current form
                 this.Hide();

@@ -96,7 +96,7 @@ namespace AnotherSample
 
         private void StockBt5_Click(object sender, EventArgs e)
         {
-            StocksAdminF8 stockForm = new StocksAdminF8();
+            StocksAdmin stockForm = new StocksAdmin();
             this.Hide();
             stockForm.ShowDialog();
             this.Close();
