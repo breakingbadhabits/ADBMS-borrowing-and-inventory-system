@@ -7,10 +7,9 @@ public class DatabaseConnection
     private SqlConnection _connection;
 
     public string ConnectionString = "Server=localhost;Database=inventory_system;Trusted_Connection=True;";
-    // Replace with your actual connection string
+    
     private readonly string _connectionString = "Server=localhost;Database=inventory_system;Trusted_Connection=True;";
 
-    // Private constructor to prevent instantiation
     private DatabaseConnection()
     {
         try
@@ -24,8 +23,6 @@ public class DatabaseConnection
             throw new Exception("Failed to initialize database connection.", ex);
         }
     }
-
-    // Public static method to get the single instance
     public static DatabaseConnection Instance
     {
         get
@@ -37,7 +34,6 @@ public class DatabaseConnection
             return _instance;
         }
     }
-
     // Expose the SQL connection
     public SqlConnection Connection
     {
@@ -51,8 +47,6 @@ public class DatabaseConnection
         }
     }
 
-
-    // Optional: Method to close the connection
     public void CloseConnection()
     {
         if (_connection != null && _connection.State == System.Data.ConnectionState.Open)

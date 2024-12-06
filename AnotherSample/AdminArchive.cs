@@ -15,7 +15,8 @@ namespace AnotherSample
 
     public partial class AdminArchive : Form
     {
-        
+        string ConnectionString = "Server=localhost;Database=inventory_system;Trusted_Connection=True;";
+
         public AdminArchive()
         {
             InitializeComponent();
@@ -27,46 +28,46 @@ namespace AnotherSample
 
         private void LoadItems()
         {
+            
             try
             {
-                SqlConnection connection = DatabaseConnection.Instance.Connection;
+                using (SqlConnection connection = new SqlConnection(ConnectionString))
+                {
+                    connection.Open();
 
-                connection.Open();
+                    string query = @"
+                        SELECT 
+                            i.item_id AS 'ID', 
+                            i.item_name AS 'ItemName', 
+                            i.item_brand AS 'Brand', 
+                            i.item_serial_number AS 'SerialNumber', 
+                            i.item_type AS 'ItemType', 
+                            i.item_condition AS 'Condition', 
+                            CASE 
+                                WHEN i.item_is_borrowed = 1 THEN 'Unavailable' 
+                                ELSE 'Available' 
+                            END AS 'ItemStatus'
+                        FROM items i
+                        INNER JOIN stocks s ON i.item_stock_id = s.stock_id
+                        WHERE i.item_is_archived = 1";
 
-                // Query to fetch only archived items
-                string query = @"
-                    SELECT 
-                        i.item_id AS 'ID', 
-                        i.item_name AS 'ItemName', 
-                        i.item_brand AS 'Brand', 
-                        i.item_serial_number AS 'SerialNumber', 
-                        i.item_type AS 'ItemType', 
-                        i.item_condition AS 'Condition', 
-                        CASE 
-                            WHEN i.item_is_borrowed = 1 THEN 'Unavailable' 
-                            ELSE 'Available' 
-                        END AS 'ItemStatus'
-                    FROM items i
-                    INNER JOIN stocks s ON i.item_stock_id = s.stock_id
-                    WHERE i.item_is_archived = 1";
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                    DataTable dataTable = new DataTable();
+                    dataAdapter.Fill(dataTable);
 
-                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
-                DataTable dataTable = new DataTable();
-                dataAdapter.Fill(dataTable);
+                    dataGridView1.AutoGenerateColumns = true;
+                    dataGridView1.Visible = true;
 
-                dataGridView1.AutoGenerateColumns = true; // Ensure columns are always generated
-                dataGridView1.Visible = true;
-
-                // Bind data to DataGridView
-                dataGridView1.DataSource = dataTable;
-
-                connection.Close();
+                    dataGridView1.DataSource = dataTable;
+                }
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
 
 
@@ -182,38 +183,38 @@ namespace AnotherSample
         {
             try
             {
-                SqlConnection connection = DatabaseConnection.Instance.Connection;
+                using (SqlConnection connection = new SqlConnection(ConnectionString))
+                {
+                    connection.Open();
 
-                string query = @"
-            SELECT 
-                i.item_id AS 'ID', 
-                i.item_name AS 'ItemName', 
-                i.item_brand AS 'Brand', 
-                i.item_serial_number AS 'SerialNumber', 
-                i.item_type AS 'ItemType', 
-                i.item_condition AS 'Condition', 
-                CASE 
-                    WHEN i.item_is_archived = 1 OR i.item_is_maintenance = 1 THEN 'Unavailable' 
-                    ELSE 'Available' 
-                END AS 'ItemStatus'
-            FROM items i
-            INNER JOIN stocks s ON i.item_stock_id = s.stock_id
-            WHERE 
-                i.item_is_archived = 1
-                AND (
-                    i.item_name LIKE @SearchText
-                    OR i.item_brand LIKE @SearchText
-                    OR i.item_serial_number LIKE @SearchText
-                    OR i.item_type LIKE @SearchText
-                    OR i.item_condition LIKE @SearchText
-                )";
+                    string query = @"
+                        SELECT 
+                            i.item_id AS 'ID', 
+                            i.item_name AS 'ItemName', 
+                            i.item_brand AS 'Brand', 
+                            i.item_serial_number AS 'SerialNumber', 
+                            i.item_type AS 'ItemType', 
+                            i.item_condition AS 'Condition', 
+                            CASE 
+                                WHEN i.item_is_archived = 1 OR i.item_is_maintenance = 1 THEN 'Unavailable' 
+                                ELSE 'Available' 
+                            END AS 'ItemStatus'
+                        FROM items i
+                        INNER JOIN stocks s ON i.item_stock_id = s.stock_id
+                        WHERE 
+                            i.item_is_archived = 1
+                            AND (
+                                i.item_name LIKE @SearchText
+                                OR i.item_brand LIKE @SearchText
+                                OR i.item_serial_number LIKE @SearchText
+                                OR i.item_type LIKE @SearchText
+                                OR i.item_condition LIKE @SearchText
+                            )";
 
                     SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
                     dataAdapter.SelectCommand.Parameters.AddWithValue("@SearchText", $"%{searchText}%");
 
                     DataTable dataTable = new DataTable();
-
-                    connection.Open();
 
                     dataAdapter.Fill(dataTable);
 
@@ -232,8 +233,7 @@ namespace AnotherSample
                     {
                         MessageBox.Show("No items found matching your search.", "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-
-                    connection.Close();
+                }
             }
             catch (Exception ex)
             {
@@ -265,28 +265,28 @@ namespace AnotherSample
                     // Get the ID of the selected item
                     int selectedItemId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["ID"].Value);
 
-                    SqlConnection connection = DatabaseConnection.Instance.Connection;
-
-                    connection.Open();
-
-                    // Query to update the item_is_archived value to 0
-                    string query = "UPDATE items SET item_is_archived = 0 WHERE item_id = @ItemId";
-                    using (SqlCommand command = new SqlCommand(query, connection))
+                    using (SqlConnection connection = new SqlConnection(ConnectionString))
                     {
-                        command.Parameters.AddWithValue("@ItemId", selectedItemId);
-                        int rowsAffected = command.ExecuteNonQuery();
+                        connection.Open();
 
-                        if (rowsAffected > 0)
+                        // Query to update the item_is_archived value to 0
+                        string query = "UPDATE items SET item_is_archived = 0 WHERE item_id = @ItemId";
+                        using (SqlCommand command = new SqlCommand(query, connection))
                         {
-                            MessageBox.Show("Item successfully restored.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            LoadItems(); // Refresh the DataGridView to reflect changes
-                        }
-                        else
-                        {
-                            MessageBox.Show("Failed to restore the item. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            command.Parameters.AddWithValue("@ItemId", selectedItemId);
+                            int rowsAffected = command.ExecuteNonQuery();
+
+                            if (rowsAffected > 0)
+                            {
+                                MessageBox.Show("Item successfully restored.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                LoadItems(); // Refresh the DataGridView to reflect changes
+                            }
+                            else
+                            {
+                                MessageBox.Show("Failed to restore the item. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                     }
-                    connection.Close();
                 }
                 catch (Exception ex)
                 {
