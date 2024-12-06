@@ -221,6 +221,43 @@ namespace AnotherSample
                 MessageBox.Show($"Error fetching transaction history: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void LogoutBt11_Click(object sender, EventArgs e)
+        {
+            Logout();
+        }
+        private void Logout()
+        {
+            // Confirm logout action
+            var result = MessageBox.Show(
+                "Are you sure you want to log out?",
+                "Confirm Logout",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    // Assuming there's a login form named `LoginF1`
+                    LoginF1 loginForm = new LoginF1();
+
+                    // Hide the current form
+                    this.Hide();
+
+                    // Show the login form and wait for it to close
+                    loginForm.ShowDialog();
+
+                    // After the login form is closed, exit the application to ensure all forms are closed
+                    Application.Exit();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred while logging out: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }
 
