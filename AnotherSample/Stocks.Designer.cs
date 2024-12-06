@@ -102,7 +102,7 @@ namespace AnotherSample
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1242, 759);
+            this.panel1.Size = new System.Drawing.Size(1241, 692);
             this.panel1.TabIndex = 4;
             // 
             // label5
@@ -319,7 +319,7 @@ namespace AnotherSample
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1242, 759);
+            this.ClientSize = new System.Drawing.Size(1241, 692);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "StocksAdmin";
