@@ -105,3 +105,4 @@ C:\Users\Ace\source\repos\ADBMS-borrowing-and-inventory-system\AnotherSample\obj
 C:\Users\Ace\source\repos\ADBMS-borrowing-and-inventory-system\AnotherSample\obj\Debug\AnotherSample.AdminView.resources
 C:\Users\jerma\source\repos\ADBMS-borrowing-and-inventory-system\AnotherSample\obj\Debug\AnotherSample.AdminView.resources
 C:\Users\jerma\source\repos\ADBMS-borrowing-and-inventory-system\AnotherSample\obj\Debug\AnotherSample.Borrower.resources
+C:\Users\Ace\source\repos\ADBMS-borrowing-and-inventory-system\AnotherSample\obj\Debug\AnotherSample.Borrower.resources

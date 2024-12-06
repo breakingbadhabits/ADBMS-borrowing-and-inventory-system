@@ -1,181 +1,181 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\",
+  "WorkspaceRootPath": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|c:\\users\\jerma\\source\\repos\\adbms-borrowing-and-inventory-system\\anothersample\\stocks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\stocks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|c:\\users\\ace\\source\\repos\\adbms-borrowing-and-inventory-system\\anothersample\\history.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\history.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\adminview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\adminview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\formnavigator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\formnavigator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\adminview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\adminview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|c:\\users\\ace\\source\\repos\\adbms-borrowing-and-inventory-system\\anothersample\\history.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\history.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\itemborrow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|c:\\users\\ace\\source\\repos\\adbms-borrowing-and-inventory-system\\anothersample\\stocks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\stocks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\adminview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\adminview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\itemborrow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\itemborrow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\itemborrow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\itemborrow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\itemborrow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\borrowerview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\borrowerview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\borrowerview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\usersession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\usersession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\usersession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\formnavigator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\formnavigator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/JERMAINE/inventory_system/True/SqlTable/dbo.users.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\form7.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\form7.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|c:\\users\\ace\\source\\repos\\adbms-borrowing-and-inventory-system\\anothersample\\history.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\history.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\form7.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\form7.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\form7.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\form7.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\form6.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\form6.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\form6.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\form5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\form5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\form5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\borrower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\borrower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\borrower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\borrower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\borrower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\borrower.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\form5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\form5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\form5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\form6.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\form6.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\form6.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\stocks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\stocks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\stocks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\adminview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\adminview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\form10.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\form10.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\form10.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\form16.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\form16.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\form16.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\borrower.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\borrower.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\borrower.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/JERMAINE/inventory_system/True/SqlTable/dbo.transactions.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\itemlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\itemlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\itemlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\form5.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\form5.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\form5.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\maintenancehistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\maintenancehistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\maintenancehistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\maintenancehistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\maintenancehistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\maintenancehistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\borrowerview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\borrowerview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\borrowerview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\form15.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\form15.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\form15.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\form14.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\form14.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\form14.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\form13.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\form13.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\form13.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\form11.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\form11.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\form11.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/JERMAINE/inventory_system/True/SqlTable/dbo.stocks.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\itemlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\itemlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\itemlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\form14.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\form14.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\form14.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/JERMAINE/inventory_system/True/SqlTable/dbo.items.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\maintenancehistory.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\maintenancehistory.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\maintenancehistory.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\anothersample\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E9BA68C5-A53D-4C37-8177-0A64D45EB0E6}|AnotherSample\\AnotherSample.csproj|solutionrelative:anothersample\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -186,54 +186,57 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Program.cs",
               "RelativeDocumentMoniker": "AnotherSample\\Program.cs",
-              "ToolTip": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Program.cs",
+              "ToolTip": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Program.cs",
               "RelativeToolTip": "AnotherSample\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAALAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABsAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-04T09:58:50.407Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
               "Title": "FormNavigator.cs",
-              "DocumentMoniker": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\FormNavigator.cs",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\FormNavigator.cs",
               "RelativeDocumentMoniker": "AnotherSample\\FormNavigator.cs",
-              "ToolTip": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\FormNavigator.cs",
+              "ToolTip": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\FormNavigator.cs",
               "RelativeToolTip": "AnotherSample\\FormNavigator.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAhwA8AAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAhwA8AAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-04T09:57:45.744Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 2,
               "Title": "AdminView.cs",
-              "DocumentMoniker": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\AdminView.cs",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\AdminView.cs",
               "RelativeDocumentMoniker": "AnotherSample\\AdminView.cs",
-              "ToolTip": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\AdminView.cs",
+              "ToolTip": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\AdminView.cs",
               "RelativeToolTip": "AnotherSample\\AdminView.cs",
               "ViewState": "AgIAAKUBAAAAAAAAAAAwwLEBAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-04T09:56:23.594Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 40,
               "Title": "ItemList.cs",
-              "DocumentMoniker": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\ItemList.cs",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\ItemList.cs",
               "RelativeDocumentMoniker": "AnotherSample\\ItemList.cs",
-              "ToolTip": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\ItemList.cs",
+              "ToolTip": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\ItemList.cs",
               "RelativeToolTip": "AnotherSample\\ItemList.cs",
               "ViewState": "AgIAAEIBAAAAAAAAAAAqwFIBAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -244,10 +247,10 @@
               "$type": "Document",
               "DocumentIndex": 26,
               "Title": "ItemList.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\ItemList.cs",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\ItemList.cs",
               "RelativeDocumentMoniker": "AnotherSample\\ItemList.cs",
               "ToolTip": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\ItemList.cs [Design]",
-              "RelativeToolTip": "AnotherSample\\ItemList.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\..\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\ItemList.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-04T09:57:07.175Z",
               "IsPinned": true
@@ -255,31 +258,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Stocks.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Stocks.cs",
-              "RelativeDocumentMoniker": "AnotherSample\\Stocks.cs",
-              "ToolTip": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Stocks.cs [Design]",
-              "RelativeToolTip": "AnotherSample\\Stocks.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-05T02:20:30.248Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "dbo.stocks.sql",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/JERMAINE/inventory_system/True/SqlTable/dbo.stocks.sql",
-              "ToolTip": "ViewDataWindow_MSSQL__/JERMAINE/inventory_system/True/SqlTable/dbo.stocks.sql",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-12-05T02:13:17.447Z"
             },
             {
               "$type": "Document",
@@ -292,6 +270,52 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "History.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\History.cs",
+              "RelativeDocumentMoniker": "AnotherSample\\History.cs",
+              "ToolTip": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\History.cs [Design]",
+              "RelativeToolTip": "AnotherSample\\History.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-05T01:52:07.963Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "History.cs",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\History.cs",
+              "RelativeDocumentMoniker": "AnotherSample\\History.cs",
+              "ToolTip": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\History.cs",
+              "RelativeToolTip": "AnotherSample\\History.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-05T09:06:12.456Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "dbo.stocks.sql",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/JERMAINE/inventory_system/True/SqlTable/dbo.stocks.sql",
+              "ToolTip": "ViewDataWindow_MSSQL__/JERMAINE/inventory_system/True/SqlTable/dbo.stocks.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-12-05T02:13:17.447Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Stocks.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Stocks.cs",
+              "RelativeDocumentMoniker": "AnotherSample\\Stocks.cs",
+              "ToolTip": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Stocks.cs [Design]",
+              "RelativeToolTip": "AnotherSample\\Stocks.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-05T02:20:30.248Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 25,
               "Title": "dbo.transactions.sql",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/JERMAINE/inventory_system/True/SqlTable/dbo.transactions.sql",
@@ -301,7 +325,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "dbo.users.sql",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/JERMAINE/inventory_system/True/SqlTable/dbo.users.sql",
               "ToolTip": "ViewDataWindow_MSSQL__/JERMAINE/inventory_system/True/SqlTable/dbo.users.sql",
@@ -310,44 +334,45 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "AdminView.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\AdminView.cs",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\AdminView.cs",
               "RelativeDocumentMoniker": "AnotherSample\\AdminView.cs",
-              "ToolTip": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\AdminView.cs [Design]",
+              "ToolTip": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\AdminView.cs [Design]",
               "RelativeToolTip": "AnotherSample\\AdminView.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T09:56:05.456Z"
+              "WhenOpened": "2024-12-04T09:56:05.456Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "ItemBorrow.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\ItemBorrow.cs",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\ItemBorrow.cs",
               "RelativeDocumentMoniker": "AnotherSample\\ItemBorrow.cs",
               "ToolTip": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\ItemBorrow.cs [Design]",
-              "RelativeToolTip": "AnotherSample\\ItemBorrow.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\..\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\ItemBorrow.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-05T02:09:33.666Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "BorrowerView.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\BorrowerView.cs",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\BorrowerView.cs",
               "RelativeDocumentMoniker": "AnotherSample\\BorrowerView.cs",
               "ToolTip": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\BorrowerView.cs [Design]",
-              "RelativeToolTip": "AnotherSample\\BorrowerView.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\..\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\BorrowerView.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-05T02:09:11.247Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "ItemBorrow.cs",
-              "DocumentMoniker": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\ItemBorrow.cs",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\ItemBorrow.cs",
               "RelativeDocumentMoniker": "AnotherSample\\ItemBorrow.cs",
-              "ToolTip": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\ItemBorrow.cs",
+              "ToolTip": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\ItemBorrow.cs",
               "RelativeToolTip": "AnotherSample\\ItemBorrow.cs",
               "ViewState": "AgIAAEYAAAAAAAAAAAAiwDUAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -355,11 +380,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "UserSession.cs",
-              "DocumentMoniker": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\UserSession.cs",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\UserSession.cs",
               "RelativeDocumentMoniker": "AnotherSample\\UserSession.cs",
-              "ToolTip": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\UserSession.cs",
+              "ToolTip": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\UserSession.cs",
               "RelativeToolTip": "AnotherSample\\UserSession.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -367,79 +392,57 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Form7.cs",
-              "DocumentMoniker": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form7.cs",
-              "RelativeDocumentMoniker": "AnotherSample\\Form7.cs",
-              "ToolTip": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form7.cs",
-              "RelativeToolTip": "AnotherSample\\Form7.cs",
-              "ViewState": "AgIAAG8AAAAAAAAAAAAiwOYAAABKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-05T09:06:12.456Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Form7.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form7.Designer.cs",
-              "RelativeDocumentMoniker": "AnotherSample\\Form7.Designer.cs",
-              "ToolTip": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form7.Designer.cs",
-              "RelativeToolTip": "AnotherSample\\Form7.Designer.cs",
+              "DocumentIndex": 12,
+              "Title": "History.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\History.Designer.cs",
+              "RelativeDocumentMoniker": "AnotherSample\\History.Designer.cs",
+              "ToolTip": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\History.Designer.cs",
+              "RelativeToolTip": "AnotherSample\\History.Designer.cs",
               "ViewState": "AgIAACEAAAAAAAAAAAAYwDcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-05T11:15:46.757Z"
+              "WhenOpened": "2024-12-05T11:15:46.757Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "Form6.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form6.cs",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form6.cs",
               "RelativeDocumentMoniker": "AnotherSample\\Form6.cs",
               "ToolTip": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form6.cs [Design]",
-              "RelativeToolTip": "AnotherSample\\Form6.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\..\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form6.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-05T01:21:38.879Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Form7.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form7.cs",
-              "RelativeDocumentMoniker": "AnotherSample\\Form7.cs",
-              "ToolTip": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form7.cs [Design]",
-              "RelativeToolTip": "AnotherSample\\Form7.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-05T01:52:07.963Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "Form5.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form5.cs",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form5.cs",
               "RelativeDocumentMoniker": "AnotherSample\\Form5.cs",
               "ToolTip": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form5.cs [Design]",
-              "RelativeToolTip": "AnotherSample\\Form5.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\..\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form5.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-05T02:04:32.625Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "Form4.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form4.cs",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form4.cs",
               "RelativeDocumentMoniker": "AnotherSample\\Form4.cs",
               "ToolTip": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form4.cs [Design]",
-              "RelativeToolTip": "AnotherSample\\Form4.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\..\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form4.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-05T02:04:43.545Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "Form4.cs",
-              "DocumentMoniker": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form4.cs",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form4.cs",
               "RelativeDocumentMoniker": "AnotherSample\\Form4.cs",
-              "ToolTip": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form4.cs",
+              "ToolTip": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form4.cs",
               "RelativeToolTip": "AnotherSample\\Form4.cs",
               "ViewState": "AgIAAGMBAAAAAAAAAAAwwHIBAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -447,22 +450,22 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "Borrower.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Borrower.cs",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Borrower.cs",
               "RelativeDocumentMoniker": "AnotherSample\\Borrower.cs",
               "ToolTip": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Borrower.cs [Design]",
-              "RelativeToolTip": "AnotherSample\\Borrower.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\..\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Borrower.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-05T10:36:17.345Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "Borrower.cs",
-              "DocumentMoniker": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Borrower.cs",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Borrower.cs",
               "RelativeDocumentMoniker": "AnotherSample\\Borrower.cs",
-              "ToolTip": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Borrower.cs",
+              "ToolTip": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Borrower.cs",
               "RelativeToolTip": "AnotherSample\\Borrower.cs",
               "ViewState": "AgIAANUAAAAAAAAAAAAwwOQAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -470,11 +473,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "Form5.cs",
-              "DocumentMoniker": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form5.cs",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form5.cs",
               "RelativeDocumentMoniker": "AnotherSample\\Form5.cs",
-              "ToolTip": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form5.cs",
+              "ToolTip": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form5.cs",
               "RelativeToolTip": "AnotherSample\\Form5.cs",
               "ViewState": "AgIAAB8BAAAAAAAAAAAwwCsBAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -482,11 +485,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "Form6.cs",
-              "DocumentMoniker": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form6.cs",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form6.cs",
               "RelativeDocumentMoniker": "AnotherSample\\Form6.cs",
-              "ToolTip": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form6.cs",
+              "ToolTip": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form6.cs",
               "RelativeToolTip": "AnotherSample\\Form6.cs",
               "ViewState": "AgIAAFUBAAAAAAAAAAAwwGQBAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -494,11 +497,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "Stocks.cs",
-              "DocumentMoniker": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Stocks.cs",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Stocks.cs",
               "RelativeDocumentMoniker": "AnotherSample\\Stocks.cs",
-              "ToolTip": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Stocks.cs",
+              "ToolTip": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Stocks.cs",
               "RelativeToolTip": "AnotherSample\\Stocks.cs",
               "ViewState": "AgIAAAwBAAAAAAAAAAAwwBsBAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -508,10 +511,10 @@
               "$type": "Document",
               "DocumentIndex": 22,
               "Title": "Form10.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form10.cs",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form10.cs",
               "RelativeDocumentMoniker": "AnotherSample\\Form10.cs",
               "ToolTip": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form10.cs [Design]",
-              "RelativeToolTip": "AnotherSample\\Form10.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\..\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form10.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-05T02:04:22.145Z"
             },
@@ -519,10 +522,10 @@
               "$type": "Document",
               "DocumentIndex": 23,
               "Title": "Form16.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form16.cs",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form16.cs",
               "RelativeDocumentMoniker": "AnotherSample\\Form16.cs",
               "ToolTip": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form16.cs [Design]",
-              "RelativeToolTip": "AnotherSample\\Form16.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\..\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form16.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-05T03:03:04.113Z"
             },
@@ -530,9 +533,9 @@
               "$type": "Document",
               "DocumentIndex": 24,
               "Title": "Borrower.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Borrower.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Borrower.Designer.cs",
               "RelativeDocumentMoniker": "AnotherSample\\Borrower.Designer.cs",
-              "ToolTip": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Borrower.Designer.cs",
+              "ToolTip": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Borrower.Designer.cs",
               "RelativeToolTip": "AnotherSample\\Borrower.Designer.cs",
               "ViewState": "AgIAACUAAAAAAAAAAAAQwDoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -542,9 +545,9 @@
               "$type": "Document",
               "DocumentIndex": 27,
               "Title": "Form5.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form5.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form5.Designer.cs",
               "RelativeDocumentMoniker": "AnotherSample\\Form5.Designer.cs",
-              "ToolTip": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form5.Designer.cs",
+              "ToolTip": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form5.Designer.cs",
               "RelativeToolTip": "AnotherSample\\Form5.Designer.cs",
               "ViewState": "AgIAAC8AAAAAAAAAAAAYwDkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -554,9 +557,9 @@
               "$type": "Document",
               "DocumentIndex": 28,
               "Title": "MaintenanceHistory.cs",
-              "DocumentMoniker": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\MaintenanceHistory.cs",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\MaintenanceHistory.cs",
               "RelativeDocumentMoniker": "AnotherSample\\MaintenanceHistory.cs",
-              "ToolTip": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\MaintenanceHistory.cs",
+              "ToolTip": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\MaintenanceHistory.cs",
               "RelativeToolTip": "AnotherSample\\MaintenanceHistory.cs",
               "ViewState": "AgIAAI4AAAAAAAAAAAAYwJ8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -566,10 +569,10 @@
               "$type": "Document",
               "DocumentIndex": 29,
               "Title": "MaintenanceHistory.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\MaintenanceHistory.cs",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\MaintenanceHistory.cs",
               "RelativeDocumentMoniker": "AnotherSample\\MaintenanceHistory.cs",
               "ToolTip": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\MaintenanceHistory.cs [Design]",
-              "RelativeToolTip": "AnotherSample\\MaintenanceHistory.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\..\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\MaintenanceHistory.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-05T01:20:20.159Z"
             },
@@ -577,9 +580,9 @@
               "$type": "Document",
               "DocumentIndex": 30,
               "Title": "BorrowerView.cs",
-              "DocumentMoniker": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\BorrowerView.cs",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\BorrowerView.cs",
               "RelativeDocumentMoniker": "AnotherSample\\BorrowerView.cs",
-              "ToolTip": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\BorrowerView.cs",
+              "ToolTip": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\BorrowerView.cs",
               "RelativeToolTip": "AnotherSample\\BorrowerView.cs",
               "ViewState": "AgIAAFsAAAAAAAAAAAAcwLUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -589,10 +592,10 @@
               "$type": "Document",
               "DocumentIndex": 31,
               "Title": "Form15.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form15.cs",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form15.cs",
               "RelativeDocumentMoniker": "AnotherSample\\Form15.cs",
               "ToolTip": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form15.cs [Design]",
-              "RelativeToolTip": "AnotherSample\\Form15.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\..\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form15.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-05T02:04:20.312Z"
             },
@@ -600,10 +603,10 @@
               "$type": "Document",
               "DocumentIndex": 32,
               "Title": "Login.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Login.cs",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Login.cs",
               "RelativeDocumentMoniker": "AnotherSample\\Login.cs",
               "ToolTip": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Login.cs [Design]",
-              "RelativeToolTip": "AnotherSample\\Login.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\..\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Login.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-04T10:01:04.229Z"
             },
@@ -611,10 +614,10 @@
               "$type": "Document",
               "DocumentIndex": 33,
               "Title": "Notification.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Notification.cs",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Notification.cs",
               "RelativeDocumentMoniker": "AnotherSample\\Notification.cs",
               "ToolTip": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Notification.cs [Design]",
-              "RelativeToolTip": "AnotherSample\\Notification.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\..\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Notification.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-05T03:14:14.913Z"
             },
@@ -622,10 +625,10 @@
               "$type": "Document",
               "DocumentIndex": 35,
               "Title": "Form14.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form14.cs",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form14.cs",
               "RelativeDocumentMoniker": "AnotherSample\\Form14.cs",
               "ToolTip": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form14.cs [Design]",
-              "RelativeToolTip": "AnotherSample\\Form14.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\..\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form14.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-05T01:52:06.688Z"
             },
@@ -633,10 +636,10 @@
               "$type": "Document",
               "DocumentIndex": 34,
               "Title": "SignUp.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\SignUp.cs",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\SignUp.cs",
               "RelativeDocumentMoniker": "AnotherSample\\SignUp.cs",
               "ToolTip": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\SignUp.cs [Design]",
-              "RelativeToolTip": "AnotherSample\\SignUp.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\..\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\SignUp.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-05T02:09:31.664Z"
             },
@@ -644,10 +647,10 @@
               "$type": "Document",
               "DocumentIndex": 36,
               "Title": "Form13.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form13.cs",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form13.cs",
               "RelativeDocumentMoniker": "AnotherSample\\Form13.cs",
               "ToolTip": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form13.cs [Design]",
-              "RelativeToolTip": "AnotherSample\\Form13.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\..\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form13.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-05T02:20:58.019Z"
             },
@@ -655,10 +658,10 @@
               "$type": "Document",
               "DocumentIndex": 37,
               "Title": "Form11.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form11.cs",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form11.cs",
               "RelativeDocumentMoniker": "AnotherSample\\Form11.cs",
               "ToolTip": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form11.cs [Design]",
-              "RelativeToolTip": "AnotherSample\\Form11.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\..\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form11.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-05T02:20:56.908Z"
             },
@@ -666,22 +669,21 @@
               "$type": "Document",
               "DocumentIndex": 39,
               "Title": "App.config",
-              "DocumentMoniker": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\App.config",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\App.config",
               "RelativeDocumentMoniker": "AnotherSample\\App.config",
-              "ToolTip": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\App.config",
+              "ToolTip": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\App.config",
               "RelativeToolTip": "AnotherSample\\App.config",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2024-12-05T03:03:06.576Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-05T03:03:06.576Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 41,
               "Title": "Form14.cs",
-              "DocumentMoniker": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form14.cs",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form14.cs",
               "RelativeDocumentMoniker": "AnotherSample\\Form14.cs",
-              "ToolTip": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form14.cs",
+              "ToolTip": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Form14.cs",
               "RelativeToolTip": "AnotherSample\\Form14.cs",
               "ViewState": "AgIAACoAAAAAAAAAAAApwCsAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -691,9 +693,9 @@
               "$type": "Document",
               "DocumentIndex": 43,
               "Title": "MaintenanceHistory.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\MaintenanceHistory.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\MaintenanceHistory.Designer.cs",
               "RelativeDocumentMoniker": "AnotherSample\\MaintenanceHistory.Designer.cs",
-              "ToolTip": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\MaintenanceHistory.Designer.cs",
+              "ToolTip": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\MaintenanceHistory.Designer.cs",
               "RelativeToolTip": "AnotherSample\\MaintenanceHistory.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAD4BAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -703,9 +705,9 @@
               "$type": "Document",
               "DocumentIndex": 44,
               "Title": "Login.cs",
-              "DocumentMoniker": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Login.cs",
+              "DocumentMoniker": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Login.cs",
               "RelativeDocumentMoniker": "AnotherSample\\Login.cs",
-              "ToolTip": "C:\\Users\\jerma\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Login.cs",
+              "ToolTip": "C:\\Users\\Ace\\source\\repos\\ADBMS-borrowing-and-inventory-system\\AnotherSample\\Login.cs",
               "RelativeToolTip": "AnotherSample\\Login.cs",
               "ViewState": "AgIAAKAAAAAAAAAAAAAAADcAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
