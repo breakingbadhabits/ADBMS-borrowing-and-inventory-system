@@ -1,5 +1,6 @@
 ﻿    using System;
-    using System.Collections.Generic;
+using System.Collections;
+using System.Collections.Generic;
     using System.ComponentModel;
     using System.Data;
     using System.Data.SqlClient;
@@ -13,15 +14,12 @@ namespace AnotherSample
 {
     public partial class HistoryAdminF7 : Form
     {
-        private string connectionString;
+        SqlConnection connection = DatabaseConnection.Instance.Connection;
 
         public HistoryAdminF7()
         {
             InitializeComponent();
-            connectionString = "Server=localhost;Database=inventory_system;Trusted_Connection=True;"; // Assign the connection string here
         }
-
-        // The rest of your code follows...
 
 
 
@@ -33,68 +31,28 @@ namespace AnotherSample
         private void ItemBt4_Click(object sender, EventArgs e)
         {
             {
-                // Create an instance of the stock form
-                AdminView itemForm = new AdminView();
-
-                // Hide the current form
-                this.Hide();
-
-                // Show the stock form as a modal dialog
-                itemForm.ShowDialog();
-
-                // Show the current form again when returning from the stock form
-                this.Close();
+                FormNavigator.Navigate(this, new AdminView());
             }
         }
 
         private void StockBt5_Click(object sender, EventArgs e)
         {
             {
-                // Create an instance of the stock form
-                StocksAdminF8 stockForm = new StocksAdminF8();
-
-                // Hide the current form
-                this.Hide();
-
-                // Show the stock form as a modal dialog
-                stockForm.ShowDialog();
-
-                // Show the current form again when returning from the stock form
-                this.Close();
+                FormNavigator.Navigate(this, new StocksAdminF8());
             }
         }
 
         private void MaintenanceBt6_Click(object sender, EventArgs e)
         {
             {
-                // Create an instance of the stock form
-                MaintenanceAdminF6 maintenanceForm = new MaintenanceAdminF6();
-
-                // Hide the current form
-                this.Hide();
-
-                // Show the stock form as a modal dialog
-                maintenanceForm.ShowDialog();
-
-                // Show the current form again when returning from the stock form
-                this.Close();
+                FormNavigator.Navigate(this, new MaintenanceAdminF6());
             }
         }
 
         private void ArchivesBt10_Click(object sender, EventArgs e)
         {
             {
-                // Create an instance of the stock form
-                ArchiveAdminF4 archiveForm = new ArchiveAdminF4();
-
-                // Hide the current form
-                this.Hide();
-
-                // Show the stock form as a modal dialog
-                archiveForm.ShowDialog();
-
-                // Show the current form again when returning from the stock form
-                this.Close();
+                FormNavigator.Navigate(this, new ArchiveAdminF4());
             }
         }
 
@@ -117,34 +75,33 @@ namespace AnotherSample
         {
             try
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                string query = @"
+                        SELECT 
+                            i.item_id AS 'ID', 
+                            i.item_name AS 'ItemName', 
+                            i.item_brand AS 'Brand', 
+                            i.item_serial_number AS 'SerialNumber', 
+                            i.item_type AS 'ItemType', 
+                            i.item_condition AS 'Condition', 
+                            CASE 
+                                WHEN i.item_is_borrowed = 1 OR i.item_is_maintenance = 1 THEN 'Unavailable' 
+                                ELSE 'Available' 
+                            END AS 'ItemStatus'
+                        FROM items i
+                        INNER JOIN stocks s ON i.item_stock_id = s.stock_id
+                        WHERE 
+                            i.item_is_archived = 0
+                            AND i.item_is_borrowed = 0   -- Exclude unavailable items
+                            AND i.item_is_maintenance = 0  -- Exclude unavailable items
+                            AND (
+                                i.item_name LIKE @SearchText
+                                OR i.item_brand LIKE @SearchText
+                                OR i.item_serial_number LIKE @SearchText
+                                OR i.item_type LIKE @SearchText
+                                OR i.item_condition LIKE @SearchText
+                            )";
+                using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    string query = @"
-        SELECT 
-            i.item_id AS 'ID', 
-            i.item_name AS 'ItemName', 
-            i.item_brand AS 'Brand', 
-            i.item_serial_number AS 'SerialNumber', 
-            i.item_type AS 'ItemType', 
-            i.item_condition AS 'Condition', 
-            CASE 
-                WHEN i.item_is_borrowed = 1 OR i.item_is_maintenance = 1 THEN 'Unavailable' 
-                ELSE 'Available' 
-            END AS 'ItemStatus'
-        FROM items i
-        INNER JOIN stocks s ON i.item_stock_id = s.stock_id
-        WHERE 
-            i.item_is_archived = 0
-            AND i.item_is_borrowed = 0   -- Exclude unavailable items
-            AND i.item_is_maintenance = 0  -- Exclude unavailable items
-            AND (
-                i.item_name LIKE @SearchText
-                OR i.item_brand LIKE @SearchText
-                OR i.item_serial_number LIKE @SearchText
-                OR i.item_type LIKE @SearchText
-                OR i.item_condition LIKE @SearchText
-            )";
-
                     SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
                     dataAdapter.SelectCommand.Parameters.AddWithValue("@SearchText", $"%{searchText}%");
 
@@ -181,26 +138,17 @@ namespace AnotherSample
 
         private void RequestBt7_Click(object sender, EventArgs e)
         {
-            BorrowedAdminF5 borrowReq = new BorrowedAdminF5();
-            this.Hide();
-            borrowReq.ShowDialog();
-            this.Close();
+            FormNavigator.Navigate(this, new BorrowedAdminF5());
         }
 
         private void BorrowedBt8_Click(object sender, EventArgs e)
         {
-            Borrower borrower = new Borrower();
-            this.Hide();
-            borrower.ShowDialog();
-            this.Close();
+            FormNavigator.Navigate(this, new Borrower());
         }
 
         private void HistoriesBt9_Click(object sender, EventArgs e)
         {
-            HistoryAdminF7 historyAdminF7 = new HistoryAdminF7();
-            this.Hide();
-            historyAdminF7.ShowDialog();
-            this.Close();
+            FormNavigator.Navigate(this, new HistoryAdminF7());
         }
         private void HistoryAdminF7_Load(object sender, EventArgs e)
         {
@@ -210,26 +158,26 @@ namespace AnotherSample
         {
             try
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    string query = @"
-                SELECT 
-                    transactions.transaction_id AS 'Transaction ID',
-                    ISNULL(users.user_name, 'No user assigned') AS 'User Name',
-                    items.item_name AS 'Item Name',
-                    transactions.transaction_borrow_date AS 'Borrow Date',
-                    transactions.transaction_due_date AS 'Due Date',
-                    transactions.transaction_return_date AS 'Return Date'
-                FROM 
-                    transactions
-                LEFT JOIN 
-                    users ON transactions.transaction_user_id = users.user_id
-                INNER JOIN 
-                    items ON transactions.transaction_item_id = items.item_id
-                WHERE 
-                    transactions.transaction_borrow_date IS NOT NULL
-                    AND transactions.transaction_return_date IS NOT NULL";
+                string query = @"
+                    SELECT 
+                        transactions.transaction_id AS 'Transaction ID',
+                        ISNULL(users.user_name, 'No user assigned') AS 'User Name',
+                        items.item_name AS 'Item Name',
+                        transactions.transaction_borrow_date AS 'Borrow Date',
+                        transactions.transaction_due_date AS 'Due Date',
+                        transactions.transaction_return_date AS 'Return Date'
+                    FROM 
+                        transactions
+                    LEFT JOIN 
+                        users ON transactions.transaction_user_id = users.user_id
+                    INNER JOIN 
+                        items ON transactions.transaction_item_id = items.item_id
+                    WHERE 
+                        transactions.transaction_borrow_date IS NOT NULL
+                        AND transactions.transaction_return_date IS NOT NULL";
 
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
                     SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
                     DataTable dataTable = new DataTable();
 

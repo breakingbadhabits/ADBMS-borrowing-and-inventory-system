@@ -19,16 +19,13 @@ namespace AnotherSample
             Application.SetCompatibleTextRenderingDefault(false);
 
             SqlConnection connection = DatabaseConnection.Instance.Connection;
-            var dbConnection = DatabaseConnection.Instance;
 
-            //Application.Run(new LoginF1());
+            Application.Run(new LoginF1());
 
             // use for debug only, comment it to stop debugging, replace the view that you want to open on app start
             //Application.Run(new BorrowerView());
             //end debug
-           Application.Run(new AdminView());
-
-            dbConnection.CloseConnection();
+            //Application.Run(new AdminView());
         }
     }
 

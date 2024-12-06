@@ -13,7 +13,7 @@ namespace AnotherSample
         {
             currentForm.Hide();
             nextForm.ShowDialog();
-            currentForm.Show();
+            currentForm.Close();
         }
     }
 }
