@@ -66,6 +66,7 @@
             this.LogoutBt11.TabIndex = 11;
             this.LogoutBt11.Text = "LOGOUT";
             this.LogoutBt11.UseVisualStyleBackColor = false;
+            this.LogoutBt11.Click += new System.EventHandler(this.LogoutBt11_Click);
             // 
             // dateTimePicker1
             // 
