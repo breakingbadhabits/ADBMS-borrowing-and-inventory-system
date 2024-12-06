@@ -106,7 +106,7 @@ namespace AnotherSample
             // 
             // LogoutBt11
             // 
-            this.LogoutBt11.BackColor = System.Drawing.Color.Blue;
+            this.LogoutBt11.BackColor = System.Drawing.Color.DarkRed;
             this.LogoutBt11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogoutBt11.ForeColor = System.Drawing.Color.White;
             this.LogoutBt11.Location = new System.Drawing.Point(1110, 635);

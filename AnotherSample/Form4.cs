@@ -35,41 +35,32 @@ namespace AnotherSample
 
                     // Query to fetch only archived items
                     string query = @"
-                        SELECT 
-                            i.item_id AS 'ID', 
-                            i.item_name AS 'ItemName', 
-                            i.item_brand AS 'Brand', 
-                            i.item_serial_number AS 'SerialNumber', 
-                            i.item_type AS 'ItemType', 
-                            i.item_condition AS 'Condition', 
-                            CASE 
-                                WHEN i.item_is_borrowed = 1 THEN 'Unavailable' 
-                                ELSE 'Available' 
-                            END AS 'ItemStatus'
-                        FROM items i
-                        INNER JOIN stocks s ON i.item_stock_id = s.stock_id
-                        WHERE i.item_is_archived = 1";
+                SELECT 
+                    i.item_id AS 'ID', 
+                    i.item_name AS 'ItemName', 
+                    i.item_brand AS 'Brand', 
+                    i.item_serial_number AS 'SerialNumber', 
+                    i.item_type AS 'ItemType', 
+                    i.item_condition AS 'Condition', 
+                    CASE 
+                        WHEN i.item_is_borrowed = 1 THEN 'Unavailable' 
+                        ELSE 'Available' 
+                    END AS 'ItemStatus'
+                FROM items i
+                INNER JOIN stocks s ON i.item_stock_id = s.stock_id
+                WHERE i.item_is_archived = 1";
+
                     SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
                     DataTable dataTable = new DataTable();
                     dataAdapter.Fill(dataTable);
 
-                    dataGridView1.AutoGenerateColumns = true;
+                    dataGridView1.AutoGenerateColumns = true; // Ensure columns are always generated
                     dataGridView1.Visible = true;
 
-                    if (dataTable.Rows.Count > 0)
-                    {
-                        // If data exists, bind it to the DataGridView
-                        dataGridView1.DataSource = dataTable;
-                    }
-                    else
-                    {
-                        // If no data exists, clear the DataGridView
-                        dataGridView1.DataSource = null;
-                        dataGridView1.Rows.Clear();
-                        dataGridView1.Refresh();
+                    // Bind data to DataGridView
+                    dataGridView1.DataSource = dataTable;
 
-                        MessageBox.Show("No archived items found.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                    // No message is shown if no data is fetched
                 }
             }
             catch (Exception ex)
@@ -77,7 +68,6 @@ namespace AnotherSample
                 MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
 
 
 
@@ -196,28 +186,28 @@ namespace AnotherSample
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     string query = @"
-    SELECT 
-        i.item_id AS 'ID', 
-        i.item_name AS 'ItemName', 
-        i.item_brand AS 'Brand', 
-        i.item_serial_number AS 'SerialNumber', 
-        i.item_type AS 'ItemType', 
-        i.item_condition AS 'Condition', 
-        CASE 
-            WHEN i.item_is_archived = 1 OR i.item_is_maintenance = 1 THEN 'Unavailable' 
-            ELSE 'Available' 
-        END AS 'ItemStatus'
-    FROM items i
-    INNER JOIN stocks s ON i.item_stock_id = s.stock_id
-    WHERE 
-        i.item_is_archived = 1
-        AND (
-            i.item_name LIKE @SearchText
-            OR i.item_brand LIKE @SearchText
-            OR i.item_serial_number LIKE @SearchText
-            OR i.item_type LIKE @SearchText
-            OR i.item_condition LIKE @SearchText
-        )";
+            SELECT 
+                i.item_id AS 'ID', 
+                i.item_name AS 'ItemName', 
+                i.item_brand AS 'Brand', 
+                i.item_serial_number AS 'SerialNumber', 
+                i.item_type AS 'ItemType', 
+                i.item_condition AS 'Condition', 
+                CASE 
+                    WHEN i.item_is_archived = 1 OR i.item_is_maintenance = 1 THEN 'Unavailable' 
+                    ELSE 'Available' 
+                END AS 'ItemStatus'
+            FROM items i
+            INNER JOIN stocks s ON i.item_stock_id = s.stock_id
+            WHERE 
+                i.item_is_archived = 1
+                AND (
+                    i.item_name LIKE @SearchText
+                    OR i.item_brand LIKE @SearchText
+                    OR i.item_serial_number LIKE @SearchText
+                    OR i.item_type LIKE @SearchText
+                    OR i.item_condition LIKE @SearchText
+                )";
 
                     SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
                     dataAdapter.SelectCommand.Parameters.AddWithValue("@SearchText", $"%{searchText}%");
@@ -227,17 +217,19 @@ namespace AnotherSample
                     connection.Open();
                     dataAdapter.Fill(dataTable);
 
+                    // Make sure columns are visible
+                    dataGridView1.AutoGenerateColumns = true;
+                    dataGridView1.DataSource = dataTable;
+
                     if (dataTable.Rows.Count > 0)
                     {
-                        dataGridView1.DataSource = dataTable;
                         dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-                        // Hide the ID column
+                        // Hide the ID column (if required)
                         dataGridView1.Columns["ID"].Visible = false;
                     }
                     else
                     {
-                        dataGridView1.DataSource = null;
                         MessageBox.Show("No items found matching your search.", "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }

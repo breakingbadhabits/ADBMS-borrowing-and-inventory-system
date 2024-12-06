@@ -75,7 +75,7 @@ namespace AnotherSample
                     }
                     else
                     {
-                        MessageBox.Show("No data found with NULL transaction_borrow_date.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        // Clear the DataGridView without showing any message
                         dataGridView1.DataSource = null;
                     }
                 }

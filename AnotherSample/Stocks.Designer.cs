@@ -120,7 +120,7 @@
             // 
             // LogoutBt11
             // 
-            this.LogoutBt11.BackColor = System.Drawing.Color.Blue;
+            this.LogoutBt11.BackColor = System.Drawing.Color.DarkRed;
             this.LogoutBt11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogoutBt11.ForeColor = System.Drawing.Color.White;
             this.LogoutBt11.Location = new System.Drawing.Point(987, 508);
@@ -223,7 +223,12 @@
             // 
             this.DeleteBt3.BackColor = System.Drawing.Color.Red;
             this.DeleteBt3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+<<<<<<< Updated upstream
             this.DeleteBt3.Location = new System.Drawing.Point(758, 371);
+=======
+            this.DeleteBt3.Location = new System.Drawing.Point(849, 464);
+            this.DeleteBt3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+>>>>>>> Stashed changes
             this.DeleteBt3.Name = "DeleteBt3";
             this.DeleteBt3.Size = new System.Drawing.Size(80, 25);
             this.DeleteBt3.TabIndex = 13;
@@ -233,7 +238,7 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Blue;
+            this.button1.BackColor = System.Drawing.Color.Green;
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button1.Location = new System.Drawing.Point(669, 371);
             this.button1.Name = "button1";
