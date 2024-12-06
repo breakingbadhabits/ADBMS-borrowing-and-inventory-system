@@ -8,12 +8,12 @@ CREATE TABLE roles (
 CREATE TABLE users (
 	user_id INT PRIMARY KEY IDENTITY(1,1),
 	user_role_id INT NOT NULL,
-	user_uli INT NOT NULL,
-	user_username varchar(50) NOT NULL,
+	user_uli INT UNIQUE NOT NULL,
+	user_username varchar(50) UNIQUE NOT NULL,
 	user_password varchar(50) NOT NULL,
 	user_name varchar(50) NOT NULL,
 	user_contact_number varchar(11),
-	user_address varchar(100),
+	user_address varchar(200),
 	user_birthday DATE,
 	CONSTRAINT FK_user_role_id_role_id FOREIGN KEY (user_role_id)
         REFERENCES roles(role_id)
@@ -28,6 +28,7 @@ CREATE TABLE stocks (
 	stock_available INT NOT NULL,
 	stock_under_maintenance INT NOT NULL,
 	stock_borrowed INT NOT NULL,
+	stock_archived INT NOT NULL
 );
 
 CREATE TABLE items (
@@ -77,13 +78,3 @@ CREATE TABLE transactions (
     ON UPDATE CASCADE
 );
 
-CREATE TABLE notifications (
-	notification_id INT PRIMARY KEY IDENTITY(1,1),
-	notification_transaction_id INT NOT NULL,
-	notification_date DATE NOT NULL,
-	notification_description VARCHAR(200) NOT NULL,
-	CONSTRAINT FK_notification_transaction_id_transaction_id FOREIGN KEY (notification_transaction_id)
-        REFERENCES transactions(transaction_id)
-	ON DELETE CASCADE
-    ON UPDATE CASCADE
-);
