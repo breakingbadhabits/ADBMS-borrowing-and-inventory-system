@@ -32,7 +32,8 @@ namespace AnotherSample
                 transactions.transaction_id AS [Transaction ID],
                 users.user_name AS [User Name],
                 items.item_name AS [Item Name],
-                transactions.transaction_due_date AS [Due Date]
+                transactions.transaction_due_date AS [Due Date],
+                transactions.transaction_return_condition as [Condition]
             FROM 
                 transactions
             LEFT JOIN 
@@ -40,7 +41,9 @@ namespace AnotherSample
             LEFT JOIN 
                 items ON transactions.transaction_item_id = items.item_id
             WHERE 
-                transactions.transaction_borrow_date IS NULL";
+                transactions.transaction_borrow_date IS NULL
+            AND
+                transactions.transaction_return_condition IS NULL";
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
@@ -326,7 +329,96 @@ namespace AnotherSample
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            // Check if a row is selected
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                try
+                {
+                    // Retrieve the "Transaction ID" from the selected row
+                    if (dataGridView1.SelectedRows[0].Cells["Transaction ID"] != null)
+                    {
+                        int transactionId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["Transaction ID"].Value);
 
+                        // SQL connection string
+                        string connectionString = "Server=localhost;Database=inventory_system;Trusted_Connection=True;";
+
+                        using (SqlConnection connection = new SqlConnection(connectionString))
+                        {
+                            // First, fetch the `transaction_item_id` for the given `transaction_id`
+                            string selectQuery = @"
+                                SELECT transaction_item_id
+                                FROM transactions
+                                WHERE transaction_id = @TransactionId";
+
+                            int transactionItemId = 0;
+                            string transactionItemCondition = "Rejected";
+
+                            using (SqlCommand selectCommand = new SqlCommand(selectQuery, connection))
+                            {
+                                // Add parameter to prevent SQL injection
+                                selectCommand.Parameters.AddWithValue("@TransactionId", transactionId);
+
+                                // Open the connection
+                                connection.Open();
+
+                                // Execute the SELECT query and retrieve the result
+                                object result = selectCommand.ExecuteScalar();
+                                if (result != null)
+                                {
+                                    transactionItemId = Convert.ToInt32(result);
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Transaction Item ID not found for the selected Transaction ID.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    return; // Exit the method if no item ID is found
+                                }
+                            }
+
+                            // Update the `transaction_return_condition` column to 0 to reject transaction (can be better, fix this please)
+                            string updateItemQuery = @"
+                                UPDATE transactions
+                                SET transaction_return_condition = @ReturnCondition
+                                WHERE item_id = @ItemId";
+
+                            using (SqlCommand updateItemCommand = new SqlCommand(updateItemQuery, connection))
+                            {
+                                // Add parameter to prevent SQL injection
+                                updateItemCommand.Parameters.AddWithValue("@ItemId", transactionItemId);
+                                updateItemCommand.Parameters.AddWithValue("@ReturnCondition", transactionItemCondition);
+
+                                // Execute the UPDATE query
+                                int rowsAffected = updateItemCommand.ExecuteNonQuery();
+
+                                if (rowsAffected > 0)
+                                {
+                                    
+                                    MessageBox.Show("The borrow request was rejected", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                }
+                                else
+                                {
+                                    // No rows updated, possibly incorrect Transaction ID
+                                    MessageBox.Show($"No item found with the selected Transaction Item ID: {transactionItemId}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Selected row does not contain a valid Transaction ID.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Handle unexpected errors
+                    MessageBox.Show($"An error occurred while updating the item: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                // No row selected
+                MessageBox.Show("Please select a row to archive.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }
