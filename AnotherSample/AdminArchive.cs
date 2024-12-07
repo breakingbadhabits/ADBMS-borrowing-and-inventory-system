@@ -15,7 +15,7 @@ namespace AnotherSample
 
     public partial class AdminArchive : Form
     {
-        string ConnectionString = "Server=localhost;Database=inventory_system;Trusted_Connection=True;";
+        string ConnectionString = "Data Source=JERMAINE;Initial Catalog=inventory_system;Persist Security Info=True;User ID=sa;Password=12345;";
 
         public AdminArchive()
         {

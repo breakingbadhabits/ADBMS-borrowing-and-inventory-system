@@ -18,7 +18,7 @@ namespace AnotherSample
         public MaintenanceHistory()
         {
             InitializeComponent();
-            connectionString = "Server=localhost;Database=inventory_system;Trusted_Connection=True;"; // Replace with your connection string
+            connectionString = "Data Source=JERMAINE;Initial Catalog=inventory_system;Persist Security Info=True;User ID=sa;Password=12345;"; // Replace with your connection string
         }
         private void MaintenanceHistory_Load(object sender, EventArgs e)
         {

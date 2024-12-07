@@ -6,9 +6,9 @@ public class DatabaseConnection
     private static DatabaseConnection _instance;
     private SqlConnection _connection;
 
-    public string ConnectionString = "Server=localhost;Database=inventory_system;Trusted_Connection=True;";
+    public string ConnectionString = "Data Source=JERMAINE;Initial Catalog=inventory_system;Persist Security Info=True;User ID=sa;Password=12345;";
     
-    private readonly string _connectionString = "Server=localhost;Database=inventory_system;Trusted_Connection=True;";
+    private readonly string _connectionString = "Data Source=JERMAINE;Initial Catalog=inventory_system;Persist Security Info=True;User ID=sa;Password=12345;";
 
     private DatabaseConnection()
     {

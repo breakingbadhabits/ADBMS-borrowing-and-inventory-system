@@ -27,7 +27,7 @@ namespace AnotherSample
         {
             try
             {
-                string connectionString = "Server=localhost;Database=inventory_system;Trusted_Connection=True;";
+                string connectionString = "Data Source=JERMAINE;Initial Catalog=inventory_system;Persist Security Info=True;User ID=sa;Password=12345;";
                 string query = @"
             SELECT 
                 transactions.transaction_id AS [Transaction ID],
@@ -156,7 +156,7 @@ namespace AnotherSample
                         int transactionId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["Transaction ID"].Value);
 
                         // SQL connection string
-                        string connectionString = "Server=localhost;Database=inventory_system;Trusted_Connection=True;";
+                        string connectionString = "Data Source=JERMAINE;Initial Catalog=inventory_system;Persist Security Info=True;User ID=sa;Password=12345;";
 
                         using (SqlConnection connection = new SqlConnection(connectionString))
                         {
@@ -342,7 +342,7 @@ namespace AnotherSample
                         int transactionId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["Transaction ID"].Value);
 
                         // SQL connection string
-                        string connectionString = "Server=localhost;Database=inventory_system;Trusted_Connection=True;";
+                        string connectionString = "Data Source=JERMAINE;Initial Catalog=inventory_system;Persist Security Info=True;User ID=sa;Password=12345;";
 
                         using (SqlConnection connection = new SqlConnection(connectionString))
                         {

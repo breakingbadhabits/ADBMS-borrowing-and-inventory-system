@@ -24,7 +24,7 @@ namespace AnotherSample
             try
             {
                 // Define your connection string
-                string connectionString = "Server=localhost;Database=inventory_system;Trusted_Connection=True;";
+                string connectionString = "Data Source=JERMAINE;Initial Catalog=inventory_system;Persist Security Info=True;User ID=sa;Password=12345;";
 
                 // Your SQL query (adjust as needed)
                 string query = @"
@@ -144,7 +144,7 @@ namespace AnotherSample
                 string query = "SELECT * FROM items WHERE item_is_archived = 0 AND item_is_borrowed = 1"; // Example condition for notifications
                 DataTable dataTable = new DataTable();
 
-                using (SqlConnection connection = new SqlConnection("Server=localhost;Database=inventory_system;Trusted_Connection=True;"))
+                using (SqlConnection connection = new SqlConnection("Data Source=JERMAINE;Initial Catalog=inventory_system;Persist Security Info=True;User ID=sa;Password=12345;"))
                 {
                     connection.Open();
                     using (SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection))

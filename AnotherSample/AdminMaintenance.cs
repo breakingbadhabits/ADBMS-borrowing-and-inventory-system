@@ -19,7 +19,7 @@ namespace AnotherSample
             InitializeComponent();
 
             // Initialize the connection string before any method calls that depend on it
-            connectionString = "Server=localhost;Database=inventory_system;Trusted_Connection=True;";
+            connectionString = "Data Source=JERMAINE;Initial Catalog=inventory_system;Persist Security Info=True;User ID=sa;Password=12345;";
 
             // Load maintenance items
             LoadMaintenanceItems();

@@ -108,7 +108,7 @@ namespace AnotherSample
             }
 
             // Database connection string and query
-            string connectionString = "Server=localhost;Database=inventory_system;Trusted_Connection=True;";
+            string connectionString = "Data Source=JERMAINE;Initial Catalog=inventory_system;Persist Security Info=True;User ID=sa;Password=12345;";
             string insertQuery = "INSERT INTO users " +
                                  "(role_id, user_uli, user_username, user_password, user_name, user_contact_number, user_address, user_birthday) " +
                                  "VALUES (@RoleId, @UserUli, @Username, @Password, @Name, @ContactNumber, @Address, @Birthday)";
