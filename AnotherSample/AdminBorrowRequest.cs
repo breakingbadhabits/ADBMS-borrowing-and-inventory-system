@@ -20,6 +20,7 @@ namespace AnotherSample
         private void BorrowedAdminF5_Load(object sender, EventArgs e)
         {
             ShowTransactionsWithNullBorrowDate();
+            UpdateNotificationCount();
         }
 
         private void ShowTransactionsWithNullBorrowDate()
@@ -314,7 +315,7 @@ namespace AnotherSample
             this.Close();
         }
 
-        private void NotifBt_Click(object sender, EventArgs e)
+      private void NotifBt_Click(object sender, EventArgs e)
         {
             using (Notif overlay = new Notif())
             {
@@ -418,6 +419,29 @@ namespace AnotherSample
             {
                 // No row selected
                 MessageBox.Show("Please select a row to archive.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void labelNotifCount_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void UpdateNotificationCount()
+        {
+            try
+            {
+                // Create an instance of the Notif form to access the row count
+                using (Notif notifForm = new Notif())
+                {
+                    notifForm.LoadNotifications(); // Load the notifications (or your existing method)
+                    int notificationCount = notifForm.GetNotificationCount(); // Get the row count
+
+                    labelNotifCount.Text = $"{notificationCount}"; // Update the label
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error updating notification count: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

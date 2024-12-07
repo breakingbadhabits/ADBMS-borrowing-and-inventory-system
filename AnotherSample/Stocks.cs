@@ -12,17 +12,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 namespace AnotherSample
 
+{
+    public partial class StocksAdmin : Form
     {
-        public partial class StocksAdmin : Form
-        {
-            SqlConnection connection = DatabaseConnection.Instance.Connection;
+        SqlConnection connection = DatabaseConnection.Instance.Connection;
 
-            private Timer autoUpdateTimer;
+        private Timer autoUpdateTimer;
 
         public StocksAdmin()
         {
             InitializeComponent();
             LoadStockData();
+            UpdateNotificationCount();
 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.CellFormatting += DataGridView1_CellFormatting;
@@ -92,34 +93,34 @@ namespace AnotherSample
 
         // Button handlers to navigate to other forms (already in your code)
         private void ItemBt4_Click(object sender, EventArgs e)
-            {
-                FormNavigator.Navigate(this, new AdminView());
-            }
+        {
+            FormNavigator.Navigate(this, new AdminView());
+        }
 
-            private void MaintenanceBt6_Click(object sender, EventArgs e)
-            {
-                FormNavigator.Navigate(this, new MaintenanceAdminF6());
-            }
+        private void MaintenanceBt6_Click(object sender, EventArgs e)
+        {
+            FormNavigator.Navigate(this, new MaintenanceAdminF6());
+        }
 
-            private void StockBt5_Click(object sender, EventArgs e)
-            {
-                FormNavigator.Navigate(this, new StocksAdmin());
-            }
+        private void StockBt5_Click(object sender, EventArgs e)
+        {
+            FormNavigator.Navigate(this, new StocksAdmin());
+        }
 
-            private void HistoriesBt9_Click(object sender, EventArgs e)
-            {
-                FormNavigator.Navigate(this, new HistoryAdminF7());
-            }
+        private void HistoriesBt9_Click(object sender, EventArgs e)
+        {
+            FormNavigator.Navigate(this, new HistoryAdminF7());
+        }
 
-            private void ArchivesBt10_Click(object sender, EventArgs e)
-            {
-                FormNavigator.Navigate(this, new AdminArchive());
-            }
+        private void ArchivesBt10_Click(object sender, EventArgs e)
+        {
+            FormNavigator.Navigate(this, new AdminArchive());
+        }
 
-            private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-            {
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
-            }
+        }
         private void DataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             // Check if the current column is the "Available" column
@@ -152,9 +153,9 @@ namespace AnotherSample
 
 
         private void button1_Click(object sender, EventArgs e)
-            {
-                ShowItemListPopup();
-            }
+        {
+            ShowItemListPopup();
+        }
         private void ShowItemListPopup()
         {
             Form overlay = new Form
@@ -195,8 +196,8 @@ namespace AnotherSample
                 overlay.Close();
             }
         }
-    
-private void DeleteBt3_Click(object sender, EventArgs e)
+
+        private void DeleteBt3_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
@@ -310,7 +311,7 @@ private void DeleteBt3_Click(object sender, EventArgs e)
         {
             Logout();
         }
-            
+
         private void Logout()
         {
             // Confirm logout action
@@ -399,16 +400,34 @@ private void DeleteBt3_Click(object sender, EventArgs e)
 
         private void NotifBt_Click(object sender, EventArgs e)
         {
-            using (Notif overlay = new Notif())
+            Notif notifForm = new Notif();
+            notifForm.OnNotificationCountUpdated += count =>
             {
+                labelNotifCount.Text = $"Notifications: {count}";
+            };
+            notifForm.ShowDialog();
+        }
+        private void UpdateNotificationCount()
+        {
+            try
+            {
+                // Create an instance of the Notif form to access the row count
+                using (Notif notifForm = new Notif())
+                {
+                    notifForm.LoadNotifications(); // Load the notifications (or your existing method)
+                    int notificationCount = notifForm.GetNotificationCount(); // Get the row count
 
-
-                // Create the notification panel or embed a user control
-
-
-                // Show overlay as a modal dialog
-                overlay.ShowDialog();
+                    labelNotifCount.Text = $"{notificationCount}"; // Update the label
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error updating notification count: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void labelNotifCount_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

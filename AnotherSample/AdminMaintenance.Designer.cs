@@ -52,6 +52,7 @@
             this.ArchivesBt10 = new System.Windows.Forms.Button();
             this.MaintenanceBt6 = new System.Windows.Forms.Button();
             this.ItemBt4 = new System.Windows.Forms.Button();
+            this.labelNotifCount = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -272,6 +273,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightBlue;
+            this.panel1.Controls.Add(this.labelNotifCount);
             this.panel1.Controls.Add(this.NotifBt);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
@@ -341,6 +343,16 @@
             this.ItemBt4.UseVisualStyleBackColor = true;
             this.ItemBt4.Click += new System.EventHandler(this.ItemBt4_Click);
             // 
+            // labelNotifCount
+            // 
+            this.labelNotifCount.AutoSize = true;
+            this.labelNotifCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNotifCount.Location = new System.Drawing.Point(1203, 16);
+            this.labelNotifCount.Name = "labelNotifCount";
+            this.labelNotifCount.Size = new System.Drawing.Size(23, 25);
+            this.labelNotifCount.TabIndex = 21;
+            this.labelNotifCount.Text = "1";
+            // 
             // MaintenanceAdminF6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -386,5 +398,6 @@
         private System.Windows.Forms.Button ArchiveBt3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button NotifBt;
+        private System.Windows.Forms.Label labelNotifCount;
     }
 }

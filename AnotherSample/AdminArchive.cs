@@ -24,6 +24,7 @@ namespace AnotherSample
         private void ArchiveAdminF4_Load(object sender, EventArgs e)
         {
             LoadItems();
+            UpdateNotificationCount();
         }
 
         private void LoadItems()
@@ -348,16 +349,34 @@ namespace AnotherSample
 
         private void NotifBt_Click(object sender, EventArgs e)
         {
-            using (Notif overlay = new Notif())
+            Notif notifForm = new Notif();
+            notifForm.OnNotificationCountUpdated += count =>
             {
+                labelNotifCount.Text = $"Notifications: {count}";
+            };
+            notifForm.ShowDialog();
+        }
+        private void UpdateNotificationCount()
+        {
+            try
+            {
+                // Create an instance of the Notif form to access the row count
+                using (Notif notifForm = new Notif())
+                {
+                    notifForm.LoadNotifications(); // Load the notifications (or your existing method)
+                    int notificationCount = notifForm.GetNotificationCount(); // Get the row count
 
-
-                // Create the notification panel or embed a user control
-
-
-                // Show overlay as a modal dialog
-                overlay.ShowDialog();
+                    labelNotifCount.Text = $"{notificationCount}"; // Update the label
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error updating notification count: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void labelNotifCount_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

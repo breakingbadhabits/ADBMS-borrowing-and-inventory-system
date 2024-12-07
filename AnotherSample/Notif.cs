@@ -104,12 +104,6 @@ namespace AnotherSample
                     NotifGridView.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
                     NotifGridView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
                 }
-                else
-                {
-                    // Show message and go back to admin view if no notifs
-                    MessageBox.Show("No active transactions to display.", "No Transactions", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    FormNavigator.Navigate(this, new AdminView());
-                }
             }
             catch (Exception ex)
             {
@@ -129,7 +123,44 @@ namespace AnotherSample
         {
 
         }
+        public event Action<int> OnNotificationCountUpdated;
 
+        private void Notif_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            int notificationCount = GetNotificationCount();
+            OnNotificationCountUpdated?.Invoke(notificationCount); // Trigger the event
+        }
+
+        public int GetNotificationCount()
+        {
+            // Return the row count of NotifGridView
+            return NotifGridView.Rows.Count;
+        }
+
+        public void LoadNotifications()
+        {
+            try
+            {
+                string query = "SELECT * FROM items WHERE item_is_archived = 0 AND item_is_borrowed = 1"; // Example condition for notifications
+                DataTable dataTable = new DataTable();
+
+                using (SqlConnection connection = new SqlConnection("Server=localhost;Database=inventory_system;Trusted_Connection=True;"))
+                {
+                    connection.Open();
+                    using (SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection))
+                    {
+                        dataAdapter.Fill(dataTable);
+                    }
+                }
+
+                // Set the DataSource of the NotifGridView
+                NotifGridView.DataSource = dataTable;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading notifications: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         private void label3_Click(object sender, EventArgs e)
         {
 

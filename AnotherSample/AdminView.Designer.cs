@@ -52,6 +52,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.labelNotifCount = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -61,6 +62,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightBlue;
+            this.panel1.Controls.Add(this.labelNotifCount);
             this.panel1.Controls.Add(this.NotifBt);
             this.panel1.Controls.Add(this.LogoutBt11);
             this.panel1.Controls.Add(this.label5);
@@ -343,6 +345,17 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "ITEMS";
             // 
+            // labelNotifCount
+            // 
+            this.labelNotifCount.AutoSize = true;
+            this.labelNotifCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNotifCount.Location = new System.Drawing.Point(1204, 17);
+            this.labelNotifCount.Name = "labelNotifCount";
+            this.labelNotifCount.Size = new System.Drawing.Size(23, 25);
+            this.labelNotifCount.TabIndex = 20;
+            this.labelNotifCount.Text = "1";
+            this.labelNotifCount.Click += new System.EventHandler(this.labelNotifCount_Click);
+            // 
             // AdminView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -389,5 +402,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button FixButton;
         private System.Windows.Forms.Button NotifBt;
+        private System.Windows.Forms.Label labelNotifCount;
     }
 }
