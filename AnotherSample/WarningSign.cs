@@ -13,7 +13,7 @@ namespace AnotherSample
 {
     public partial class WarningSign : Form
     {
-        private string connectionString = "Data Source=JERMAINE;Initial Catalog=inventory_system;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        private string connectionString = "Data Source=localhost;Initial Catalog=inventory_system;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
 
         public int SelectedItemId { get; set; } // To pass the selected item ID from the main form
 

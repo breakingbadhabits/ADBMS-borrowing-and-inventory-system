@@ -52,31 +52,53 @@ namespace AnotherSample
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string query = @"
+                    // INSERT query for maintenance table
+                    string insertQuery = @"
                 INSERT INTO maintenance (maintenance_item_id, maintenance_start_date, maintenance_description)
                 VALUES (@ItemId, @StartDate, @Description)";
 
-                    using (SqlCommand command = new SqlCommand(query, connection))
+                    // UPDATE query for items table
+                    string updateQuery = @"
+                UPDATE items
+                SET item_is_maintenance = 1
+                WHERE item_id = @ItemId";
+
+                    connection.Open();
+
+                    using (SqlTransaction transaction = connection.BeginTransaction()) // Start a transaction
                     {
-                        // Add parameters to prevent SQL injection
-                        command.Parameters.AddWithValue("@ItemId", selectedItemId);
-                        command.Parameters.AddWithValue("@StartDate", maintenanceStartDate);
-                        command.Parameters.AddWithValue("@Description", maintenanceDescription);
-
-                        connection.Open();
-                        int rowsAffected = command.ExecuteNonQuery();
-
-                        if (rowsAffected > 0)
+                        try
                         {
-                            MessageBox.Show("Maintenance record added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            // Insert into maintenance table
+                            using (SqlCommand insertCommand = new SqlCommand(insertQuery, connection, transaction))
+                            {
+                                insertCommand.Parameters.AddWithValue("@ItemId", selectedItemId);
+                                insertCommand.Parameters.AddWithValue("@StartDate", maintenanceStartDate);
+                                insertCommand.Parameters.AddWithValue("@Description", maintenanceDescription);
+                                insertCommand.ExecuteNonQuery();
+                            }
+
+                            // Update item_is_maintenance in items table
+                            using (SqlCommand updateCommand = new SqlCommand(updateQuery, connection, transaction))
+                            {
+                                updateCommand.Parameters.AddWithValue("@ItemId", selectedItemId);
+                                updateCommand.ExecuteNonQuery();
+                            }
+
+                            // Commit the transaction
+                            transaction.Commit();
+
+                            MessageBox.Show("Maintenance record updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                             // Close the form and return DialogResult.OK
                             this.DialogResult = DialogResult.OK;
                             this.Close();
                         }
-                        else
+                        catch (Exception ex)
                         {
-                            MessageBox.Show("Failed to add maintenance record. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            // Rollback the transaction in case of error
+                            transaction.Rollback();
+                            MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
@@ -86,6 +108,7 @@ namespace AnotherSample
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
 
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,7 +17,15 @@ namespace AnotherSample
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginF1());
+
+            SqlConnection connection = DatabaseConnection.Instance.Connection;
+
+            //Application.Run(new LoginF1());
+
+            // use for debug only, comment it to stop debugging, replace the view that you want to open on app start
+            //Application.Run(new BorrowerView());
+            //end debug
+            Application.Run(new AdminBorrowedItem());
         }
     }
 

@@ -1,6 +1,6 @@
 ﻿namespace AnotherSample
 {
-    partial class ItemsStuF10
+    partial class StudentHistoryView
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemsStuF10));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentHistoryView));
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.LogoutBt11 = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -53,7 +52,6 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.LogoutBt11);
             this.panel2.Controls.Add(this.dateTimePicker1);
             this.panel2.Controls.Add(this.dataGridView1);
@@ -93,17 +91,6 @@
             this.button2.Text = "HISTORY";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button1.Location = new System.Drawing.Point(849, 189);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(97, 34);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "BORROW";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // LogoutBt11
             // 
             this.LogoutBt11.BackColor = System.Drawing.Color.Blue;
@@ -140,11 +127,11 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Bodoni MT Condensed", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(487, 15);
+            this.label1.Location = new System.Drawing.Point(518, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 51);
+            this.label1.Size = new System.Drawing.Size(469, 51);
             this.label1.TabIndex = 3;
-            this.label1.Text = "ITEMS";
+            this.label1.Text = "HISTORY";
             // 
             // panel1
             // 
@@ -156,15 +143,15 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1019, 760);
-            this.panel1.TabIndex = 4;
+            this.panel1.Size = new System.Drawing.Size(1019, 705);
+            this.panel1.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Bodoni MT Condensed", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(321, 24);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(688, 62);
+            this.label3.Size = new System.Drawing.Size(574, 62);
             this.label3.TabIndex = 2;
             this.label3.Text = "Equipment Borrowing Management System";
             // 
@@ -179,15 +166,15 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // ItemsStuF10
+            // StudentHistoryView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1019, 760);
+            this.ClientSize = new System.Drawing.Size(1019, 705);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "ItemsStuF10";
-            this.Text = "Form10";
+            this.Name = "StudentHistoryView";
+            this.Text = "HistoryUser";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -200,6 +187,9 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button LogoutBt11;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DataGridView dataGridView1;
@@ -207,9 +197,5 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
     }
 }

@@ -87,9 +87,6 @@ namespace AnotherSample
                 this.Close();
             }
         }
-    
-
-
 
         private void Form15_Load(object sender, EventArgs e)
         {
