@@ -70,6 +70,25 @@ namespace AnotherSample
                 return;
             }
 
+            // Validate contact number
+            if (!IsValidContactNumber(ContactNumberBox.Text))
+            {
+                MessageBox.Show("Contact number must be exactly 11 digits.", "Invalid Contact Number", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Password strength validation
+            if (!IsPasswordStrong(PasswordBox.Text))
+            {
+                MessageBox.Show(
+                    "Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one digit, and one special character.",
+                    "Weak Password",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
+                return;
+            }
+
             // Ensure a valid role is selected
             int roleId;
             switch (RoleComboBox.Text)
@@ -129,6 +148,48 @@ namespace AnotherSample
                 MessageBox.Show("Error inserting user: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        /// <summary>
+        /// Validates if the contact number is exactly 11 digits.
+        /// </summary>
+        /// <param name="contactNumber">The contact number to validate.</param>
+        /// <returns>True if valid; otherwise, false.</returns>
+        private bool IsValidContactNumber(string contactNumber)
+        {
+            // Check if the contact number is 11 digits
+            return System.Text.RegularExpressions.Regex.IsMatch(contactNumber, @"^\d{11}$");
+        }
+
+        /// <summary>
+        /// Validates the strength of a password.
+        /// </summary>
+        /// <param name="password">The password to validate.</param>
+        /// <returns>True if the password is strong; otherwise, false.</returns>
+        private bool IsPasswordStrong(string password)
+        {
+            // Minimum 8 characters
+            if (password.Length < 8)
+                return false;
+
+            // At least one uppercase letter
+            if (!System.Text.RegularExpressions.Regex.IsMatch(password, @"[A-Z]"))
+                return false;
+
+            // At least one lowercase letter
+            if (!System.Text.RegularExpressions.Regex.IsMatch(password, @"[a-z]"))
+                return false;
+
+            // At least one digit
+            if (!System.Text.RegularExpressions.Regex.IsMatch(password, @"\d"))
+                return false;
+
+            // At least one special character
+            if (!System.Text.RegularExpressions.Regex.IsMatch(password, @"[\W_]"))
+                return false;
+
+            return true;
+        }
+
 
 
         private void UsernameBox_TextChanged(object sender, EventArgs e)

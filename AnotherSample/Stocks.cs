@@ -399,7 +399,16 @@ private void DeleteBt3_Click(object sender, EventArgs e)
 
         private void NotifBt_Click(object sender, EventArgs e)
         {
-            FormNavigator.Navigate(this, new Notif());
+            using (Notif overlay = new Notif())
+            {
+
+
+                // Create the notification panel or embed a user control
+
+
+                // Show overlay as a modal dialog
+                overlay.ShowDialog();
+            }
         }
     }
 }

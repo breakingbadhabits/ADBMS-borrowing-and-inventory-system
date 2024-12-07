@@ -19,7 +19,7 @@ namespace AnotherSample
             LoadNotif();
         }
 
-        public void LoadNotif ()
+        public void LoadNotif()
         {
             try
             {
@@ -28,21 +28,18 @@ namespace AnotherSample
 
                 // Your SQL query (adjust as needed)
                 string query = @"
-                SELECT 
-                    transaction_id, 
-                    user_name, 
-                    item_name, 
-                    transaction_borrow_date
-                FROM 
-                    transactions
-                LEFT JOIN 
-                    users ON transactions.transaction_user_id = users.user_id
-                LEFT JOIN 
-                    items ON transactions.transaction_item_id = items.item_id
-                WHERE 
-                    transactions.transaction_borrow_date IS NOT NULL
-                    AND transactions.transaction_return_date IS NULL
-                ORDER BY transactions.transaction_due_date";
+        SELECT 
+            *
+        FROM 
+            transactions
+        LEFT JOIN 
+            users ON transactions.transaction_user_id = users.user_id
+        LEFT JOIN 
+            items ON transactions.transaction_item_id = items.item_id
+        WHERE 
+            transactions.transaction_borrow_date IS NOT NULL
+            AND transactions.transaction_return_date IS NULL
+        ORDER BY transactions.transaction_due_date";
 
                 // Create a DataTable to hold the query results
                 DataTable dataTable = new DataTable();
@@ -67,16 +64,30 @@ namespace AnotherSample
                     foreach (DataRow row in dataTable.Rows)
                     {
                         DateTime dueDate = Convert.ToDateTime(row["transaction_due_date"]);
-                        if (dueDate < DateTime.Now)
+                        DateTime currentDate = DateTime.Now;
+                        int remainingDays = (dueDate - currentDate).Days;
+
+                        // Only show notifications for due dates within the next 3 days
+                        if (remainingDays >= 0 && remainingDays <= 3)
                         {
-                            // String interpolation to format the notification message
-                            string message = $"User: {row["user_name"]}, Did not return the Item: {row["item_name"]} on time, Borrowed on: {row["transaction_borrow_date"]} with Due date: {row["transaction_due_date"]}";
-                            notificationsTable.Rows.Add(message);
-                        } else if (dueDate == DateTime.Now) {
-                            string message = $"User: {row["user_name"]}, need to return the Item: {row["item_name"]} today, Borrowed on: {row["transaction_borrow_date"]}";
-                            notificationsTable.Rows.Add(message);
-                        } else if (dueDate > DateTime.Now.AddDays(3)) {
-                            string message = $"User: {row["user_name"]}, need to return the Item: {row["item_name"]} within 3 days, Borrowed on: {row["transaction_borrow_date"]} with Due date: {row["transaction_due_date"]}";
+                            string message;
+
+                            if (remainingDays == 0)
+                            {
+                                // Due today
+                                message = $"User: {row["user_name"]}, need to return the Item: {row["item_name"]} TODAY, Borrowed on: {row["transaction_borrow_date"]} with Due date: {row["transaction_due_date"]}";
+                            }
+                            else if (remainingDays == 1)
+                            {
+                                // Due in 1 day
+                                message = $"User: {row["user_name"]}, need to return the Item: {row["item_name"]} in 1 day, Borrowed on: {row["transaction_borrow_date"]} with Due date: {row["transaction_due_date"]}";
+                            }
+                            else
+                            {
+                                // Due in more than 1 day but less than or equal to 3 days
+                                message = $"User: {row["user_name"]}, need to return the Item: {row["item_name"]} in {remainingDays} days, Borrowed on: {row["transaction_borrow_date"]} with Due date: {row["transaction_due_date"]}";
+                            }
+
                             notificationsTable.Rows.Add(message);
                         }
                     }
@@ -95,7 +106,7 @@ namespace AnotherSample
                 }
                 else
                 {
-                    // show message and goes back to admin view if no notifs
+                    // Show message and go back to admin view if no notifs
                     MessageBox.Show("No active transactions to display.", "No Transactions", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     FormNavigator.Navigate(this, new AdminView());
                 }
@@ -107,6 +118,8 @@ namespace AnotherSample
             }
         }
 
+
+
         private void Notif_Load(object sender, EventArgs e)
         {
             
@@ -115,6 +128,16 @@ namespace AnotherSample
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

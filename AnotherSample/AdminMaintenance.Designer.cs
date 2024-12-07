@@ -57,6 +57,8 @@
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
+
+
             // 
             // LogoutBt11
             // 
@@ -340,6 +342,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+
 
         }
 
