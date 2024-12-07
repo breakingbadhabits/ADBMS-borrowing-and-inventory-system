@@ -104,6 +104,7 @@
       <DependentUpon>BorrowerCurrent.cs</DependentUpon>
     </Compile>
     <Compile Include="DatabaseConnection.cs" />
+<<<<<<< HEAD
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +117,8 @@
     <Compile Include="Export.Designer.cs">
       <DependentUpon>Export.cs</DependentUpon>
     </Compile>
+=======
+>>>>>>> parent of d4fdb6d (EditButton)
     <Compile Include="FormNavigator.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -260,12 +263,15 @@
     <EmbeddedResource Include="BorrowerCurrent.resx">
       <DependentUpon>BorrowerCurrent.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Export.resx">
       <DependentUpon>Export.cs</DependentUpon>
     </EmbeddedResource>
+=======
+>>>>>>> parent of d4fdb6d (EditButton)
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>

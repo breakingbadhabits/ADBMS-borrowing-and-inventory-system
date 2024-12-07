@@ -35,23 +35,23 @@ namespace AnotherSample
             {
                 // Define the query
                 string query = @"
-    SELECT 
-        i.item_id AS 'ID',  
-        i.item_name AS 'ItemName', 
-        i.item_brand AS 'Brand', 
-        i.item_serial_number AS 'SerialNumber', 
-        i.item_type AS 'ItemType', 
-        i.item_condition AS 'Condition', 
-        CASE 
-            WHEN i.item_is_borrowed = 1 OR i.item_is_maintenance = 1 OR i.item_condition = 'Need Maintenance' THEN 'Unavailable' 
-            ELSE 'Available' 
-        END AS 'ItemStatus'
-    FROM items i
-    INNER JOIN stocks s ON i.item_stock_id = s.stock_id
-    WHERE 
-        i.item_is_archived = 0 
-        AND i.item_is_maintenance = 0 
-        AND i.item_is_borrowed = 0";
+        SELECT 
+            i.item_id AS 'ID',  
+            i.item_name AS 'ItemName', 
+            i.item_brand AS 'Brand', 
+            i.item_serial_number AS 'SerialNumber', 
+            i.item_type AS 'ItemType', 
+            i.item_condition AS 'Condition', 
+            CASE 
+                WHEN i.item_is_borrowed = 1 OR i.item_is_maintenance = 1 THEN 'Unavailable' 
+                ELSE 'Available' 
+            END AS 'ItemStatus'
+        FROM items i
+        INNER JOIN stocks s ON i.item_stock_id = s.stock_id
+        WHERE 
+            i.item_is_archived = 0 
+            AND i.item_is_maintenance = 0 
+            AND i.item_is_borrowed = 0";
 
                 // Create the DataTable to hold query results
                 DataTable dataTable = new DataTable();
@@ -82,7 +82,6 @@ namespace AnotherSample
                 dataGridView1.DataSource = null; // Clear the DataGridView in case of an error
             }
         }
-
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -473,6 +472,7 @@ namespace AnotherSample
         {
 
         }
+<<<<<<< HEAD
 
         private void ExportBt_Click(object sender, EventArgs e)
         {
@@ -508,5 +508,7 @@ namespace AnotherSample
             }
         }
 
+=======
+>>>>>>> parent of d4fdb6d (EditButton)
     }
 }
