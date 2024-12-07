@@ -129,7 +129,7 @@
             this.label1.Font = new System.Drawing.Font("Bodoni MT Condensed", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(518, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 51);
+            this.label1.Size = new System.Drawing.Size(469, 51);
             this.label1.TabIndex = 3;
             this.label1.Text = "HISTORY";
             // 
@@ -166,14 +166,14 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // Form11
+            // StudentHistoryView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1019, 705);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "Form11";
+            this.Name = "StudentHistoryView";
             this.Text = "HistoryUser";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

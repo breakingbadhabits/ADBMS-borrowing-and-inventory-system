@@ -44,8 +44,6 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            this.Load += new System.EventHandler(this.borrow_history_Load);
-
             // 
             // panel2
             // 
@@ -128,7 +126,7 @@
             this.label3.Font = new System.Drawing.Font("Bodoni MT Condensed", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(410, 22);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(574, 62);
+            this.label3.Size = new System.Drawing.Size(791, 62);
             this.label3.TabIndex = 2;
             this.label3.Text = "Equipment Borrowing Management System";
             // 
@@ -183,6 +181,7 @@
             this.Name = "BorrowerCurrent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BorrowerCurrent";
+            this.Load += new System.EventHandler(this.borrow_history_Load);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.BorrowDataGrid)).EndInit();
             this.panel1.ResumeLayout(false);

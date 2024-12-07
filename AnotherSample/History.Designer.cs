@@ -120,7 +120,7 @@
             this.label1.Font = new System.Drawing.Font("Bodoni MT Condensed", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(436, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 51);
+            this.label1.Size = new System.Drawing.Size(492, 51);
             this.label1.TabIndex = 3;
             this.label1.Text = "HISTORY";
             this.label1.Click += new System.EventHandler(this.label1_Click);
