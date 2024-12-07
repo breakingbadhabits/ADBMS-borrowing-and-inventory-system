@@ -328,6 +328,7 @@ namespace AnotherSample
                 overlay.ShowDialog();
             }
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
             // Check if a row is selected
@@ -345,61 +346,34 @@ namespace AnotherSample
 
                         using (SqlConnection connection = new SqlConnection(connectionString))
                         {
-                            // First, fetch the `transaction_item_id` for the given `transaction_id`
-                            string selectQuery = @"
-                                SELECT transaction_item_id
-                                FROM transactions
-                                WHERE transaction_id = @TransactionId";
+                            // Update the `transaction_return_condition` column to "Rejected"
+                            string updateTransactionQuery = @"
+                        UPDATE transactions
+                        SET transaction_return_condition = @ReturnCondition
+                        WHERE transaction_id = @TransactionId";
 
-                            int transactionItemId = 0;
-                            string transactionItemCondition = "Rejected";
-
-                            using (SqlCommand selectCommand = new SqlCommand(selectQuery, connection))
+                            using (SqlCommand updateCommand = new SqlCommand(updateTransactionQuery, connection))
                             {
-                                // Add parameter to prevent SQL injection
-                                selectCommand.Parameters.AddWithValue("@TransactionId", transactionId);
+                                // Add parameters to prevent SQL injection
+                                updateCommand.Parameters.AddWithValue("@TransactionId", transactionId);
+                                updateCommand.Parameters.AddWithValue("@ReturnCondition", "Rejected");
 
                                 // Open the connection
                                 connection.Open();
 
-                                // Execute the SELECT query and retrieve the result
-                                object result = selectCommand.ExecuteScalar();
-                                if (result != null)
-                                {
-                                    transactionItemId = Convert.ToInt32(result);
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Transaction Item ID not found for the selected Transaction ID.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                    return; // Exit the method if no item ID is found
-                                }
-                            }
-
-                            // Update the `transaction_return_condition` column to 0 to reject transaction (can be better, fix this please)
-                            string updateItemQuery = @"
-                                UPDATE transactions
-                                SET transaction_return_condition = @ReturnCondition
-                                WHERE item_id = @ItemId";
-
-                            using (SqlCommand updateItemCommand = new SqlCommand(updateItemQuery, connection))
-                            {
-                                // Add parameter to prevent SQL injection
-                                updateItemCommand.Parameters.AddWithValue("@ItemId", transactionItemId);
-                                updateItemCommand.Parameters.AddWithValue("@ReturnCondition", transactionItemCondition);
-
                                 // Execute the UPDATE query
-                                int rowsAffected = updateItemCommand.ExecuteNonQuery();
+                                int rowsAffected = updateCommand.ExecuteNonQuery();
 
                                 if (rowsAffected > 0)
                                 {
-                                    
-                                    MessageBox.Show("The borrow request was rejected", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    MessageBox.Show("The borrow request was rejected successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                                    // Refresh the DataGridView to reflect changes
+                                    ShowTransactionsWithNullBorrowDate();
                                 }
                                 else
                                 {
-                                    // No rows updated, possibly incorrect Transaction ID
-                                    MessageBox.Show($"No item found with the selected Transaction Item ID: {transactionItemId}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    MessageBox.Show($"No transaction found with ID: {transactionId}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
                             }
                         }
@@ -412,15 +386,16 @@ namespace AnotherSample
                 catch (Exception ex)
                 {
                     // Handle unexpected errors
-                    MessageBox.Show($"An error occurred while updating the item: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"An error occurred while rejecting the request: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
                 // No row selected
-                MessageBox.Show("Please select a row to archive.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please select a row to reject.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
 
         private void labelNotifCount_Click(object sender, EventArgs e)
         {
