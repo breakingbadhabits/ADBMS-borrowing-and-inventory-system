@@ -35,23 +35,23 @@ namespace AnotherSample
             {
                 // Define the query
                 string query = @"
-        SELECT 
-            i.item_id AS 'ID',  
-            i.item_name AS 'ItemName', 
-            i.item_brand AS 'Brand', 
-            i.item_serial_number AS 'SerialNumber', 
-            i.item_type AS 'ItemType', 
-            i.item_condition AS 'Condition', 
-            CASE 
-                WHEN i.item_is_borrowed = 1 OR i.item_is_maintenance = 1 THEN 'Unavailable' 
-                ELSE 'Available' 
-            END AS 'ItemStatus'
-        FROM items i
-        INNER JOIN stocks s ON i.item_stock_id = s.stock_id
-        WHERE 
-            i.item_is_archived = 0 
-            AND i.item_is_maintenance = 0 
-            AND i.item_is_borrowed = 0";
+    SELECT 
+        i.item_id AS 'ID',  
+        i.item_name AS 'ItemName', 
+        i.item_brand AS 'Brand', 
+        i.item_serial_number AS 'SerialNumber', 
+        i.item_type AS 'ItemType', 
+        i.item_condition AS 'Condition', 
+        CASE 
+            WHEN i.item_is_borrowed = 1 OR i.item_is_maintenance = 1 OR i.item_condition = 'Need Maintenance' THEN 'Unavailable' 
+            ELSE 'Available' 
+        END AS 'ItemStatus'
+    FROM items i
+    INNER JOIN stocks s ON i.item_stock_id = s.stock_id
+    WHERE 
+        i.item_is_archived = 0 
+        AND i.item_is_maintenance = 0 
+        AND i.item_is_borrowed = 0";
 
                 // Create the DataTable to hold query results
                 DataTable dataTable = new DataTable();
@@ -82,6 +82,7 @@ namespace AnotherSample
                 dataGridView1.DataSource = null; // Clear the DataGridView in case of an error
             }
         }
+
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -472,5 +473,35 @@ namespace AnotherSample
         {
 
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                // Get the selected item ID and name
+                int selectedItemId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["ID"].Value);
+                string itemName = dataGridView1.SelectedRows[0].Cells["ItemName"].Value.ToString();
+
+                // Create the overlay form (Form1) and pass itemName to the constructor
+                Form1 overlay = new Form1(itemName)
+                {
+                    FormBorderStyle = FormBorderStyle.None, // Remove border to create overlay effect
+                    ShowInTaskbar = false, // Don't show in taskbar
+                    Owner = this // Set the parent form to the current form
+                };
+
+                // Show the overlay form as a modal dialog and wait for it to close
+                if (overlay.ShowDialog() == DialogResult.OK)
+                {
+                    // If the overlay form was closed with DialogResult.OK, reload the DataGridView
+                    LoadItems(); // Reload the DataGridView after the overlay form is closed
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a row to edit.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
     }
 }

@@ -53,6 +53,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.labelNotifCount = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -237,6 +238,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.FixButton);
             this.panel2.Controls.Add(this.ArchiveBt3);
             this.panel2.Controls.Add(this.AddBt1);
@@ -281,7 +283,7 @@
             // 
             this.AddBt1.BackColor = System.Drawing.Color.Green;
             this.AddBt1.ForeColor = System.Drawing.Color.Black;
-            this.AddBt1.Location = new System.Drawing.Point(786, 461);
+            this.AddBt1.Location = new System.Drawing.Point(695, 461);
             this.AddBt1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.AddBt1.Name = "AddBt1";
             this.AddBt1.Size = new System.Drawing.Size(83, 38);
@@ -356,6 +358,19 @@
             this.labelNotifCount.Text = "1";
             this.labelNotifCount.Click += new System.EventHandler(this.labelNotifCount_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Yellow;
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(785, 461);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(83, 38);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "EDIT";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // AdminView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -403,5 +418,6 @@
         private System.Windows.Forms.Button FixButton;
         private System.Windows.Forms.Button NotifBt;
         private System.Windows.Forms.Label labelNotifCount;
+        private System.Windows.Forms.Button button1;
     }
 }
