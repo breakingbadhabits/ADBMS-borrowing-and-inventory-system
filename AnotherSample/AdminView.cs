@@ -472,5 +472,43 @@ namespace AnotherSample
         {
 
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            // Check if an item is selected
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                string selectedItemName = dataGridView1.SelectedRows[0].Cells["ItemName"].Value.ToString();
+
+                // Show only the EditOverlay popup without FixItem
+                ShowEditOverlayWithForm(selectedItemName);
+            }
+            else
+            {
+                MessageBox.Show("Please select an item to edit.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        private void ShowEditOverlayWithForm(string itemName)
+        {
+            EditOverlay overlay = new EditOverlay(itemName)
+            {
+            
+                Owner = this
+            };
+
+            try
+            {
+                overlay.ShowDialog(); // Show the EditOverlay
+                LoadItems(); // Reload items in DataGridView after closing EditOverlay
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                overlay.Close();
+            }
+        }
     }
 }

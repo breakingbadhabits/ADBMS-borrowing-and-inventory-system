@@ -45,6 +45,7 @@
             this.label1.Size = new System.Drawing.Size(123, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "ItemName:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label7
             // 
@@ -55,6 +56,7 @@
             this.label7.Size = new System.Drawing.Size(110, 25);
             this.label7.TabIndex = 6;
             this.label7.Text = "DueDate:";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // textBox1
             // 

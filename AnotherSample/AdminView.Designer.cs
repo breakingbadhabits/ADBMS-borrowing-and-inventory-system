@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminView));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelNotifCount = new System.Windows.Forms.Label();
             this.NotifBt = new System.Windows.Forms.Button();
             this.LogoutBt11 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -52,7 +53,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.labelNotifCount = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -84,6 +85,17 @@
             this.panel1.Size = new System.Drawing.Size(1241, 692);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // labelNotifCount
+            // 
+            this.labelNotifCount.AutoSize = true;
+            this.labelNotifCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNotifCount.Location = new System.Drawing.Point(1204, 17);
+            this.labelNotifCount.Name = "labelNotifCount";
+            this.labelNotifCount.Size = new System.Drawing.Size(23, 25);
+            this.labelNotifCount.TabIndex = 20;
+            this.labelNotifCount.Text = "1";
+            this.labelNotifCount.Click += new System.EventHandler(this.labelNotifCount_Click);
             // 
             // NotifBt
             // 
@@ -237,6 +249,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.FixButton);
             this.panel2.Controls.Add(this.ArchiveBt3);
             this.panel2.Controls.Add(this.AddBt1);
@@ -281,7 +294,7 @@
             // 
             this.AddBt1.BackColor = System.Drawing.Color.Green;
             this.AddBt1.ForeColor = System.Drawing.Color.Black;
-            this.AddBt1.Location = new System.Drawing.Point(786, 461);
+            this.AddBt1.Location = new System.Drawing.Point(695, 461);
             this.AddBt1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.AddBt1.Name = "AddBt1";
             this.AddBt1.Size = new System.Drawing.Size(83, 38);
@@ -345,16 +358,18 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "ITEMS";
             // 
-            // labelNotifCount
+            // button1
             // 
-            this.labelNotifCount.AutoSize = true;
-            this.labelNotifCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNotifCount.Location = new System.Drawing.Point(1204, 17);
-            this.labelNotifCount.Name = "labelNotifCount";
-            this.labelNotifCount.Size = new System.Drawing.Size(23, 25);
-            this.labelNotifCount.TabIndex = 20;
-            this.labelNotifCount.Text = "1";
-            this.labelNotifCount.Click += new System.EventHandler(this.labelNotifCount_Click);
+            this.button1.BackColor = System.Drawing.Color.Yellow;
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(785, 461);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(83, 38);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "EDIT";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // AdminView
             // 
@@ -403,5 +418,6 @@
         private System.Windows.Forms.Button FixButton;
         private System.Windows.Forms.Button NotifBt;
         private System.Windows.Forms.Label labelNotifCount;
+        private System.Windows.Forms.Button button1;
     }
 }

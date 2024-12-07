@@ -66,6 +66,12 @@
       <DependentUpon>BorrowerCurrent.cs</DependentUpon>
     </Compile>
     <Compile Include="DatabaseConnection.cs" />
+    <Compile Include="EditOverlay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditOverlay.Designer.cs">
+      <DependentUpon>EditOverlay.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormNavigator.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -209,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BorrowerCurrent.resx">
       <DependentUpon>BorrowerCurrent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditOverlay.resx">
+      <DependentUpon>EditOverlay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

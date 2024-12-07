@@ -25,7 +25,7 @@ namespace AnotherSample
             // use for debug only, comment it to stop debugging, replace the view that you want to open on app start
             //Application.Run(new BorrowerView());
             //end debug
-            //Application.Run(new AdminBorrowedItem());
+             //Application.Run(new AdminBorrowedItem());
         }
     }
 

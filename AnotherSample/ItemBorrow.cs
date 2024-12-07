@@ -157,5 +157,14 @@ namespace AnotherSample
             public static int user_id { get; set; }
         }
 
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
