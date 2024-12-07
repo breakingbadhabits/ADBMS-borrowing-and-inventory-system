@@ -16,5 +16,20 @@ namespace AnotherSample
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ExportCheckList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ExportBt_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
