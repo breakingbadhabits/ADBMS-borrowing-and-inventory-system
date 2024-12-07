@@ -51,7 +51,7 @@ CREATE TABLE items (
 CREATE TABLE maintenance (
 	maintenance_id INT PRIMARY KEY IDENTITY(1,1),
 	maintenance_item_id INT NOT NULL,
-	maintenance_start_date DATE NOT NULL,
+	maintenance_start_date DATE,
 	maintenance_complete_date DATE,
 	maintenance_description VARCHAR(100),
 	CONSTRAINT FK_maintenance_item_id_item_id FOREIGN KEY (maintenance_item_id)
