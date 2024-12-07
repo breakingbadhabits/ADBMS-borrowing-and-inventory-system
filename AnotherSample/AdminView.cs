@@ -474,6 +474,11 @@ namespace AnotherSample
 
         }
 
+        private void ExportBt_Click(object sender, EventArgs e)
+        {
+            FormNavigator.Navigate(this, new Export());
+        }
+
         private void button1_Click_1(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
