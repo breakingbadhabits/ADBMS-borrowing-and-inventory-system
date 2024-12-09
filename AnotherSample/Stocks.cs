@@ -124,29 +124,32 @@ namespace AnotherSample
         private void DataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             // Check if the current column is the "Available" column
-            if (dataGridView1.Columns[e.ColumnIndex].Name == "Available")
+            if (dataGridView1.Columns["Available"].Index == e.ColumnIndex)
             {
                 if (e.Value != null && int.TryParse(e.Value.ToString(), out int available))
                 {
-                    // Change the "Available" cell's background color based on its value
+                    // Define row styles based on the "Available" value
+                    DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+
                     if (available == 0)
                     {
-                        e.CellStyle.BackColor = Color.Red;
-                        e.CellStyle.ForeColor = Color.White; // Optional: For better text visibility
+                        row.DefaultCellStyle.BackColor = Color.Red;
+                        row.DefaultCellStyle.ForeColor = Color.White; // Optional: For better text visibility
                     }
                     else if (available <= 4)
                     {
-                        e.CellStyle.BackColor = Color.Yellow;
-                        e.CellStyle.ForeColor = Color.Black;
+                        row.DefaultCellStyle.BackColor = Color.Yellow;
+                        row.DefaultCellStyle.ForeColor = Color.Black;
                     }
                     else
                     {
-                        e.CellStyle.BackColor = Color.Green;
-                        e.CellStyle.ForeColor = Color.White;
+                        row.DefaultCellStyle.BackColor = Color.Green;
+                        row.DefaultCellStyle.ForeColor = Color.White;
                     }
                 }
             }
         }
+
 
 
 

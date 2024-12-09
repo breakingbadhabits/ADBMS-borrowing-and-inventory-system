@@ -27,7 +27,26 @@ namespace AnotherSample
         {
             UpdateNotificationCount();
             LoadItems();
+
+            // Attach the CellFormatting event
+            dataGridView1.CellFormatting += DataGridView1_CellFormatting;
         }
+
+        private void DataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // Check if the column is "Condition"
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "Condition" && e.Value != null)
+            {
+                string condition = e.Value.ToString();
+                if (condition == "Need Maintenance")
+                {
+                    // Change the background color of the entire row
+                    dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Red;
+                    dataGridView1.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.White; // Optional for better readability
+                }
+            }
+        }
+
 
         private void LoadItems()
         {
@@ -43,15 +62,14 @@ namespace AnotherSample
             i.item_type AS 'ItemType', 
             i.item_condition AS 'Condition', 
             CASE 
-                WHEN i.item_is_borrowed = 1 OR i.item_is_maintenance = 1 THEN 'Unavailable' 
+                WHEN i.item_condition = 'Need Maintenance' OR i.item_is_borrowed = 1 OR i.item_is_maintenance = 1 THEN 'Unavailable' 
                 ELSE 'Available' 
             END AS 'ItemStatus'
         FROM items i
         INNER JOIN stocks s ON i.item_stock_id = s.stock_id
         WHERE 
-            i.item_is_archived = 0 
-            AND i.item_is_maintenance = 0 
-            AND i.item_is_borrowed = 0";
+            i.item_is_archived = 0
+            AND i.item_is_maintenance = 0"; // Exclude items under maintenance
 
                 // Create the DataTable to hold query results
                 DataTable dataTable = new DataTable();
@@ -82,6 +100,8 @@ namespace AnotherSample
                 dataGridView1.DataSource = null; // Clear the DataGridView in case of an error
             }
         }
+
+
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -284,17 +304,33 @@ namespace AnotherSample
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                // Kunin ang ID mula sa selected row
-                int selectedItemId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["ID"].Value);
-
-                // Buksan ang FixItem form at ipasa ang itemId
-                FixItem fixItemForm = new FixItem(selectedItemId);
-
-                // Ipakita ang form bilang modal dialog
-                if (fixItemForm.ShowDialog() == DialogResult.OK)
+                try
                 {
-                    // Reload the data in DataGridView after fixing the item
-                    LoadItems();
+                    int selectedItemId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["ID"]?.Value);
+                    string itemCondition = dataGridView1.SelectedRows[0].Cells["condition"]?.Value?.ToString();
+
+                    if (string.IsNullOrEmpty(itemCondition))
+                    {
+                        MessageBox.Show("Invalid item condition data.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    if (itemCondition == "Good")
+                    {
+                        MessageBox.Show("You cannot fix an item with condition 'Good'.", "Operation Not Allowed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+
+                    FixItem fixItemForm = new FixItem(selectedItemId);
+
+                    if (fixItemForm.ShowDialog() == DialogResult.OK)
+                    {
+                        LoadItems();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An unexpected error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
@@ -302,6 +338,8 @@ namespace AnotherSample
                 MessageBox.Show("Please select a row to fix.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+
 
         private void ShowFixItemPopup(int itemId)
         {
@@ -366,9 +404,7 @@ namespace AnotherSample
         {
             try
             {
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    string query = @"
+                string query = @"
     SELECT 
         i.item_id AS 'ID', 
         i.item_name AS 'ItemName', 
@@ -377,15 +413,13 @@ namespace AnotherSample
         i.item_type AS 'ItemType', 
         i.item_condition AS 'Condition', 
         CASE 
-            WHEN i.item_is_borrowed = 1 OR i.item_is_maintenance = 1 THEN 'Unavailable' 
+            WHEN i.item_condition = 'Need Maintenance' OR i.item_is_borrowed = 1 OR i.item_is_maintenance = 1 THEN 'Unavailable' 
             ELSE 'Available' 
         END AS 'ItemStatus'
     FROM items i
     INNER JOIN stocks s ON i.item_stock_id = s.stock_id
     WHERE 
         i.item_is_archived = 0
-        AND i.item_is_borrowed = 0   -- Exclude unavailable items
-        AND i.item_is_maintenance = 0  -- Exclude unavailable items
         AND (
             i.item_name LIKE @SearchText
             OR i.item_brand LIKE @SearchText
@@ -394,26 +428,25 @@ namespace AnotherSample
             OR i.item_condition LIKE @SearchText
         )";
 
-                    SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
-                    dataAdapter.SelectCommand.Parameters.AddWithValue("@SearchText", $"%{searchText}%");
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                dataAdapter.SelectCommand.Parameters.AddWithValue("@SearchText", $"%{searchText}%");
 
-                    DataTable dataTable = new DataTable();
+                DataTable dataTable = new DataTable();
 
-                    dataAdapter.Fill(dataTable);
+                dataAdapter.Fill(dataTable);
 
-                    if (dataTable.Rows.Count > 0)
-                    {
-                        dataGridView1.DataSource = dataTable;
-                        dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                if (dataTable.Rows.Count > 0)
+                {
+                    dataGridView1.DataSource = dataTable;
+                    dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-                        // Hide the ID column
-                        dataGridView1.Columns["ID"].Visible = false;
-                    }
-                    else
-                    {
-                        dataGridView1.DataSource = null;
-                        MessageBox.Show("No items found matching your search.", "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                    // Hide the ID column
+                    dataGridView1.Columns["ID"].Visible = false;
+                }
+                else
+                {
+                    dataGridView1.DataSource = null;
+                    MessageBox.Show("No items found matching your search.", "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)

@@ -27,16 +27,17 @@ namespace AnotherSample
         {
             SqlConnection connection = DatabaseConnection.Instance.Connection;
 
-            // Query to fetch items with specific conditions
+            // Query to fetch items with specific conditions, excluding items needing maintenance
             string query = @"
-        SELECT  
-            item_name AS 'Name',
-            item_type AS 'Type'
-        FROM items
-        WHERE 
-            item_is_borrowed = 0 AND 
-            item_is_maintenance = 0 AND 
-            item_is_archived = 0"; // Filter: Only items meeting all conditions
+    SELECT  
+        item_name AS 'Name',
+        item_type AS 'Type'
+    FROM items
+    WHERE 
+        item_is_borrowed = 0 AND 
+        item_is_maintenance = 0 AND 
+        item_is_archived = 0 AND 
+        item_condition != 'Need Maintenance'"; // Exclude items with condition "Need Maintenance"
 
             try
             {
@@ -61,13 +62,6 @@ namespace AnotherSample
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
-
-
-
-
-
 
 
         private void label1_Click(object sender, EventArgs e)

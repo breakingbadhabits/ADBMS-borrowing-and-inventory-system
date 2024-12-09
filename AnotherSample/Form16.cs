@@ -32,13 +32,8 @@ namespace AnotherSample
         {
             try
             {
-                // Use the provided itemId instead of relying on a DataGridView
                 int selectedItemId = this.itemId;
-
-                // Get the current date
                 DateTime maintenanceStartDate = DateTime.Now;
-
-                // Get the description from textbox1
                 string maintenanceDescription = textBox1.Text.Trim();
 
                 if (string.IsNullOrEmpty(maintenanceDescription))
@@ -47,17 +42,14 @@ namespace AnotherSample
                     return;
                 }
 
-                // Define your connection string (this should come from your configuration)
                 string connectionString = ConfigurationManager.ConnectionStrings["InventorySystemDB"].ConnectionString;
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    // INSERT query for maintenance table
                     string insertQuery = @"
                 INSERT INTO maintenance (maintenance_item_id, maintenance_start_date, maintenance_description)
                 VALUES (@ItemId, @StartDate, @Description)";
 
-                    // UPDATE query for items table
                     string updateQuery = @"
                 UPDATE items
                 SET item_is_maintenance = 1
@@ -65,11 +57,10 @@ namespace AnotherSample
 
                     connection.Open();
 
-                    using (SqlTransaction transaction = connection.BeginTransaction()) // Start a transaction
+                    using (SqlTransaction transaction = connection.BeginTransaction())
                     {
                         try
                         {
-                            // Insert into maintenance table
                             using (SqlCommand insertCommand = new SqlCommand(insertQuery, connection, transaction))
                             {
                                 insertCommand.Parameters.AddWithValue("@ItemId", selectedItemId);
@@ -78,25 +69,20 @@ namespace AnotherSample
                                 insertCommand.ExecuteNonQuery();
                             }
 
-                            // Update item_is_maintenance in items table
                             using (SqlCommand updateCommand = new SqlCommand(updateQuery, connection, transaction))
                             {
                                 updateCommand.Parameters.AddWithValue("@ItemId", selectedItemId);
-                                updateCommand.ExecuteNonQuery();
+                                int rowsAffected = updateCommand.ExecuteNonQuery();
+                                MessageBox.Show($"Rows affected by update: {rowsAffected}");
                             }
 
-                            // Commit the transaction
                             transaction.Commit();
-
-                            MessageBox.Show("Maintenance record updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                            // Close the form and return DialogResult.OK
+                            MessageBox.Show("Transaction committed and maintenance record saved successfully.");
                             this.DialogResult = DialogResult.OK;
                             this.Close();
                         }
                         catch (Exception ex)
                         {
-                            // Rollback the transaction in case of error
                             transaction.Rollback();
                             MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
@@ -105,10 +91,9 @@ namespace AnotherSample
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"An unexpected error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
 
 
 

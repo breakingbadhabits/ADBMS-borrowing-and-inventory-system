@@ -151,10 +151,12 @@ namespace AnotherSample
                 // Get the selected row's ID
                 int selectedItemId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["ID"].Value);
 
-                // SQL query to update the item_is_maintenance and set maintenance_complete_date
+                // SQL query to update the item_is_maintenance, maintenance_complete_date, and item_condition
                 string query = @"
             UPDATE items 
-            SET item_is_maintenance = 0 
+            SET 
+                item_is_maintenance = 0, 
+                item_condition = 'Good'
             WHERE item_id = @ItemId;
 
             UPDATE maintenance

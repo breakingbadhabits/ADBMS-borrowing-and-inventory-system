@@ -104,7 +104,6 @@ namespace AnotherSample
             "Need Maintenance"});
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Items.AddRange(new object[] {
-            "New",
             "Good",
             "Need Maintenance"});
             this.comboBox3.Location = new System.Drawing.Point(133, 144);
