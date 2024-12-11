@@ -432,5 +432,34 @@ namespace AnotherSample
         {
 
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            string searchValue = textBox1.Text.Trim().ToLower();
+
+            // Check if DataGridView has a DataSource
+            if (dataGridView1.DataSource is DataTable dataTable)
+            {
+                try
+                {
+                    // Create a filter string
+                    string filterExpression = $@"
+                CONVERT(StockName, 'System.String') LIKE '%{searchValue}%' OR
+                CONVERT(TotalQuantity, 'System.String') LIKE '%{searchValue}%' OR
+                CONVERT(Borrowed, 'System.String') LIKE '%{searchValue}%' OR
+                CONVERT(UnderMaintenance, 'System.String') LIKE '%{searchValue}%' OR
+                CONVERT(Archived, 'System.String') LIKE '%{searchValue}%' OR
+                CONVERT(Available, 'System.String') LIKE '%{searchValue}%'";
+
+                    // Apply filter
+                    (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = filterExpression;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred while filtering: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
     }
 }

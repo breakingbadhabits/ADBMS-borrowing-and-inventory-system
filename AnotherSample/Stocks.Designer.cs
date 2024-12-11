@@ -34,6 +34,7 @@ namespace AnotherSample
             this.ArchivesBt10 = new System.Windows.Forms.Button();
             this.BorrowedBt8 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelNotifCount = new System.Windows.Forms.Label();
             this.NotifBt = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -54,7 +55,6 @@ namespace AnotherSample
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.labelNotifCount = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -109,6 +109,17 @@ namespace AnotherSample
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1241, 692);
             this.panel1.TabIndex = 4;
+            // 
+            // labelNotifCount
+            // 
+            this.labelNotifCount.AutoSize = true;
+            this.labelNotifCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNotifCount.Location = new System.Drawing.Point(1203, 16);
+            this.labelNotifCount.Name = "labelNotifCount";
+            this.labelNotifCount.Size = new System.Drawing.Size(23, 25);
+            this.labelNotifCount.TabIndex = 21;
+            this.labelNotifCount.Text = "1";
+            this.labelNotifCount.Click += new System.EventHandler(this.labelNotifCount_Click);
             // 
             // NotifBt
             // 
@@ -316,6 +327,7 @@ namespace AnotherSample
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(201, 26);
             this.textBox1.TabIndex = 5;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // dataGridView1
             // 
@@ -345,17 +357,6 @@ namespace AnotherSample
             this.label1.Size = new System.Drawing.Size(358, 51);
             this.label1.TabIndex = 3;
             this.label1.Text = "STOCKS";
-            // 
-            // labelNotifCount
-            // 
-            this.labelNotifCount.AutoSize = true;
-            this.labelNotifCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNotifCount.Location = new System.Drawing.Point(1203, 16);
-            this.labelNotifCount.Name = "labelNotifCount";
-            this.labelNotifCount.Size = new System.Drawing.Size(23, 25);
-            this.labelNotifCount.TabIndex = 21;
-            this.labelNotifCount.Text = "1";
-            this.labelNotifCount.Click += new System.EventHandler(this.labelNotifCount_Click);
             // 
             // StocksAdmin
             // 

@@ -138,14 +138,131 @@ namespace AnotherSample
                 }
             }
         }
-            private void ArchiveBt3_Click(object sender, EventArgs e)
+        private void ArchiveBt3_Click(object sender, EventArgs e)
         {
+            try
+            {
+                // Check if any row is selected
+                if (dataGridView1.SelectedRows.Count > 0)
+                {
+                    // Get the selected row
+                    DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+
+                    // Retrieve the Maintenance ID of the selected row
+                    int maintenanceId = Convert.ToInt32(selectedRow.Cells["Maintenance ID"].Value);
+
+                    // Confirm the deletion
+                    var result = MessageBox.Show(
+                        "Are you sure you want to archive/delete this record?",
+                        "Confirm Delete",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question
+                    );
+
+                    if (result == DialogResult.Yes)
+                    {
+                        // Perform the deletion in the database
+                        using (SqlConnection connection = new SqlConnection(connectionString))
+                        {
+                            connection.Open();
+
+                            string query = "DELETE FROM maintenance WHERE maintenance_id = @MaintenanceId";
+                            using (SqlCommand command = new SqlCommand(query, connection))
+                            {
+                                command.Parameters.AddWithValue("@MaintenanceId", maintenanceId);
+                                command.ExecuteNonQuery();
+                            }
+                        }
+
+                        // Remove the row from the DataGridView
+                        dataGridView1.Rows.Remove(selectedRow);
+
+                        MessageBox.Show("Record archived/deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please select a row to delete.", "No Row Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error while deleting the record: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-           
+            string searchText = textBox1.Text.Trim();
+
+            if (string.IsNullOrEmpty(searchText))
+            {
+                // Reload all maintenance data if the search box is empty
+                LoadMaintenanceData();
+                return;
+            }
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string query = @"
+            SELECT 
+                maintenance.maintenance_id AS 'Maintenance ID',
+                items.item_name AS 'Item Name',
+                maintenance.maintenance_start_date AS 'Start Date',
+                maintenance.maintenance_complete_date AS 'Complete Date',
+                maintenance.maintenance_description AS 'Description'
+            FROM maintenance
+            INNER JOIN items ON maintenance.maintenance_item_id = items.item_id
+            WHERE 
+                items.item_name LIKE @SearchText
+                OR CONVERT(VARCHAR, maintenance.maintenance_start_date, 120) LIKE @SearchText
+                OR CONVERT(VARCHAR, maintenance.maintenance_complete_date, 120) LIKE @SearchText
+                OR maintenance.maintenance_description LIKE @SearchText";
+
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                    dataAdapter.SelectCommand.Parameters.AddWithValue("@SearchText", $"%{searchText}%");
+
+                    DataTable dataTable = new DataTable();
+                    dataAdapter.Fill(dataTable);
+
+                    // Update the DataGridView
+                    dataGridView1.DataSource = dataTable;
+
+                    // Automatically resize columns
+                    dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+                    // Hide the Maintenance ID column
+                    if (dataGridView1.Columns.Contains("Maintenance ID"))
+                    {
+                        dataGridView1.Columns["Maintenance ID"].Visible = false;
+                    }
+
+                    // Format the date columns
+                    if (dataGridView1.Columns.Contains("Start Date"))
+                    {
+                        dataGridView1.Columns["Start Date"].DefaultCellStyle.Format = "yyyy-MM-dd";
+                    }
+                    if (dataGridView1.Columns.Contains("Complete Date"))
+                    {
+                        dataGridView1.Columns["Complete Date"].DefaultCellStyle.Format = "yyyy-MM-dd";
+                    }
+
+                    // Handle no matching rows
+                    if (dataTable.Rows.Count == 0)
+                    {
+                        dataGridView1.DataSource = null;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error searching data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

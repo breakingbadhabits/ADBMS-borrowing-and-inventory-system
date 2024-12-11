@@ -59,8 +59,93 @@ namespace AnotherSample
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            string searchText = textBox1.Text.Trim();
 
+            if (string.IsNullOrEmpty(searchText))
+            {
+                // Reload all transaction history if the search box is empty
+                ShowTransactionHistory();
+                return;
+            }
+
+            try
+            {
+                string query = @"
+        SELECT 
+            transactions.transaction_id AS 'Transaction ID',
+            ISNULL(users.user_name, 'No user assigned') AS 'User Name',
+            items.item_name AS 'Item Name',
+            transactions.transaction_borrow_date AS 'Borrow Date',
+            transactions.transaction_due_date AS 'Due Date',
+            transactions.transaction_return_date AS 'Return Date'
+        FROM 
+            transactions
+        LEFT JOIN 
+            users ON transactions.transaction_user_id = users.user_id
+        INNER JOIN 
+            items ON transactions.transaction_item_id = items.item_id
+        WHERE 
+            transactions.transaction_borrow_date IS NOT NULL
+            AND transactions.transaction_return_date IS NOT NULL
+            AND (
+                users.user_name LIKE @SearchText
+                OR items.item_name LIKE @SearchText
+                OR CONVERT(VARCHAR, transactions.transaction_borrow_date, 120) LIKE @SearchText
+                OR CONVERT(VARCHAR, transactions.transaction_due_date, 120) LIKE @SearchText
+                OR CONVERT(VARCHAR, transactions.transaction_return_date, 120) LIKE @SearchText
+            )";
+
+                using (SqlConnection localConnection = new SqlConnection(connection.ConnectionString))
+                {
+                    DataTable dataTable = new DataTable();
+
+                    using (SqlCommand command = new SqlCommand(query, localConnection))
+                    {
+                        command.Parameters.AddWithValue("@SearchText", $"%{searchText}%");
+
+                        SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
+                        dataAdapter.Fill(dataTable);
+                    }
+
+                    // Update the DataGridView with the filtered results
+                    dataGridView1.DataSource = dataTable;
+
+                    // Auto-size columns
+                    dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+                    // Hide the "Transaction ID" column
+                    if (dataGridView1.Columns.Contains("Transaction ID"))
+                    {
+                        dataGridView1.Columns["Transaction ID"].Visible = false;
+                    }
+
+                    // Format date columns
+                    if (dataGridView1.Columns.Contains("Borrow Date"))
+                    {
+                        dataGridView1.Columns["Borrow Date"].DefaultCellStyle.Format = "yyyy-MM-dd";
+                    }
+                    if (dataGridView1.Columns.Contains("Due Date"))
+                    {
+                        dataGridView1.Columns["Due Date"].DefaultCellStyle.Format = "yyyy-MM-dd";
+                    }
+                    if (dataGridView1.Columns.Contains("Return Date"))
+                    {
+                        dataGridView1.Columns["Return Date"].DefaultCellStyle.Format = "yyyy-MM-dd";
+                    }
+
+                    // Handle no matching rows
+                    if (dataTable.Rows.Count == 0)
+                    {
+                        dataGridView1.DataSource = null;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error searching data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)

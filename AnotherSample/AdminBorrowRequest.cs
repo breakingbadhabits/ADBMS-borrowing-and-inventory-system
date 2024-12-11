@@ -419,5 +419,85 @@ namespace AnotherSample
                 MessageBox.Show($"Error updating notification count: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = textBox1.Text.Trim();
+
+            if (string.IsNullOrEmpty(searchText))
+            {
+                // Reload all transactions if the search box is empty
+                ShowTransactionsWithNullBorrowDate();
+                return;
+            }
+
+            try
+            {
+                string connectionString = "Data Source=JERMAINE;Initial Catalog=inventory_system;Persist Security Info=True;User ID=sa;Password=12345;";
+
+                string query = @"
+        SELECT 
+            transactions.transaction_id AS [Transaction ID],
+            users.user_name AS [User Name],
+            items.item_name AS [Item Name],
+            transactions.transaction_due_date AS [Due Date],
+            transactions.transaction_return_condition AS [Condition]
+        FROM 
+            transactions
+        LEFT JOIN 
+            users ON transactions.transaction_user_id = users.user_id
+        LEFT JOIN 
+            items ON transactions.transaction_item_id = items.item_id
+        WHERE 
+            transactions.transaction_borrow_date IS NULL
+            AND transactions.transaction_return_condition IS NULL
+            AND (
+                users.user_name LIKE @SearchText
+                OR items.item_name LIKE @SearchText
+                OR CONVERT(VARCHAR, transactions.transaction_due_date, 120) LIKE @SearchText
+                OR transactions.transaction_return_condition LIKE @SearchText
+            )";
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    DataTable dataTable = new DataTable();
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(query, connection))
+                    {
+                        adapter.SelectCommand.Parameters.AddWithValue("@SearchText", $"%{searchText}%");
+                        adapter.Fill(dataTable);
+                    }
+
+                    // Update the DataGridView with the filtered results
+                    dataGridView1.DataSource = dataTable;
+
+                    // Auto-size columns
+                    dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+                    // Hide the "Transaction ID" column
+                    if (dataGridView1.Columns.Contains("Transaction ID"))
+                    {
+                        dataGridView1.Columns["Transaction ID"].Visible = false;
+                    }
+
+                    // Format the "Due Date" column
+                    if (dataGridView1.Columns.Contains("Due Date"))
+                    {
+                        dataGridView1.Columns["Due Date"].DefaultCellStyle.Format = "yyyy-MM-dd";
+                    }
+
+                    // Handle no matching rows
+                    if (dataTable.Rows.Count == 0)
+                    {
+                        dataGridView1.DataSource = null;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error searching data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
     }
 }

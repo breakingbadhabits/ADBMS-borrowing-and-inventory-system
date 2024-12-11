@@ -389,50 +389,54 @@ namespace AnotherSample
             this.Close();
         }
 
-        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            string searchText = textBox1.Text.Trim();
+
+            if (string.IsNullOrEmpty(searchText))
             {
-                e.Handled = true; // Pigilan ang default behavior ng Enter key
-                e.SuppressKeyPress = true; // Pigilan ang beep sound
-
-                SearchItems(textBox1.Text.Trim());
+                // If the search text is empty, reload all items
+                LoadItems();
+                return;
             }
-        }
 
-        private void SearchItems(string searchText)
-        {
             try
             {
                 string query = @"
-    SELECT 
-        i.item_id AS 'ID', 
-        i.item_name AS 'ItemName', 
-        i.item_brand AS 'Brand', 
-        i.item_serial_number AS 'SerialNumber', 
-        i.item_type AS 'ItemType', 
-        i.item_condition AS 'Condition', 
-        CASE 
-            WHEN i.item_condition = 'Need Maintenance' OR i.item_is_borrowed = 1 OR i.item_is_maintenance = 1 THEN 'Unavailable' 
-            ELSE 'Available' 
-        END AS 'ItemStatus'
-    FROM items i
-    INNER JOIN stocks s ON i.item_stock_id = s.stock_id
-    WHERE 
-        i.item_is_archived = 0
-        AND (
-            i.item_name LIKE @SearchText
-            OR i.item_brand LIKE @SearchText
-            OR i.item_serial_number LIKE @SearchText
-            OR i.item_type LIKE @SearchText
-            OR i.item_condition LIKE @SearchText
-        )";
+        SELECT 
+            i.item_id AS 'ID', 
+            i.item_name AS 'ItemName', 
+            i.item_brand AS 'Brand', 
+            i.item_serial_number AS 'SerialNumber', 
+            i.item_type AS 'ItemType', 
+            i.item_condition AS 'Condition', 
+            CASE 
+                WHEN i.item_condition = 'Need Maintenance' OR i.item_is_borrowed = 1 OR i.item_is_maintenance = 1 THEN 'Unavailable' 
+                ELSE 'Available' 
+            END AS 'ItemStatus'
+        FROM items i
+        INNER JOIN stocks s ON i.item_stock_id = s.stock_id
+        WHERE 
+            i.item_is_archived = 0
+            AND (
+                i.item_name LIKE @SearchText
+                OR i.item_brand LIKE @SearchText
+                OR i.item_serial_number LIKE @SearchText
+                OR i.item_type LIKE @SearchText
+                OR i.item_condition LIKE @SearchText
+                OR
+                CASE 
+                    WHEN i.item_condition = 'Need Maintenance' OR i.item_is_borrowed = 1 OR i.item_is_maintenance = 1 THEN 'Unavailable' 
+                    ELSE 'Available' 
+                END LIKE @SearchText
+            )";
 
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
                 dataAdapter.SelectCommand.Parameters.AddWithValue("@SearchText", $"%{searchText}%");
 
                 DataTable dataTable = new DataTable();
-
                 dataAdapter.Fill(dataTable);
 
                 if (dataTable.Rows.Count > 0)
@@ -445,8 +449,7 @@ namespace AnotherSample
                 }
                 else
                 {
-                    dataGridView1.DataSource = null;
-                    MessageBox.Show("No items found matching your search.", "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dataGridView1.DataSource = null; // Clear the DataGridView
                 }
             }
             catch (Exception ex)
@@ -456,11 +459,6 @@ namespace AnotherSample
         }
 
 
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void BorrowedBt8_Click(object sender, EventArgs e)
         {

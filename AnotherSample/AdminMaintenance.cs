@@ -262,8 +262,75 @@ namespace AnotherSample
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            string searchText = textBox1.Text.Trim();
 
+            if (string.IsNullOrEmpty(searchText))
+            {
+                // Reload all maintenance items if the search box is empty
+                LoadMaintenanceItems();
+                return;
+            }
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string query = @"
+            SELECT 
+                i.item_id AS 'ID', 
+                i.item_name AS 'ItemName', 
+                i.item_serial_number AS 'SerialNumber',
+                m.maintenance_description AS 'Description', 
+                m.maintenance_start_date AS 'StartDate',
+                m.maintenance_complete_date AS 'EndDate'
+            FROM items i
+            INNER JOIN maintenance m ON i.item_id = m.maintenance_item_id
+            WHERE 
+                i.item_is_archived = 0
+                AND i.item_is_maintenance = 1
+                AND m.maintenance_complete_date IS NULL
+                AND (
+                    i.item_name LIKE @SearchText
+                    OR i.item_serial_number LIKE @SearchText
+                    OR m.maintenance_description LIKE @SearchText
+                    OR CONVERT(VARCHAR, m.maintenance_start_date, 120) LIKE @SearchText
+                )";
+
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                    dataAdapter.SelectCommand.Parameters.AddWithValue("@SearchText", $"%{searchText}%");
+
+                    DataTable dataTable = new DataTable();
+                    dataAdapter.Fill(dataTable);
+
+                    // Update the DataGridView
+                    dataGridView1.DataSource = dataTable;
+
+                    // Automatically resize columns
+                    dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+                    // Hide unnecessary columns if present
+                    if (dataGridView1.Columns.Contains("ID"))
+                    {
+                        dataGridView1.Columns["ID"].Visible = false;
+                    }
+                    if (dataGridView1.Columns.Contains("EndDate"))
+                    {
+                        dataGridView1.Columns["EndDate"].Visible = false;
+                    }
+
+                    // Format date columns
+                    if (dataGridView1.Columns.Contains("StartDate"))
+                    {
+                        dataGridView1.Columns["StartDate"].DefaultCellStyle.Format = "yyyy-MM-dd";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error searching data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)

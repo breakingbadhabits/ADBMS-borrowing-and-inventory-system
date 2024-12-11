@@ -1,4 +1,6 @@
-﻿namespace AnotherSample
+﻿using System;
+
+namespace AnotherSample
 {
     partial class AdminArchive
     {
@@ -59,12 +61,12 @@
             this.itemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.inventory_systemDataSet = new AnotherSample.inventory_systemDataSet();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelNotifCount = new System.Windows.Forms.Label();
             this.NotifBt = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.ArchivesBt10 = new System.Windows.Forms.Button();
             this.itemsTableAdapter = new AnotherSample.inventory_systemDataSetTableAdapters.itemsTableAdapter();
-            this.labelNotifCount = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -212,8 +214,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(201, 26);
             this.textBox1.TabIndex = 5;
-            this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
-            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // label1
             // 
@@ -400,6 +401,17 @@
             this.panel1.Size = new System.Drawing.Size(1241, 692);
             this.panel1.TabIndex = 1;
             // 
+            // labelNotifCount
+            // 
+            this.labelNotifCount.AutoSize = true;
+            this.labelNotifCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNotifCount.Location = new System.Drawing.Point(1204, 16);
+            this.labelNotifCount.Name = "labelNotifCount";
+            this.labelNotifCount.Size = new System.Drawing.Size(23, 25);
+            this.labelNotifCount.TabIndex = 22;
+            this.labelNotifCount.Text = "1";
+            this.labelNotifCount.Click += new System.EventHandler(this.labelNotifCount_Click);
+            // 
             // NotifBt
             // 
             this.NotifBt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("NotifBt.BackgroundImage")));
@@ -446,17 +458,6 @@
             // 
             this.itemsTableAdapter.ClearBeforeFill = true;
             // 
-            // labelNotifCount
-            // 
-            this.labelNotifCount.AutoSize = true;
-            this.labelNotifCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNotifCount.Location = new System.Drawing.Point(1204, 16);
-            this.labelNotifCount.Name = "labelNotifCount";
-            this.labelNotifCount.Size = new System.Drawing.Size(23, 25);
-            this.labelNotifCount.TabIndex = 22;
-            this.labelNotifCount.Text = "1";
-            this.labelNotifCount.Click += new System.EventHandler(this.labelNotifCount_Click);
-            // 
             // AdminArchive
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -479,6 +480,8 @@
             this.ResumeLayout(false);
 
         }
+
+        
 
         #endregion
 
